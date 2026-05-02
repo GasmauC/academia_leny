@@ -26,7 +26,13 @@ const CardProfile = ({ card, onClose, onNext, onPrev, onNavigate }) => {
   if (!card) return null;
 
   // Extraer el texto original completo del JSON paralelo
-  const textArray = cardsTheory.find(c => c.name.toLowerCase().trim() === card.name.toLowerCase().trim())?.contenido_completo || [];
+  const cleanCardNameForTheory = card.name.replace(/\(.*?\)/g, '').trim().toLowerCase();
+  const textArray = cardsTheory.find(c => {
+    const cleanTheoryName = c.name.replace(/\(.*?\)/g, '').trim().toLowerCase();
+    return cleanTheoryName === cleanCardNameForTheory || 
+           cleanTheoryName.includes(cleanCardNameForTheory) || 
+           cleanCardNameForTheory.includes(cleanTheoryName);
+  })?.contenido_completo || [];
 
   // Calcular las misiones relacionadas dinámicamente
   const relatedExercises = lenormandExercises.filter(ex => 
