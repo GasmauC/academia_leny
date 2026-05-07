@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { LenormandAPI } from './data/api';
+import { PokerAPI } from './data/poker_api';
 import Sidebar from './components/Sidebar';
 import StudentDashboard from './components/StudentDashboard';
 import GlobalSearch from './components/GlobalSearch';
@@ -8,9 +9,15 @@ import DictionaryReader from './components/DictionaryReader';
 import CardProfile from './components/CardProfile';
 import CompareDesk from './components/CompareDesk';
 import CombinationsTheory from './components/CombinationsTheory';
+import PokerCombinationsTheory from './components/PokerCombinationsTheory';
 import TripletsTheory from './components/TripletsTheory';
+import PokerTripletsTheory from './components/PokerTripletsTheory';
 import QuintetsTheory from './components/QuintetsTheory';
+import PokerQuintetsTheory from './components/PokerQuintetsTheory';
 import NineCardsTheory from './components/NineCardsTheory';
+import PokerNineCardsTheory from './components/PokerNineCardsTheory';
+import PokerExamplesBank from './components/PokerExamplesBank';
+import PokerExerciseBank from './components/PokerExerciseBank';
 import GrandTableauTheory from './components/GrandTableauTheory';
 import SpreadsMenu from './components/SpreadsMenu';
 import DailyCardTheory from './components/DailyCardTheory';
@@ -21,11 +28,18 @@ import AtlasOfCards from './components/AtlasOfCards';
 import FlashcardsModule from './components/FlashcardsModule';
 import RelationalMap from './components/RelationalMap';
 import StudySidebar from './components/StudySidebar';
+import PokerSuitsMenu from './components/PokerSuitsMenu';
+import PokerVisualAtlas from './components/PokerVisualAtlas';
+import PokerCardProfile from './components/PokerCardProfile';
 import { useStudyData } from './hooks/useStudyData';
-import { cardsDictionary } from './data/db/lenormand_cards';
+import { PokerProvider } from './context/PokerContext';
+import { cardsDictionary as lenormandCardsDictionary } from './data/db/lenormand_cards';
+import { pokerCardsDictionary } from './data/db/poker_cards';
 import { Library, ArrowRightLeft, BookOpen, Search, Star, Sparkles, Target, Grip, Image, Network, LayoutTemplate, FlaskConical } from 'lucide-react';
 
 const App = () => {
+  const [activeModule, setActiveModule] = useState('lenormand'); // 'lenormand' | 'poker'
+  const currentDictionary = activeModule === 'poker' ? pokerCardsDictionary : lenormandCardsDictionary;
   const [navigationMap, setNavigationMap] = useState([]);
   const [stats, setStats] = useState(null);
   
@@ -40,12 +54,19 @@ const App = () => {
   const studyData = useStudyData();
 
   useEffect(() => {
-    const map = LenormandAPI.getNavigationMap();
-    const stts = LenormandAPI.getStats();
+    const api = activeModule === 'lenormand' ? LenormandAPI : PokerAPI;
+    const map = api.getNavigationMap();
+    const stts = api.getStats();
     
     setNavigationMap(map);
     setStats(stts);
-  }, []);
+
+    // Reset active node if needed when switching
+    if (viewMode === 'reader') {
+      if (map.length > 0) setActiveNodeId(map[0].id);
+      else setActiveNodeId(null);
+    }
+  }, [activeModule]);
 
   const handleStartReading = () => {
     setViewMode('reader');
@@ -79,6 +100,7 @@ const App = () => {
     if (params.viewMode) setViewMode(params.viewMode);
     if (params.activeNodeId) setActiveNodeId(params.activeNodeId);
     if (params.activeCardId) setActiveCardId(params.activeCardId);
+    if (params.activeModule) setActiveModule(params.activeModule);
     if (params.activeExerciseId) setActiveExerciseId(params.activeExerciseId);
     if (params.scrollTo) {
        setTimeout(() => {
@@ -98,7 +120,7 @@ const App = () => {
       const node = getLinearNodeArray().find(n => n.id === activeNodeId);
       if (node) hItem = { id: `node-${node.id}`, type: 'reader', title: node.title, subtitle: 'Libro', path: { viewMode: 'reader', activeNodeId: node.id } };
     } else if (viewMode === 'cardProfile') {
-      const card = cardsDictionary.find(c => c.id === activeCardId);
+      const card = currentDictionary.find(c => c.id === activeCardId);
       if (card) hItem = { id: `card-${card.id}`, type: 'card', title: `Carta ${card.number}: ${card.name}`, subtitle: 'Diccionario', path: { viewMode: 'cardProfile', activeCardId: card.id } };
     } else if (['combinations', 'triplets', 'quintets', 'grid3x3', 'grandTableau', 'dailyCard', 'trustMethod', 'spreadsMenu', 'relationalMap'].includes(viewMode)) {
       const titles = { combinations: 'Pares', triplets: 'Tríadas', quintets: 'Quintetos', grid3x3: 'Retrato 3x3', grandTableau: 'Grand Tableau', dailyCard: 'Energía del Día', trustMethod: '¿Debo Confiar?', spreadsMenu: 'Menú de Tiradas', relationalMap: 'Mapa Relacional' };
@@ -141,10 +163,19 @@ const App = () => {
       }
   };
 
+  const handleToggleModule = (mod) => {
+      setActiveModule(mod);
+      if (viewMode === 'cardProfile') {
+          setViewMode('cardsMenu');
+          setActiveCardId(null);
+      }
+  };
+
   if (!stats) return <div className="min-h-screen flex items-center justify-center bg-leny-dark text-white font-title text-2xl">Cargando la Sabiduría del Pequeño Leny...</div>;
 
   return (
-    <div className={`flex flex-col text-white min-h-screen overflow-hidden h-screen w-screen font-sans ${appMode === 'libro' ? 'bg-[#0f121a]' : 'bg-[#05070a]'}`}>
+    <PokerProvider onNavigate={handleNavigate}>
+      <div className={`flex flex-col text-white min-h-screen overflow-hidden h-screen w-screen font-sans ${appMode === 'libro' ? 'bg-[#0f121a]' : 'bg-[#05070a]'}`}>
       
       {/* BARRA SUPERIOR ARQUITECTÓNICA */}
       <div className={`fixed top-0 inset-x-0 transition-all duration-500 flex items-center justify-between px-4 md:px-8 z-50 ${appMode === 'libro' ? 'h-[64px] bg-black/90 border-b border-leny-accent/20 shadow-md' : 'h-[72px] bg-transparent'}`}>
@@ -159,19 +190,33 @@ const App = () => {
         </button>
 
         {/* TOGGLE MÁSTER CENTRAL (Selector de Mundos) */}
-        <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex bg-black/80 p-1 rounded-xl border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
-            <button 
-                onClick={() => handleToggleMode('libro')}
-                className={`flex items-center gap-2 px-6 py-2 rounded-lg text-xs font-bold tracking-[0.2em] uppercase transition-all duration-300 ${appMode === 'libro' ? 'bg-leny-accent text-black shadow-lg scale-105' : 'text-white/40 hover:text-white/80'}`}
-            >
-                <LayoutTemplate size={16} strokeWidth={1.5} /> Modo Libro
-            </button>
-            <button 
-                onClick={() => handleToggleMode('estudio')}
-                className={`flex items-center gap-2 px-6 py-2 rounded-lg text-xs font-bold tracking-[0.2em] uppercase transition-all duration-300 ${appMode === 'estudio' ? 'bg-purple-600 text-white shadow-[0_0_20px_rgba(147,51,234,0.4)] scale-105' : 'text-white/40 hover:text-white/80'}`}
-            >
-                <FlaskConical size={16} strokeWidth={1.5} /> Laboratorio
-            </button>
+        <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 mt-4">
+            <div className="flex bg-black/80 p-1 rounded-xl border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+                <button 
+                    onClick={() => handleToggleMode('libro')}
+                    className={`flex items-center gap-2 px-6 py-2 rounded-lg text-xs font-bold tracking-[0.2em] uppercase transition-all duration-300 ${appMode === 'libro' ? 'bg-leny-accent text-black shadow-lg scale-105' : 'text-white/40 hover:text-white/80'}`}
+                >
+                    <LayoutTemplate size={16} strokeWidth={1.5} /> Modo Libro
+                </button>
+                <button 
+                    onClick={() => handleToggleMode('estudio')}
+                    className={`flex items-center gap-2 px-6 py-2 rounded-lg text-xs font-bold tracking-[0.2em] uppercase transition-all duration-300 ${appMode === 'estudio' ? 'bg-purple-600 text-white shadow-[0_0_20px_rgba(147,51,234,0.4)] scale-105' : 'text-white/40 hover:text-white/80'}`}
+                >
+                    <FlaskConical size={16} strokeWidth={1.5} /> Laboratorio
+                </button>
+            </div>
+            
+            {/* SELECTOR DE MÓDULO */}
+            <div className="flex bg-black/60 p-0.5 rounded-lg border border-white/5 shadow-inner">
+                <button 
+                    onClick={() => handleToggleModule('lenormand')}
+                    className={`px-4 py-1 text-[9px] rounded uppercase font-bold tracking-[0.2em] transition-colors ${activeModule === 'lenormand' ? 'bg-leny-accent/20 text-leny-accent' : 'text-white/30 hover:text-white/60'}`}
+                >Lenormand</button>
+                <button 
+                    onClick={() => handleToggleModule('poker')}
+                    className={`px-4 py-1 text-[9px] rounded uppercase font-bold tracking-[0.2em] transition-colors ${activeModule === 'poker' ? 'bg-red-500/20 text-red-500' : 'text-white/30 hover:text-white/60'}`}
+                >Póker</button>
+            </div>
         </div>
 
         {/* HERRAMIENTAS DERECHA (Buscador y Utilidades globales, nada de botones amontonados) */}
@@ -197,11 +242,12 @@ const App = () => {
                 activeNodeId={activeNodeId} 
                 onSelectNode={handleSelectNode} 
                 isSidebarOpen={isSidebarOpen} 
+                activeModule={activeModule}
             />
             {/* Lector Canónico (Sin distracciones redondeadas, toma el 100% de alto natural) */}
             <div className="flex-1 overflow-hidden h-full relative bg-[#131722] border-l border-white/5">
-                {viewMode === 'cover' && <StudentDashboard onStart={handleStartReading} onNavigate={handleNavigate} stats={stats} />}
-                {viewMode === 'reader' && (
+                {viewMode === 'cover' && <StudentDashboard onStart={handleStartReading} onNavigate={handleNavigate} stats={stats} activeModule={activeModule} />}
+                {viewMode === 'reader' && activeNode && (
                     <Reader 
                         activeNode={activeNode} 
                         onToggleSidebar={toggleSidebar} 
@@ -210,6 +256,7 @@ const App = () => {
                         onSelectSubchapter={handleSelectNode}
                         setViewMode={setViewMode}
                         onNavigate={handleNavigate}
+                        activeModule={activeModule}
                     />
                 )}
             </div>
@@ -226,13 +273,19 @@ const App = () => {
                     if (window.innerWidth < 768) setIsSidebarOpen(false);
                 }}
                 isOpen={isSidebarOpen}
+                activeModule={activeModule}
             />
             {/* Lector Canónico o Contenido Central (Con redondeo superior solo en Desktop si se desea, o cuadrado para amalgamar mejor) */}
             <div className="flex-1 overflow-hidden h-full relative bg-[#06080d] md:border-l border-white/10 shadow-[-10px_0_30px_rgba(0,0,0,0.8)]">
             
-            {viewMode === 'cover' && <StudentDashboard onStart={() => setViewMode('cardsMenu')} onNavigate={handleNavigate} stats={stats} />}
+            {viewMode === 'cover' && <StudentDashboard onStart={() => setViewMode('cardsMenu')} onNavigate={handleNavigate} stats={stats} activeModule={activeModule} />}
 
             {viewMode === 'cardsMenu' && (
+              activeModule === 'poker' ? (
+                <div className="h-full w-full fade-in">
+                  <PokerVisualAtlas onNavigate={handleNavigate} />
+                </div>
+              ) : (
               <div className="h-full overflow-y-auto p-6 md:p-12 custom-scrollbar fade-in bg-gradient-to-br from-[#0a0a14] to-black">
                 
                 <div className="max-w-[1200px] w-full mx-auto">
@@ -270,15 +323,15 @@ const App = () => {
                   </div>
 
                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 pb-20 w-full justify-items-center">
-                    {cardsDictionary.map(card => (
+                    {currentDictionary.map(card => (
                       <button
                         key={card.id}
                         onClick={() => { setActiveCardId(card.id); setViewMode('cardProfile'); }}
-                        className="bg-black/40 border w-full border-white/5 rounded-2xl p-6 flex flex-col items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/50 hover:bg-purple-900/10 group shadow-lg"
+                        className={`bg-black/40 border w-full border-white/5 rounded-2xl p-6 flex flex-col items-center gap-4 transition-all duration-300 hover:-translate-y-1 ${activeModule === 'poker' ? 'hover:border-red-500/50 hover:bg-red-900/10' : 'hover:border-purple-500/50 hover:bg-purple-900/10'} group shadow-lg`}
                       >
-                        <div className="text-5xl group-hover:scale-110 transition-transform duration-300 drop-shadow-lg pb-1">{card.emoji}</div>
+                        <div className={`text-5xl group-hover:scale-110 transition-transform duration-300 drop-shadow-lg pb-1 ${card.color === 'rojo' ? 'text-red-500' : card.color === 'negro' ? 'text-gray-300' : ''}`}>{card.emoji}</div>
                         <div className="text-center w-full">
-                          <div className="text-[10px] text-purple-400/80 font-bold tracking-[0.2em] uppercase mb-1">{card.number}</div>
+                          <div className={`text-[10px] ${activeModule === 'poker' ? 'text-red-400/80' : 'text-purple-400/80'} font-bold tracking-[0.2em] uppercase mb-1`}>{card.number}</div>
                           <div className="text-white/90 font-medium tracking-wide text-sm border-t border-white/10 pt-2">{card.name}</div>
                         </div>
                       </button>
@@ -286,25 +339,42 @@ const App = () => {
                   </div>
                 </div>
               </div>
+              )
             )}
 
             {/* Inyecciones de Módulos (Solo accesibles en Modo Estudio) */}
             {viewMode === 'cardProfile' && (
               <div className="h-full p-4 lg:p-8 fade-in bg-[#06080d]">
                 <div className="max-w-[1200px] w-full mx-auto h-full"> 
-                  <CardProfile 
-                    card={cardsDictionary.find(c => c.id === activeCardId)} 
-                    onClose={() => setViewMode('cardsMenu')} 
-                    onNavigate={handleNavigate}
-                    onNext={() => {
-                      const idx = cardsDictionary.findIndex(c => c.id === activeCardId);
-                      setActiveCardId(cardsDictionary[(idx + 1) % cardsDictionary.length].id);
-                    }}
-                    onPrev={() => {
-                      const idx = cardsDictionary.findIndex(c => c.id === activeCardId);
-                      setActiveCardId(cardsDictionary[(idx - 1 + cardsDictionary.length) % cardsDictionary.length].id);
-                    }}
-                  />
+                  {activeModule === 'poker' ? (
+                    <PokerCardProfile 
+                      card={currentDictionary.find(c => c.id === activeCardId)} 
+                      onClose={() => setViewMode('cardsMenu')} 
+                      onNext={() => {
+                        const idx = currentDictionary.findIndex(c => c.id === activeCardId);
+                        setActiveCardId(currentDictionary[(idx + 1) % currentDictionary.length].id);
+                      }}
+                      onPrev={() => {
+                        const idx = currentDictionary.findIndex(c => c.id === activeCardId);
+                        setActiveCardId(currentDictionary[(idx - 1 + currentDictionary.length) % currentDictionary.length].id);
+                      }}
+                    />
+                  ) : (
+                    <CardProfile 
+                      card={currentDictionary.find(c => c.id === activeCardId)} 
+                      activeModule={activeModule}
+                      onClose={() => setViewMode('cardsMenu')} 
+                      onNavigate={handleNavigate}
+                      onNext={() => {
+                        const idx = currentDictionary.findIndex(c => c.id === activeCardId);
+                        setActiveCardId(currentDictionary[(idx + 1) % currentDictionary.length].id);
+                      }}
+                      onPrev={() => {
+                        const idx = currentDictionary.findIndex(c => c.id === activeCardId);
+                        setActiveCardId(currentDictionary[(idx - 1 + currentDictionary.length) % currentDictionary.length].id);
+                      }}
+                    />
+                  )}
                 </div>
               </div>
             )}
@@ -312,18 +382,20 @@ const App = () => {
             {viewMode === 'compareDesk' && (
               <div className="h-full p-0 fade-in bg-[#06080d]">
                 <div className="w-full h-full">
-                  <CompareDesk onClose={() => setViewMode('cardsMenu')} />
+                  <CompareDesk onClose={() => setViewMode('cardsMenu')} activeModule={activeModule} />
                 </div>
               </div>
             )}
 
-            {viewMode === 'spreadsMenu' && <SpreadsMenu onSelectMode={(mode) => setViewMode(mode)} />}
+            {viewMode === 'spreadsMenu' && <SpreadsMenu onSelectMode={(mode) => setViewMode(mode)} activeModule={activeModule} />}
             {viewMode === 'dailyCard' && <div className="h-full w-full"><DailyCardTheory /></div>}
             {viewMode === 'trustMethod' && <div className="h-full w-full"><TrustMethodTheory /></div>}
-            {viewMode === 'combinations' && <div className="h-full w-full"><CombinationsTheory /></div>}
-            {viewMode === 'triplets' && <div className="h-full w-full"><TripletsTheory /></div>}
-            {viewMode === 'quintets' && <div className="h-full w-full"><QuintetsTheory /></div>}
-            {viewMode === 'grid3x3' && <div className="h-full w-full"><NineCardsTheory /></div>}
+            {viewMode === 'combinations' && <div className="h-full w-full">{activeModule === 'poker' ? <PokerCombinationsTheory /> : <CombinationsTheory />}</div>}
+            {viewMode === 'triplets' && <div className="h-full w-full">{activeModule === 'poker' ? <PokerTripletsTheory /> : <TripletsTheory />}</div>}
+            {viewMode === 'quintets' && <div className="h-full w-full">{activeModule === 'poker' ? <PokerQuintetsTheory /> : <QuintetsTheory />}</div>}
+            {viewMode === 'grid3x3' && <div className="h-full w-full">{activeModule === 'poker' ? <PokerNineCardsTheory /> : <NineCardsTheory />}</div>}
+            {viewMode === 'pokerExamples' && <div className="h-full w-full"><PokerExamplesBank /></div>}
+            {viewMode === 'pokerExercises' && <div className="h-full w-full"><PokerExerciseBank onNavigate={handleNavigate} /></div>}
             {viewMode === 'grandTableau' && <div className="h-full w-full bg-leny-dark"><GrandTableauTheory /></div>}
             
             {viewMode === 'exercises' && (
@@ -337,11 +409,11 @@ const App = () => {
             )}
 
             {viewMode === 'tutor' && <div className="h-full w-full"><TutorAI /></div>}
-            {viewMode === 'flashcards' && <div className="h-full w-full"><FlashcardsModule onNavigate={handleNavigate} /></div>}
+            {viewMode === 'flashcards' && <div className="h-full w-full"><FlashcardsModule onNavigate={handleNavigate} activeModule={activeModule} /></div>}
             
             {viewMode === 'relationalMap' && (
               <div className="h-full w-full relative z-40 bg-black">
-                <RelationalMap onClose={() => setViewMode('cardsMenu')} onNavigate={handleNavigate} />
+                <RelationalMap onClose={() => setViewMode('cardsMenu')} onNavigate={handleNavigate} activeModule={activeModule} />
               </div>
             )}
 
@@ -367,8 +439,9 @@ const App = () => {
       </div>
 
       {/* Global Search Modal */}
-      <GlobalSearch isOpen={searchOpen} onClose={() => setSearchOpen(false)} onNavigate={handleNavigate} />
+      <GlobalSearch isOpen={searchOpen} onClose={() => setSearchOpen(false)} onNavigate={handleNavigate} activeModule={activeModule} />
     </div>
+    </PokerProvider>
   );
 };
 

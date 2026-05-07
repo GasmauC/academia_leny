@@ -1,17 +1,24 @@
 import React, { useState } from 'react';
 import { BookOpen, PenTool, Layout, ChevronRight, ChevronDown, Search } from 'lucide-react';
 
-const icons = {
-  theory: <BookOpen size={16} strokeWidth={1.5} className="text-white/40 group-hover:text-leny-accent flex-shrink-0 transition-colors" />,
-  practice: <Layout size={16} strokeWidth={1.5} className="text-white/40 group-hover:text-leny-accent flex-shrink-0 transition-colors" />,
-  examples: <PenTool size={16} strokeWidth={1.5} className="text-white/40 group-hover:text-leny-accent flex-shrink-0 transition-colors" />
+const getIcons = (activeModule) => {
+  const accent = activeModule === 'poker' ? 'text-red-500' : 'text-leny-accent';
+  return {
+    theory: <BookOpen size={16} strokeWidth={1.5} className={`text-white/40 group-hover:${accent} flex-shrink-0 transition-colors`} />,
+    practice: <Layout size={16} strokeWidth={1.5} className={`text-white/40 group-hover:${accent} flex-shrink-0 transition-colors`} />,
+    examples: <PenTool size={16} strokeWidth={1.5} className={`text-white/40 group-hover:${accent} flex-shrink-0 transition-colors`} />
+  };
 };
 
-const TreeNode = ({ node, level, activeNodeId, onSelect, forceOpen }) => {
+const TreeNode = ({ node, level, activeNodeId, onSelect, forceOpen, activeModule }) => {
   const [isOpen, setIsOpen] = useState(level < 2);
   const hasChildren = node.subsections && node.subsections.length > 0;
   const isActive = activeNodeId === node.id;
   const isEffectivelyOpen = forceOpen || isOpen;
+  const textAccent = activeModule === 'poker' ? 'text-red-500' : 'text-leny-accent';
+  const borderAccent = activeModule === 'poker' ? 'border-red-500' : 'border-leny-accent';
+  const bgAccent = activeModule === 'poker' ? 'bg-red-500' : 'bg-leny-accent';
+  const icons = getIcons(activeModule);
 
   const handleToggle = (e) => {
     e.stopPropagation();
@@ -30,12 +37,12 @@ const TreeNode = ({ node, level, activeNodeId, onSelect, forceOpen }) => {
           }}
           className={`flex items-center gap-3 py-3 px-3 cursor-pointer transition-all duration-300 group font-sans border-l-[3px] rounded-r-lg
             ${isActive 
-              ? 'border-leny-accent bg-white/[0.03]' 
+              ? `${borderAccent} bg-white/[0.03]` 
               : 'border-transparent hover:border-white/10'
             }`}
         >
           <div className="flex-shrink-0">
-            {icons[node.type] || <BookOpen size={15} strokeWidth={1} className={`transition-colors ${isActive ? 'text-leny-accent' : 'text-white/30 group-hover:text-white/60'}`} />}
+            {icons[node.type] || <BookOpen size={15} strokeWidth={1} className={`transition-colors ${isActive ? textAccent : 'text-white/30 group-hover:text-white/60'}`} />}
           </div>
           
           <div className="flex-1">
@@ -45,7 +52,7 @@ const TreeNode = ({ node, level, activeNodeId, onSelect, forceOpen }) => {
           </div>
           
           {hasChildren && (
-            <div onClick={handleToggle} className={`p-1 rounded-full transition-colors cursor-pointer flex-shrink-0 ${isActive ? 'text-leny-accent opacity-80' : 'text-white/30 hover:text-white/60'}`}>
+            <div onClick={handleToggle} className={`p-1 rounded-full transition-colors cursor-pointer flex-shrink-0 ${isActive ? `${textAccent} opacity-80` : 'text-white/30 hover:text-white/60'}`}>
               {isEffectivelyOpen ? <ChevronDown size={16} strokeWidth={1.5} /> : <ChevronRight size={16} strokeWidth={1.5} />}
             </div>
           )}
@@ -62,6 +69,7 @@ const TreeNode = ({ node, level, activeNodeId, onSelect, forceOpen }) => {
                 activeNodeId={activeNodeId}
                 onSelect={onSelect}
                 forceOpen={forceOpen}
+                activeModule={activeModule}
               />
             ))}
           </div>
@@ -80,19 +88,19 @@ const TreeNode = ({ node, level, activeNodeId, onSelect, forceOpen }) => {
         }}
         className={`group flex items-center justify-between py-1.5 pl-3 pr-2 cursor-pointer transition-all duration-300 border-l-[3px] rounded-r-lg
           ${isActive 
-            ? 'border-leny-accent bg-white/[0.02]' 
+            ? `${borderAccent} bg-white/[0.02]` 
             : 'border-transparent hover:border-white/10'
           }`}
       >
         <div className="flex items-center gap-2.5 w-full">
-          <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 transition-all duration-300 ${isActive ? 'bg-leny-accent shadow-[0_0_8px_rgba(205,174,104,0.6)]' : 'bg-white/20 group-hover:bg-white/60'}`}></div>
+          <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 transition-all duration-300 ${isActive ? `${bgAccent} ${activeModule === 'poker' ? 'shadow-[0_0_8px_rgba(220,38,38,0.6)]' : 'shadow-[0_0_8px_rgba(205,174,104,0.6)]'}` : 'bg-white/20 group-hover:bg-white/60'}`}></div>
           <span className={`text-[12.5px] leading-relaxed pr-2 font-sans transition-colors ${isActive ? 'text-white font-medium text-shadow-sm' : 'text-white/50 group-hover:text-white/80'}`}>
             {node.title}
           </span>
         </div>
         
         {hasChildren && (
-          <div onClick={handleToggle} className={`p-1 cursor-pointer flex-shrink-0 transition-colors ${isActive ? 'text-leny-accent/80' : 'text-white/30 hover:text-white'}`}>
+          <div onClick={handleToggle} className={`p-1 cursor-pointer flex-shrink-0 transition-colors ${isActive ? `${textAccent}/80` : 'text-white/30 hover:text-white'}`}>
             {isEffectivelyOpen ? <ChevronDown size={14} strokeWidth={1} /> : <ChevronRight size={14} strokeWidth={1} />}
           </div>
         )}
@@ -110,6 +118,7 @@ const TreeNode = ({ node, level, activeNodeId, onSelect, forceOpen }) => {
                 activeNodeId={activeNodeId}
                 onSelect={onSelect}
                 forceOpen={forceOpen}
+                activeModule={activeModule}
               />
             ))}
           </div>
@@ -119,7 +128,7 @@ const TreeNode = ({ node, level, activeNodeId, onSelect, forceOpen }) => {
   );
 };
 
-const Sidebar = ({ navigationMap, activeNodeId, onSelectNode, isSidebarOpen }) => {
+const Sidebar = ({ navigationMap, activeNodeId, onSelectNode, isSidebarOpen, activeModule = 'lenormand' }) => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const filterTree = (nodes, query) => {
@@ -154,19 +163,19 @@ const Sidebar = ({ navigationMap, activeNodeId, onSelectNode, isSidebarOpen }) =
   return (
     <div className={`fixed inset-y-0 left-0 bg-[#05070a] w-72 md:w-[280px] transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 z-20 flex flex-col md:translate-x-0 md:static shadow-sm md:shadow-none`}>
       <div className="p-6 pb-2 border-transparent flex flex-col shrink-0 mt-2 gap-4">
-        <h2 className="font-serif text-[18px] text-white/90 font-medium leading-relaxed tracking-wider">La Biblia<br/><span className="italic text-leny-accent text-2xl">Lenormand</span></h2>
+        <h2 className="font-serif text-[18px] text-white/90 font-medium leading-relaxed tracking-wider">La Biblia<br/><span className={`italic ${activeModule === 'poker' ? 'text-red-500' : 'text-leny-accent'} text-2xl`}>{activeModule === 'poker' ? 'Póker' : 'Lenormand'}</span></h2>
         
         {/* Buscador Interno Interactivo */}
         <div className="relative group">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <Search size={14} className="text-white/30 group-focus-within:text-leny-accent transition-colors" />
+            <Search size={14} className={`text-white/30 group-focus-within:${activeModule === 'poker' ? 'text-red-500' : 'text-leny-accent'} transition-colors`} />
           </div>
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Buscar en el libro..."
-            className="w-full bg-[#0a0d14] border border-white/10 rounded-lg py-2 pl-9 pr-3 text-xs text-white placeholder-white/30 focus:outline-none focus:border-leny-accent/50 focus:bg-white/5 transition-all"
+            className={`w-full bg-[#0a0d14] border border-white/10 rounded-lg py-2 pl-9 pr-3 text-xs text-white placeholder-white/30 focus:outline-none focus:border-${activeModule === 'poker' ? 'red-500/50' : 'leny-accent/50'} focus:bg-white/5 transition-all`}
           />
         </div>
       </div>
@@ -181,6 +190,7 @@ const Sidebar = ({ navigationMap, activeNodeId, onSelectNode, isSidebarOpen }) =
               activeNodeId={activeNodeId}
               onSelect={onSelectNode}
               forceOpen={isSearching}
+              activeModule={activeModule}
             />
           ))
         ) : (

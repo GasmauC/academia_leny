@@ -2,8 +2,12 @@ import React, { useEffect, useRef } from 'react';
 import { Menu, ChevronLeft, ChevronRight, Bookmark, BookOpen } from 'lucide-react';
 import EditorialText from './EditorialText';
 
-const Reader = ({ activeNode, onToggleSidebar, onNavigatePrevious, onNavigateNext, onSelectSubchapter, setViewMode }) => {
+const Reader = ({ activeNode, onToggleSidebar, onNavigatePrevious, onNavigateNext, onSelectSubchapter, setViewMode, activeModule = 'lenormand' }) => {
   const contentRef = useRef(null);
+
+  const textAccent = activeModule === 'poker' ? 'text-red-500' : 'text-leny-accent';
+  const bgAccent = activeModule === 'poker' ? 'bg-red-500' : 'bg-leny-accent';
+  const borderAccent = activeModule === 'poker' ? 'border-red-500' : 'border-leny-accent';
 
   useEffect(() => {
     // Al cambiar de nodo, scrollear suavemente arriba
@@ -25,7 +29,7 @@ const Reader = ({ activeNode, onToggleSidebar, onNavigatePrevious, onNavigateNex
           </button>
           
           <div className="flex flex-col">
-            <span className="text-[9px] text-leny-accent/60 uppercase tracking-[0.2em] font-bold mb-0.5">
+            <span className={`text-[9px] ${textAccent}/60 uppercase tracking-[0.2em] font-bold mb-0.5`}>
               {activeNode.type === 'theory' ? 'TEORÍA' : activeNode.type === 'practice' ? 'PRÁCTICA' : 'MÉTODOS'}
             </span>
             <span className="text-sm font-sans text-gray-300 truncate max-w-[200px] md:max-w-md hidden sm:block opacity-70">
@@ -46,8 +50,8 @@ const Reader = ({ activeNode, onToggleSidebar, onNavigatePrevious, onNavigateNex
         <div className="p-8 md:p-14 lg:py-20 lg:px-12 max-w-[800px] mx-auto w-full min-h-full flex flex-col">
           
           {/* Cabecera del Documento Editorial */}
-          <div className="mb-16 border-b border-leny-accent/20 pb-12">
-             <div className="text-[10px] text-leny-accent uppercase tracking-[0.3em] font-bold mb-4 opacity-80 decoration-leny-accent/30 underline underline-offset-4">
+          <div className={`mb-16 border-b ${borderAccent}/20 pb-12`}>
+             <div className={`text-[10px] ${textAccent} uppercase tracking-[0.3em] font-bold mb-4 opacity-80 decoration-${activeModule === 'poker' ? 'red-500' : 'leny-accent'}/30 underline underline-offset-4`}>
                {activeNode.type === 'theory' ? 'Estudio Teórico' : activeNode.type === 'practice' ? 'Módulo Práctico' : 'Metodología'}
              </div>
              <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif text-white font-medium leading-[1.2] tracking-wide">
@@ -62,7 +66,7 @@ const Reader = ({ activeNode, onToggleSidebar, onNavigatePrevious, onNavigateNex
                 
                 // 1. Detección de subtítulos menores o listados (texto corto en mayúsculas)
                 if (paragraph.length < 70 && !paragraph.endsWith('.') && paragraph.toUpperCase() === paragraph) {
-                  return <h3 key={index} className="text-[22px] md:text-2xl font-title text-leny-accent mt-16 mb-6 font-bold tracking-widest pb-2 border-b border-white/5">{paragraph}</h3>;
+                  return <h3 key={index} className={`text-[22px] md:text-2xl font-title ${textAccent} mt-16 mb-6 font-bold tracking-widest pb-2 border-b border-white/5`}>{paragraph}</h3>;
                 }
                 
                 // 2. Detección de "Advertencias", "Atención", "Reglas"
@@ -87,7 +91,7 @@ const Reader = ({ activeNode, onToggleSidebar, onNavigatePrevious, onNavigateNex
 
                 // Párrafo general con Drop Cap (Letra capital) solo para el primero
                 return (
-                  <div key={index} className={`text-left mb-10 ${index === 0 && paragraph.length > 100 ? 'first-letter:text-5xl first-letter:font-title first-letter:text-leny-accent first-letter:float-left first-letter:mr-3 first-letter:mt-1' : ''}`}>
+                  <div key={index} className={`text-left mb-10 ${index === 0 && paragraph.length > 100 ? `first-letter:text-5xl first-letter:font-title first-letter:${textAccent} first-letter:float-left first-letter:mr-3 first-letter:mt-1` : ''}`}>
                     <EditorialText text={paragraph} />
                   </div>
                 );
@@ -111,7 +115,7 @@ const Reader = ({ activeNode, onToggleSidebar, onNavigatePrevious, onNavigateNex
                 
                 <div className="flex flex-col items-center gap-8 relative z-10 w-full">
                   <div className="w-full max-w-2xl">
-                    <div className="text-xs uppercase tracking-[0.3em] text-leny-accent/60 font-bold mb-6">Contenido</div>
+                    <div className={`text-xs uppercase tracking-[0.3em] ${textAccent}/60 font-bold mb-6`}>Contenido</div>
                     <div className="grid grid-cols-1 gap-3 w-full">
                       {activeNode.subsections.map((sub, idx) => (
                         <button 
@@ -123,14 +127,14 @@ const Reader = ({ activeNode, onToggleSidebar, onNavigatePrevious, onNavigateNex
                               : 'bg-white/[0.02] border border-white/5 hover:border-white/10 hover:bg-white/[0.04]'}`}
                         >
                           <div className="flex items-center gap-4">
-                            <span className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shadow-lg transition-transform group-hover:scale-105 ${idx === 0 ? 'bg-leny-accent text-leny-dark font-title text-lg' : 'bg-white/10 text-white/50 font-sans'}`}>
+                            <span className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shadow-lg transition-transform group-hover:scale-105 ${idx === 0 ? `${bgAccent} ${activeModule === 'poker' ? 'text-white' : 'text-leny-dark'} font-title text-lg` : 'bg-white/10 text-white/50 font-sans'}`}>
                               {idx + 1}
                             </span>
                             <span className={`font-medium tracking-wide transition-colors ${idx === 0 ? 'text-white' : 'text-gray-400 group-hover:text-white/90'}`}>
                               {sub.title}
                             </span>
                           </div>
-                          <div className={`p-2 rounded-full transition-all ${idx === 0 ? 'bg-leny-accent/20 text-leny-accent group-hover:bg-leny-accent group-hover:text-leny-dark' : 'text-white/20 group-hover:text-white/60 bg-white/5'}`}>
+                          <div className={`p-2 rounded-full transition-all ${idx === 0 ? `${bgAccent}/20 ${textAccent} group-hover:${bgAccent} group-hover:${activeModule === 'poker' ? 'text-white' : 'text-leny-dark'}` : 'text-white/20 group-hover:text-white/60 bg-white/5'}`}>
                             <ChevronRight size={16} strokeWidth={2} className={`${idx === 0 ? 'group-hover:translate-x-0.5' : ''} transition-transform`} />
                           </div>
                         </button>
@@ -173,7 +177,7 @@ const Reader = ({ activeNode, onToggleSidebar, onNavigatePrevious, onNavigateNex
             </button>
             <button 
               onClick={onNavigateNext}
-              className="group flex w-full sm:w-auto items-center justify-center gap-3 text-leny-dark bg-leny-accent hover:bg-yellow-400 px-6 py-3 rounded-lg transition-all shadow-[0_4px_14px_0_rgba(205,174,104,0.3)] hover:shadow-[0_6px_20px_rgba(205,174,104,0.4)] hover:-translate-y-0.5"
+              className={`group flex w-full sm:w-auto items-center justify-center gap-3 ${activeModule === 'poker' ? 'text-white bg-red-600 hover:bg-red-500 shadow-[0_4px_14px_0_rgba(220,38,38,0.3)] hover:shadow-[0_6px_20px_rgba(220,38,38,0.4)]' : 'text-leny-dark bg-leny-accent hover:bg-yellow-400 shadow-[0_4px_14px_0_rgba(205,174,104,0.3)] hover:shadow-[0_6px_20px_rgba(205,174,104,0.4)]'} px-6 py-3 rounded-lg transition-all hover:-translate-y-0.5`}
             >
               <span className="font-semibold tracking-wide">Siguiente Módulo</span> 
               <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />

@@ -2,7 +2,7 @@ import React from 'react';
 import { BookOpen, Library, Grip, History, Star, Play, CheckCircle2, Target } from 'lucide-react';
 import { useStudyData } from '../hooks/useStudyData';
 
-const StudentDashboard = ({ onStart, onNavigate, stats }) => {
+const StudentDashboard = ({ onStart, onNavigate, stats, activeModule = 'lenormand' }) => {
   const { bookmarks, history, readNodes } = useStudyData();
 
   // Progress Calculations
@@ -43,9 +43,9 @@ const StudentDashboard = ({ onStart, onNavigate, stats }) => {
         {/* === NIVEL 1: ENCABEZADO Y BIENVENIDA === */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 pb-8 border-b border-white/5">
           <div className="space-y-4">
-            <h2 className="text-leny-accent uppercase tracking-[0.25em] text-[11px] font-bold flex items-center gap-3">
-               <span className="w-6 h-px bg-leny-accent/50 inline-block"></span>
-               CENTRO DE CONTROL LENORMAND
+            <h2 className={`${activeModule === 'poker' ? 'text-red-500' : 'text-leny-accent'} uppercase tracking-[0.25em] text-[11px] font-bold flex items-center gap-3`}>
+               <span className={`w-6 h-px ${activeModule === 'poker' ? 'bg-red-500/50' : 'bg-leny-accent/50'} inline-block`}></span>
+               CENTRO DE CONTROL {activeModule === 'poker' ? 'PÓKER' : 'LENORMAND'}
             </h2>
             <h1 className="text-4xl md:text-5xl font-serif text-white leading-tight">
               Bienvenido a<br/><span className="font-bold text-5xl md:text-6xl">Tu Academia</span>
@@ -54,7 +54,7 @@ const StudentDashboard = ({ onStart, onNavigate, stats }) => {
           
           <button 
             onClick={onStart}
-            className="group px-8 py-4 bg-leny-accent text-leny-dark font-bold text-lg rounded-xl transition-all transform hover:-translate-y-1 shadow-[0_10px_30px_rgba(201,162,39,0.15)] hover:shadow-[0_15px_40px_rgba(201,162,39,0.3)] flex items-center gap-3 shrink-0"
+            className={`group px-8 py-4 ${activeModule === 'poker' ? 'bg-red-600 text-white hover:shadow-[0_15px_40px_rgba(220,38,38,0.3)]' : 'bg-leny-accent text-leny-dark shadow-[0_10px_30px_rgba(201,162,39,0.15)] hover:shadow-[0_15px_40px_rgba(201,162,39,0.3)]'} font-bold text-lg rounded-xl transition-all transform hover:-translate-y-1 flex items-center gap-3 shrink-0`}
           >
             {history.length > 0 ? (
               <><Play className="w-5 h-5 fill-leny-dark" /> Retomar Estudio</>
@@ -99,7 +99,7 @@ const StudentDashboard = ({ onStart, onNavigate, stats }) => {
         {/* === NIVEL 3: PANEL DE PROGRESO UNIFICADO === */}
         <div className="bg-[#0a0d14] border border-white/5 rounded-3xl p-8 lg:p-12 shadow-2xl flex flex-col lg:flex-row items-center gap-12 lg:gap-16 relative overflow-hidden">
             {/* Decors */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-leny-accent/5 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+            <div className={`absolute top-0 right-0 w-64 h-64 ${activeModule === 'poker' ? 'bg-red-500/5' : 'bg-leny-accent/5'} rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none`}></div>
             
             <div className="w-full xl:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-10">
                 {/* Gauge: Teoría */}

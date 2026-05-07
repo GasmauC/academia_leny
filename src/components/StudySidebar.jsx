@@ -1,7 +1,18 @@
 import React from 'react';
-import { Library, ArrowRightLeft, Image, Network, Grip, Target, Sparkles, LayoutDashboard } from 'lucide-react';
+import { Library, ArrowRightLeft, Image, Network, Grip, Target, Sparkles, LayoutDashboard, Dumbbell } from 'lucide-react';
 
-const StudySidebar = ({ currentView, onViewChange, isOpen }) => {
+const StudySidebar = ({ currentView, onViewChange, isOpen, activeModule = 'lenormand' }) => {
+  const isPoker = activeModule === 'poker';
+  const textTitleColor = isPoker ? 'text-red-50' : 'text-purple-50';
+  const textSubColor = isPoker ? 'text-red-400/60' : 'text-purple-400/60';
+  const borderRightColor = isPoker ? 'border-red-500/10' : 'border-purple-500/10';
+  const bgActive = isPoker ? 'bg-red-600/10' : 'bg-purple-600/10';
+  const textActive = isPoker ? 'text-red-200' : 'text-purple-200';
+  const shadowActive = isPoker ? 'shadow-[inset_3px_0_0_#ef4444]' : 'shadow-[inset_3px_0_0_#c084fc]';
+  const borderActive = isPoker ? 'border-red-500/20' : 'border-purple-500/20';
+  const iconActive = isPoker ? 'text-red-400' : 'text-purple-400';
+  const iconHover = isPoker ? 'group-hover:text-red-400/50' : 'group-hover:text-purple-400/50';
+  const textShadowActive = isPoker ? 'drop-shadow-[0_0_8px_rgba(239,68,68,0.4)]' : 'drop-shadow-[0_0_8px_rgba(168,85,247,0.4)]';
   const categories = [
     {
       title: "Base de Datos",
@@ -22,7 +33,15 @@ const StudySidebar = ({ currentView, onViewChange, isOpen }) => {
       items: [
         { id: 'flashcards', icon: Image, label: 'Memoria Visual (Flashcards)' },
         { id: 'spreadsMenu', icon: Grip, label: 'Módulos de Tiradas' },
-        { id: 'exercises', icon: Target, label: 'Campo de Ejercicios' },
+        ...(isPoker 
+          ? [
+              { id: 'pokerExamples', icon: Target, label: 'Aula Práctica (Casos)' },
+              { id: 'pokerExercises', icon: Dumbbell, label: 'Gimnasio Práctico' }
+            ] 
+          : [
+              { id: 'exercises', icon: Target, label: 'Campo de Ejercicios' }
+            ]
+        ),
       ]
     },
     {
@@ -34,13 +53,13 @@ const StudySidebar = ({ currentView, onViewChange, isOpen }) => {
   ];
 
   return (
-    <div className={`fixed md:relative flex-shrink-0 w-72 md:w-[320px] h-full bg-[#07080c] border-r border-purple-500/10 flex flex-col transition-all duration-300 z-40 ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'} shadow-[10px_0_30px_rgba(0,0,0,0.5)]`}>
+    <div className={`fixed md:relative flex-shrink-0 w-72 md:w-[320px] h-full bg-[#07080c] border-r ${borderRightColor} flex flex-col transition-all duration-300 z-40 ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'} shadow-[10px_0_30px_rgba(0,0,0,0.5)]`}>
       <div className="flex flex-col h-full overflow-y-auto custom-scrollbar p-6">
         
         {/* Header decorativo de la Sidebar */}
         <div className="mb-10 px-2 mt-2">
-            <h2 className="text-[22px] font-serif text-purple-50 font-bold tracking-wide drop-shadow-md">Estación de Trabajo</h2>
-            <p className="text-[10px] text-purple-400/60 uppercase tracking-widest mt-1.5 font-bold">Laboratorio Lenormand</p>
+            <h2 className={`text-[22px] font-serif ${textTitleColor} font-bold tracking-wide drop-shadow-md`}>Estación de Trabajo</h2>
+            <p className={`text-[10px] ${textSubColor} uppercase tracking-widest mt-1.5 font-bold`}>Laboratorio {isPoker ? 'Póker' : 'Lenormand'}</p>
         </div>
 
         {/* Categorías Funcionales */}
@@ -58,12 +77,12 @@ const StudySidebar = ({ currentView, onViewChange, isOpen }) => {
                       onClick={() => onViewChange(item.id)}
                       className={`w-full flex items-center gap-3.5 px-4 py-3.5 rounded-2xl transition-all duration-300 text-left group
                         ${isActive 
-                          ? 'bg-purple-600/10 text-purple-200 shadow-[inset_3px_0_0_#c084fc] border border-purple-500/20' 
+                          ? `${bgActive} ${textActive} ${shadowActive} border ${borderActive}` 
                           : 'text-white/50 hover:bg-white/5 hover:text-white/90'
                         }`}
                     >
-                      <Icon size={18} className={`${isActive ? 'text-purple-400' : 'text-white/30 group-hover:text-purple-400/50'} transition-colors`} strokeWidth={isActive ? 2 : 1.5} />
-                      <span className={`text-xs font-semibold tracking-wide uppercase ${isActive ? 'drop-shadow-[0_0_8px_rgba(168,85,247,0.4)] text-[11px]' : 'text-[10px]'}`}>
+                      <Icon size={18} className={`${isActive ? iconActive : `text-white/30 ${iconHover}`} transition-colors`} strokeWidth={isActive ? 2 : 1.5} />
+                      <span className={`text-xs font-semibold tracking-wide uppercase ${isActive ? `${textShadowActive} text-[11px]` : 'text-[10px]'}`}>
                         {item.label}
                       </span>
                     </button>
@@ -75,7 +94,7 @@ const StudySidebar = ({ currentView, onViewChange, isOpen }) => {
         </div>
         
         {/* Footer info de la sidebar */}
-        <div className="mt-10 pt-6 border-t border-purple-500/10 px-2 pb-4">
+        <div className={`mt-10 pt-6 border-t ${borderRightColor} px-2 pb-4`}>
           <div className="text-[9px] text-white/20 uppercase tracking-[0.2em] font-bold text-center">Entorno Pedagógico Activo</div>
         </div>
 

@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Search, X, BookOpen, Layers, Target, GraduationCap, LayoutPanelTop, GalleryHorizontal, Hash, ArrowRight, Network, ChevronDown, Sparkles } from 'lucide-react';
 import { LenormandAPI } from '../data/api';
-import { cardsDictionary } from '../data/db/lenormand_cards';
+import { PokerAPI } from '../data/poker_api';
+import { cardsDictionary as lenormandCardsDictionary } from '../data/db/lenormand_cards';
+import { pokerCardsDictionary } from '../data/db/poker_cards';
 import { comparisonCategories } from '../data/db/advanced_comparisons';
 import { semanticDictionary } from '../data/db/semantic_dictionary';
 import { theoryBlocks as combinationsBlocks } from '../data/combinations_theory';
@@ -10,7 +12,19 @@ import { quintetsBlocks } from '../data/quintets_theory';
 import { ninecardsBlocks } from '../data/ninecards_theory';
 import { gtBlocks } from '../data/grandtableau_theory';
 
-export default function GlobalSearch({ isOpen, onClose, onNavigate }) {
+// Poker Modules
+import { theoryBlocks as p_combinationsBlocks } from '../data/db/poker_combinations_theory';
+import { theoryBlocks as p_tripletsBlocks } from '../data/poker_triplets_theory';
+import { theoryBlocks as p_quintetsBlocks } from '../data/poker_quintets_theory';
+import { theoryBlocks as p_ninecardsBlocks } from '../data/poker_ninecards_theory';
+
+export default function GlobalSearch({ isOpen, onClose, onNavigate, activeModule = 'lenormand' }) {
+  const isPoker = activeModule === 'poker';
+  const currentDict = isPoker ? pokerCardsDictionary : lenormandCardsDictionary;
+  const currentAPI = isPoker ? PokerAPI : LenormandAPI;
+  const accentText = isPoker ? 'text-red-500' : 'text-leny-accent';
+  const accentBorder = isPoker ? 'border-red-500' : 'border-leny-accent';
+  const iconColor = isPoker ? 'text-red-400' : 'text-leny-accent';
   const [query, setQuery] = useState('');
   const [results, setResults] = useState({ 
       canonicalNode: null,
@@ -43,6 +57,16 @@ export default function GlobalSearch({ isOpen, onClose, onNavigate }) {
     }
   }, [isOpen]);
 
+  const handleSelectCard = (card) => {
+    const isPokerCard = card.id.startsWith('pk_');
+    onNavigate({ 
+      viewMode: 'cardProfile', 
+      activeCardId: card.id,
+      activeModule: isPokerCard ? 'poker' : 'lenormand'
+    });
+    onClose();
+  };
+
   const searchEverything = (searchTerm) => {
     setShowSecondaryCards(false);
     if (!searchTerm || searchTerm.trim().length < 2) {
@@ -67,20 +91,21 @@ export default function GlobalSearch({ isOpen, onClose, onNavigate }) {
     const newResults = { canonicalNode: null, cards: [], theory: [], practical: [], semanticLinks: [] };
     const foundCardIds = new Set();
 
-    // INTERCEPCIÓN SEMÁNTICA ESTRATÉGICA
-    // Revisar si la consulta coincide limpiamente con un concepto en el Diccionario Ontológico
+    // INTERCEPCIÓN SEMÁNTICA ESTRATÉGICA (Solo Lenormand por ahora)
     let conceptualMatch = null;
-    for (const entry of semanticDictionary) {
-        if (entry.keywords.some(kw => matchesQuery(kw))) {
-             conceptualMatch = entry;
-             break; // Priorizar el primer concepto que coincida
+    if (!isPoker) {
+        for (const entry of semanticDictionary) {
+            if (entry.keywords.some(kw => matchesQuery(kw))) {
+                 conceptualMatch = entry;
+                 break; // Priorizar el primer concepto que coincida
+            }
         }
     }
 
     if (conceptualMatch) {
          // Si hay Match Canónico, se extraen las cartas y se aíslan visualmente
-         const pCard = cardsDictionary.find(c => c.id === conceptualMatch.primaryCardId);
-         const sCards = conceptualMatch.relatedCardIds.map(id => cardsDictionary.find(c => c.id === id)).filter(Boolean);
+         const pCard = currentDict.find(c => c.id === conceptualMatch.primaryCardId);
+         const sCards = conceptualMatch.relatedCardIds.map(id => currentDict.find(c => c.id === id)).filter(Boolean);
          
          newResults.canonicalNode = {
             concept: conceptualMatch.concept.toUpperCase(),
@@ -93,7 +118,7 @@ export default function GlobalSearch({ isOpen, onClose, onNavigate }) {
          sCards.forEach(c => foundCardIds.add(c.id));
     } else {
          // Si no hay interceptación maestra, hacer búsqueda libre normal en cartas
-         cardsDictionary.forEach(c => {
+         currentDict.forEach(c => {
             let textToSearch = `${c.name} ${c.baseMeaning} ${c.symbolicCore} ${c.actionVerb} ${c.mainTheme} `;
             if (c.readings) {
                 textToSearch += Object.values(c.readings).join(" ");
@@ -110,20 +135,20 @@ export default function GlobalSearch({ isOpen, onClose, onNavigate }) {
                 icon: <span className="text-xl">{c.emoji}</span>,
                 title: `${c.number}. ${c.name}`,
                 subtitle: c.actionVerb,
-                action: () => onNavigate({ viewMode: 'cardProfile', activeCardId: c.id })
+                action: () => handleSelectCard(c)
               });
             }
         });
     }
 
-    // Construcción de Enlaces Semánticos basados en Cartas Encontradas
-    if (foundCardIds.size > 0 && foundCardIds.size < 5) {
+    // Construcción de Enlaces Semánticos basados en Cartas Encontradas (Solo Lenormand)
+    if (!isPoker && foundCardIds.size > 0 && foundCardIds.size < 5) {
         comparisonCategories.forEach(cat => {
             const catMatched = cat.comparisons.some(comp => comp.cards.some(cid => foundCardIds.has(cid)));
             if (catMatched) {
                 newResults.semanticLinks.push({
                     id: `cat-${cat.id}`,
-                    icon: <Network className="w-5 h-5 text-leny-accent"/>,
+                    icon: <Network className={`w-5 h-5 ${iconColor}`}/>,
                     title: `Concepto Familia: ${cat.title}`,
                     subtitle: `Explora esto en el Mapa Relacional`,
                     action: () => onNavigate({ viewMode: 'relationalMap' })
@@ -133,7 +158,7 @@ export default function GlobalSearch({ isOpen, onClose, onNavigate }) {
     }
 
     // EL LIBRO (Teoría pura)
-    const map = LenormandAPI.getNavigationMap();
+    const map = currentAPI.getNavigationMap();
     const traverse = (node) => {
       let nodeText = node.title + " ";
       if (node.content && Array.isArray(node.content)) {
@@ -170,11 +195,13 @@ export default function GlobalSearch({ isOpen, onClose, onNavigate }) {
       });
     };
 
-    searchModule(combinationsBlocks, "Pares", "combinations", Layers);
-    searchModule(tripletsBlocks, "Tríadas", "triplets", GalleryHorizontal);
-    searchModule(quintetsBlocks, "Quintetos", "quintets", LayoutPanelTop);
-    searchModule(ninecardsBlocks, "Malla 3x3", "grid3x3", Hash);
-    searchModule(gtBlocks, "GT", "grandTableau", GraduationCap);
+    searchModule(isPoker ? p_combinationsBlocks : combinationsBlocks, "Pares", "combinations", Layers);
+    searchModule(isPoker ? p_tripletsBlocks : tripletsBlocks, "Tríadas", "triplets", GalleryHorizontal);
+    searchModule(isPoker ? p_quintetsBlocks : quintetsBlocks, "Quintetos", "quintets", LayoutPanelTop);
+    searchModule(isPoker ? p_ninecardsBlocks : ninecardsBlocks, "Malla 3x3", "grid3x3", Hash);
+    if (!isPoker) {
+        searchModule(gtBlocks, "GT", "grandTableau", GraduationCap);
+    }
 
     setResults(newResults);
   };
@@ -192,7 +219,7 @@ export default function GlobalSearch({ isOpen, onClose, onNavigate }) {
       if (!items || items.length === 0) return null;
       return (
           <div className="mb-6">
-              <div className="text-[10px] text-leny-accent uppercase font-bold tracking-widest pl-2 mb-3 opacity-80">{title}</div>
+              <div className={`text-[10px] ${accentText} uppercase font-bold tracking-widest pl-2 mb-3 opacity-80`}>{title}</div>
               <div className="flex flex-col gap-2">
                   {items.slice(0, limit).map(r => (
                       <button
@@ -205,11 +232,11 @@ export default function GlobalSearch({ isOpen, onClose, onNavigate }) {
                             {r.icon}
                           </div>
                           <div>
-                            <h4 className="font-serif text-white group-hover:text-leny-accent transition-colors text-base leading-tight">{r.title}</h4>
+                            <h4 className={`font-serif text-white group-hover:${accentText} transition-colors text-base leading-tight`}>{r.title}</h4>
                             <p className="text-[11px] text-white/50 mt-0.5 line-clamp-1">{r.subtitle}</p>
                           </div>
                         </div>
-                        <ArrowRight className="w-4 h-4 text-white/10 group-hover:text-leny-accent transition-all -translate-x-2 group-hover:translate-x-0" />
+                        <ArrowRight className={`w-4 h-4 text-white/10 group-hover:${accentText} transition-all -translate-x-2 group-hover:translate-x-0`} />
                       </button>
                   ))}
               </div>
@@ -223,24 +250,24 @@ export default function GlobalSearch({ isOpen, onClose, onNavigate }) {
 
       return (
           <div className="mb-8 p-1">
-              <div className="text-[10px] text-leny-accent uppercase font-bold tracking-widest pl-2 mb-3 opacity-80 flex items-center gap-2">
+              <div className={`text-[10px] ${accentText} uppercase font-bold tracking-widest pl-2 mb-3 opacity-80 flex items-center gap-2`}>
                   <Sparkles className="w-3 h-3"/> Eje Temático Canónico: {concept}
               </div>
               
               {/* Carta Principal / Regente */}
               <button 
-                  onClick={() => { onNavigate({ viewMode: 'cardProfile', activeCardId: primary.id }); onClose(); }}
-                  className="w-full relative overflow-hidden bg-gradient-to-br from-red-950/40 via-black to-leny-darker border-l-4 border-l-leny-accent border-y border-r border-white/10 rounded-xl p-5 mb-4 group text-left hover:shadow-[0_0_20px_rgba(205,174,104,0.15)] transition-shadow"
+                  onClick={() => handleSelectCard(primary)}
+                  className={`w-full relative overflow-hidden bg-gradient-to-br from-black to-leny-darker border-l-4 border-l-${isPoker?'red-500':'leny-accent'} border-y border-r border-white/10 rounded-xl p-5 mb-4 group text-left hover:${accentShadow} transition-shadow`}
               >
                  <div className="absolute top-0 right-0 p-4 opacity-5 text-6xl rotate-12 transition-transform group-hover:rotate-0">
                      {primary.emoji}
                  </div>
                  <div className="flex items-center gap-4 relative z-10">
-                     <div className="w-16 h-16 rounded-xl bg-leny-accent/10 flex items-center justify-center text-4xl drop-shadow-md border border-leny-accent/30 group-hover:scale-105 transition-transform shrink-0">
+                     <div className={`w-16 h-16 rounded-xl ${accentBg}/10 flex items-center justify-center text-4xl drop-shadow-md border ${accentBorder}/30 group-hover:scale-105 transition-transform shrink-0`}>
                          {primary.emoji}
                      </div>
                      <div>
-                         <div className="text-xs text-leny-accent mb-0.5 font-bold uppercase tracking-widest">Gobernante Primario</div>
+                         <div className={`text-xs ${accentText} mb-0.5 font-bold uppercase tracking-widest`}>Gobernante Primario</div>
                          <h3 className="text-2xl font-serif text-white leading-none">{primary.name}</h3>
                          <p className="text-xs text-leny-dim mt-2 line-clamp-2 md:line-clamp-none pr-8">
                              {context}
@@ -267,7 +294,7 @@ export default function GlobalSearch({ isOpen, onClose, onNavigate }) {
                               {secondary.map((c, i) => (
                                   <button
                                       key={c.id}
-                                      onClick={() => { onNavigate({ viewMode: 'cardProfile', activeCardId: c.id }); onClose(); }}
+                                      onClick={() => handleSelectCard(c)}
                                       className="flex items-center p-3 bg-white/5 hover:bg-white/10 rounded-lg border border-white/5 transition-colors gap-3 justify-start text-left"
                                   >
                                       <div className="w-8 h-8 flex items-center justify-center bg-black/40 rounded text-xl shrink-0 opacity-80">{c.emoji}</div>
@@ -288,12 +315,12 @@ export default function GlobalSearch({ isOpen, onClose, onNavigate }) {
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center pt-16 md:pt-20 px-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200" onClick={onClose}>
       <div 
-        className="w-full max-w-3xl bg-leny-darker/95 border border-leny-accent/20 rounded-2xl shadow-2xl flex flex-col max-h-[85vh] overflow-hidden slide-in-from-top-8"
+        className={`w-full max-w-3xl bg-leny-darker/95 border ${accentBorder}/20 rounded-2xl shadow-2xl flex flex-col max-h-[85vh] overflow-hidden slide-in-from-top-8`}
         onClick={e => e.stopPropagation()}
       >
         {/* Barra de input */}
         <div className="p-5 border-b border-white/10 flex items-center gap-4 bg-black/20">
-          <Search className="w-7 h-7 text-leny-accent" />
+          <Search className={`w-7 h-7 ${iconColor}`} />
           <input 
             ref={inputRef}
             type="text"
@@ -311,13 +338,13 @@ export default function GlobalSearch({ isOpen, onClose, onNavigate }) {
         <div className="flex-1 overflow-y-auto p-4 md:p-6 custom-scrollbar">
           {query.trim().length < 2 ? (
             <div className="text-center py-20 text-leny-dim space-y-4">
-              <Network className="w-12 h-12 mx-auto text-leny-accent/30" />
+              <Network className={`w-12 h-12 mx-auto ${iconColor}/30`} />
               <p className="text-base text-white/70">Ontología Semántica Activada</p>
               <p className="opacity-50 text-sm max-w-md mx-auto">Ingresa conceptos filosóficos para descubrir el Gobernante Primario y su periferia energética (ej. "Lentitud").</p>
             </div>
           ) : !hasResults ? (
             <div className="text-center py-20 text-white/40">
-              No se hallaron ramificaciones oraculares para "<span className="text-leny-accent font-bold">{query}</span>".
+              No se hallaron ramificaciones oraculares para "<span className={`${accentText} font-bold`}>{query}</span>".
             </div>
           ) : (
             <div className="flex flex-col">

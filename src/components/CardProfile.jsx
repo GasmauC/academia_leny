@@ -4,7 +4,12 @@ import EditorialText from './EditorialText';
 import cardsTheory from '../data/db/lenormand_cards_theory.json';
 import { lenormandExercises } from '../data/db/lenormand_exercises';
 
-const CardProfile = ({ card, onClose, onNext, onPrev, onNavigate }) => {
+const CardProfile = ({ card, onClose, onNext, onPrev, onNavigate, activeModule = 'lenormand' }) => {
+  const isPoker = activeModule === 'poker';
+  const accentText = isPoker ? 'text-red-500' : 'text-leny-accent';
+  const accentBg = isPoker ? 'bg-red-500' : 'bg-leny-accent';
+  const accentBorder = isPoker ? 'border-red-500' : 'border-leny-accent';
+  const cardColor = card.color === 'rojo' ? 'text-red-600' : isPoker ? 'text-black' : '';
   const [activeTab, setActiveTab] = useState('base');
 
   useEffect(() => {
@@ -70,18 +75,26 @@ const CardProfile = ({ card, onClose, onNext, onPrev, onNavigate }) => {
         )}
         
         <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-6 mx-auto max-w-2xl px-12">
-          <div className="w-24 h-32 shrink-0 bg-gradient-to-br from-leny-accent/20 to-transparent border border-leny-accent/30 rounded-lg flex items-center justify-center text-5xl shadow-[0_0_20px_rgba(201,162,39,0.15)] bg-leny-darker">
-            {card.emoji}
-          </div>
+          {isPoker ? (
+            <div className="w-24 h-32 shrink-0 bg-white border border-gray-300 rounded-lg flex flex-col items-center justify-center shadow-xl relative overflow-hidden">
+              <div className={`absolute top-1 left-1.5 text-xs font-bold leading-none text-center ${cardColor}`}>{card.number}<br/><span className="text-[10px]">{card.emoji}</span></div>
+              <div className={`text-4xl drop-shadow-sm ${cardColor}`}>{card.emoji}</div>
+              <div className={`absolute bottom-1 right-1.5 text-xs font-bold leading-none text-center ${cardColor} rotate-180`}>{card.number}<br/><span className="text-[10px]">{card.emoji}</span></div>
+            </div>
+          ) : (
+            <div className="w-24 h-32 shrink-0 bg-gradient-to-br from-leny-accent/20 to-transparent border border-leny-accent/30 rounded-lg flex items-center justify-center text-5xl shadow-[0_0_20px_rgba(201,162,39,0.15)] bg-leny-darker">
+              {card.emoji}
+            </div>
+          )}
           <div>
-            <div className="flex items-center gap-3 mb-1">
-              <span className="px-2 py-0.5 rounded text-xs font-bold tracking-wider bg-leny-accent/10 text-leny-accent border border-leny-accent/20">
-                CARTA {card.number}
+            <div className="flex items-center justify-center md:justify-start gap-3 mb-1">
+              <span className={`px-2 py-0.5 rounded text-xs font-bold tracking-wider ${accentBg}/10 ${accentText} border ${accentBorder}/20`}>
+                {isPoker ? card.number : `CARTA ${card.number}`}
               </span>
               <span className="text-xs text-leny-dim uppercase tracking-widest">{card.suit}</span>
             </div>
             <h1 className="text-4xl font-serif text-white mb-3 tracking-tight">{card.name}</h1>
-            <p className="text-leny-accent/80 font-bold uppercase tracking-widest text-sm mb-2">{card.mainTheme}</p>
+            <p className={`${accentText}/80 font-bold uppercase tracking-widest text-sm mb-2`}>{card.mainTheme || 'Carta en estudio'}</p>
           </div>
         </div>
       </div>
@@ -101,11 +114,11 @@ const CardProfile = ({ card, onClose, onNext, onPrev, onNavigate }) => {
             onClick={() => setActiveTab(tab.id)}
             className={`flex items-center gap-2 px-5 py-4 text-sm font-medium transition-all whitespace-nowrap border-b-2 outline-none ${
               activeTab === tab.id 
-                ? 'border-leny-accent text-leny-accent bg-leny-accent/5' 
+                ? `border-${isPoker ? 'red-500' : 'leny-accent'} ${accentText} ${accentBg}/5` 
                 : 'border-transparent text-leny-dim hover:text-white hover:bg-white/5'
             }`}
           >
-            <tab.icon className={`w-4 h-4 ${activeTab === tab.id ? 'text-leny-accent' : 'opacity-50'}`} />
+            <tab.icon className={`w-4 h-4 ${activeTab === tab.id ? accentText : 'opacity-50'}`} />
             {tab.label}
           </button>
         ))}
@@ -118,9 +131,9 @@ const CardProfile = ({ card, onClose, onNext, onPrev, onNavigate }) => {
           {/* TAB 1: SIGNIFICADO BASE */}
           {activeTab === 'base' && (
             <div className="space-y-8 animate-fade-in fade-in">
-              <div className="bg-leny-accent/5 border border-leny-accent/20 rounded-xl p-6 md:p-8 relative overflow-hidden shadow-inner">
-                <Sparkles className="absolute top-4 right-4 w-32 h-32 text-leny-accent/5 -rotate-12 pointer-events-none" />
-                <h3 className="text-sm uppercase tracking-[0.2em] text-leny-accent/70 font-bold mb-3 relative z-10">Esencia de la Carta</h3>
+              <div className={`${accentBg}/5 border ${accentBorder}/20 rounded-xl p-6 md:p-8 relative overflow-hidden shadow-inner`}>
+                <Sparkles className={`absolute top-4 right-4 w-32 h-32 ${accentText}/5 -rotate-12 pointer-events-none`} />
+                <h3 className={`text-sm uppercase tracking-[0.2em] ${accentText}/70 font-bold mb-3 relative z-10`}>Esencia de la Carta</h3>
                 <div className="text-xl md:text-2xl text-white font-serif leading-relaxed relative z-10">
                   <EditorialText text={card.symbolicCore} />
                 </div>
@@ -169,7 +182,7 @@ const CardProfile = ({ card, onClose, onNext, onPrev, onNavigate }) => {
                   <div className="flex-1">
                     <h4 className="font-bold text-pink-400 mb-2 uppercase tracking-wider text-sm">Si representa a una Persona</h4>
                     <p className="text-leny-text text-lg leading-relaxed font-light">
-                      <EditorialText text={card.contextualLayers.persona} />
+                      <EditorialText text={card.contextualLayers?.persona} />
                     </p>
                   </div>
                 </div>
@@ -181,7 +194,7 @@ const CardProfile = ({ card, onClose, onNext, onPrev, onNavigate }) => {
                   <div className="flex-1">
                     <h4 className="font-bold text-blue-400 mb-2 uppercase tracking-wider text-sm">Si representa un Tema</h4>
                     <p className="text-leny-text text-lg leading-relaxed font-light">
-                      <EditorialText text={card.contextualLayers.tema} />
+                      <EditorialText text={card.contextualLayers?.tema} />
                     </p>
                   </div>
                 </div>
@@ -193,7 +206,7 @@ const CardProfile = ({ card, onClose, onNext, onPrev, onNavigate }) => {
                   <div className="flex-1">
                     <h4 className="font-bold text-green-400 mb-2 uppercase tracking-wider text-sm">Si representa una Acción</h4>
                     <p className="text-leny-text text-lg leading-relaxed font-light">
-                      <EditorialText text={card.contextualLayers.accion} />
+                      <EditorialText text={card.contextualLayers?.accion} />
                     </p>
                   </div>
                 </div>
@@ -215,7 +228,7 @@ const CardProfile = ({ card, onClose, onNext, onPrev, onNavigate }) => {
                     <Heart className="text-pink-400 w-5 h-5" />
                     <h3 className="text-xl font-serif text-pink-200">Amor y Relaciones</h3>
                   </div>
-                  <EditorialText text={card.readings.love} className="text-leny-text font-light leading-relaxed" />
+                  <EditorialText text={card.readings?.love} className="text-leny-text font-light leading-relaxed" />
                 </div>
 
                 <div className="p-6 rounded-xl bg-gradient-to-br from-emerald-900/10 to-transparent border border-emerald-500/20 shadow-md">
@@ -223,7 +236,7 @@ const CardProfile = ({ card, onClose, onNext, onPrev, onNavigate }) => {
                     <Briefcase className="text-emerald-400 w-5 h-5" />
                     <h3 className="text-xl font-serif text-emerald-200">Trabajo y Negocios</h3>
                   </div>
-                  <EditorialText text={card.readings.work} className="text-leny-text font-light leading-relaxed" />
+                  <EditorialText text={card.readings?.work} className="text-leny-text font-light leading-relaxed" />
                 </div>
 
                 <div className="p-6 rounded-xl bg-gradient-to-br from-amber-900/10 to-transparent border border-amber-500/20 shadow-md">
@@ -231,7 +244,7 @@ const CardProfile = ({ card, onClose, onNext, onPrev, onNavigate }) => {
                     <span className="text-amber-400 font-bold text-xl">$</span>
                     <h3 className="text-xl font-serif text-amber-200">Dinero y Finanzas</h3>
                   </div>
-                  <EditorialText text={card.readings.money} className="text-leny-text font-light leading-relaxed" />
+                  <EditorialText text={card.readings?.money} className="text-leny-text font-light leading-relaxed" />
                 </div>
 
                 <div className="p-6 rounded-xl bg-gradient-to-br from-blue-900/10 to-transparent border border-blue-500/20 shadow-md">
@@ -239,7 +252,7 @@ const CardProfile = ({ card, onClose, onNext, onPrev, onNavigate }) => {
                     <Stethoscope className="text-blue-400 w-5 h-5" />
                     <h3 className="text-xl font-serif text-blue-200">Salud y Cuerpo</h3>
                   </div>
-                  <EditorialText text={card.readings.health} className="text-leny-text font-light leading-relaxed" />
+                  <EditorialText text={card.readings?.health} className="text-leny-text font-light leading-relaxed" />
                 </div>
               </div>
               
@@ -247,7 +260,7 @@ const CardProfile = ({ card, onClose, onNext, onPrev, onNavigate }) => {
                 <h3 className="text-sm font-bold uppercase tracking-widest text-leny-dim mb-3 flex items-center gap-2">
                   <Target className="w-4 h-4" /> Síntesis General
                 </h3>
-                <EditorialText text={card.readings.general} className="text-white/90 text-lg leading-relaxed font-serif" />
+                <EditorialText text={card.readings?.general} className="text-white/90 text-lg leading-relaxed font-serif" />
               </div>
             </div>
           )}

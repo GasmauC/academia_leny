@@ -1,0 +1,1044 @@
+{
+  "poker_cards_theory": [
+    {
+      "id": "card_corazones_as",
+      "numero": 1,
+      "palo": "Corazones",
+      "nombre": "As de Corazones",
+      "significado_base": "Constituye el bastión físico: el hogar principal y refugio del consultante, la vida familiar inamovible.",
+      "funcion": "Sustantivo. Representa el núcleo familiar, la casa física o el origen de un gran amor genuino.",
+      "polaridad": "Altamente Positiva. Es el núcleo palpitante del amor y el nido seguro.",
+      "lectura_simbolica": "El hogar, la sangre, el corazón palpitante, el inicio de la vitalidad afectiva y protectora.",
+      "contexto_de_uso": "Situaciones familiares, inicio de convivencia, compra de inmuebles para vivienda familiar.",
+      "amor": "Inicio de un amor duradero y sincero. Gestación de una familia o mudanza a un nido seguro. Armonía marital.",
+      "trabajo": "Home office o negocios familiares que prosperan. Estabilidad en un entorno laboral que se siente como 'en casa'.",
+      "salud": "Vitalidad del corazón. Buena salud general, recuperación en casa rodeado de afecto.",
+      "combinaciones_frecuentes": [
+        "+ 10 de Diamantes: Matrimonio inmensamente rico",
+        "+ As de Picas: Quiebre del hogar o separación inminente"
+      ],
+      "ejemplos": "Una pareja que se va a mudar juntos; el As de Corazones asegura que será un hogar lleno de amor genuino.",
+      "errores_comunes": "Confundir el As de Corazones (el hogar familiar) con pasión meramente sexual pasajera."
+    },
+    {
+      "id": "card_corazones_dos",
+      "numero": 2,
+      "palo": "Corazones",
+      "nombre": "Dos de Corazones",
+      "significado_base": "El afecto mutuo, el encuentro de dos almas, asociación íntima o romance inicial.",
+      "funcion": "Adjetivo/Sustantivo. Refleja correspondencia y equilibrio afectivo entre dos entidades.",
+      "polaridad": "Positiva. Genera sinergia y afinidad.",
+      "lectura_simbolica": "La dualidad armonizada. El beso, el apretón de manos genuino, la fusión de energías emocionales.",
+      "contexto_de_uso": "Inicio de relaciones, confirmación de sentimientos recíprocos, treguas emocionales.",
+      "amor": "Compromiso genuino, amor mutuo y conexión profunda. Las partes están de acuerdo emocionalmente.",
+      "trabajo": "Asociación armónica con un colega. Un ambiente de trabajo empático y colaborativo.",
+      "salud": "Equilibrio emocional y psicológico. Recuperación a través del apoyo de la pareja.",
+      "combinaciones_frecuentes": [
+        "+ 9 de Corazones: Deseo amoroso correspondido con creces",
+        "+ 5 de Picas: Desacuerdos y fricciones que enturbian temporalmente el vínculo"
+      ],
+      "ejemplos": "Al preguntar por los sentimientos del otro, el 2 de Corazones garantiza amor recíproco.",
+      "errores_comunes": "Ignorar su aspecto amistoso y de colegas, creyendo que siempre indica romance pasional."
+    },
+    {
+      "id": "card_corazones_tres",
+      "numero": 3,
+      "palo": "Corazones",
+      "nombre": "Tres de Corazones",
+      "significado_base": "La tribu emocional, el apoyo comunitario y el crecimiento de la familia a través del afecto social.",
+      "funcion": "Modificador. Indica expansión del núcleo afectivo hacia terceros o fertilidad.",
+      "polaridad": "Positiva. Aporta apoyo grupal y calidez colectiva.",
+      "lectura_simbolica": "El ancla de oro. El triángulo afectivo sano, la comunidad unida y la fertilidad.",
+      "contexto_de_uso": "Eventos sociales familiares, celebraciones afectivas, nacimiento o adopción, apoyo de amigos.",
+      "amor": "Posibilidad de embarazo, un núcleo familiar que se expande, o apoyo de amigos cercanos en la relación.",
+      "trabajo": "Trabajo en equipo donde reina la camaradería y la empatía sincera.",
+      "salud": "Mejoras gracias al cuidado de terceros; necesidad de terapia grupal o apoyo familiar.",
+      "combinaciones_frecuentes": [
+        "+ Jota de Corazones: Celebración romántica o anuncio social de noviazgo",
+        "+ 7 de Picas: Falso apoyo, traición dentro del círculo de amigos íntimos"
+      ],
+      "ejemplos": "Pregunta sobre mudanza a otra ciudad: el 3 de Corazones como base indica arraigo emocional extremo al lugar de origen.",
+      "errores_comunes": "Asumir automáticamente que significa un 'triángulo amoroso' tóxico (que es propio del 3 de Picas)."
+    },
+    {
+      "id": "card_corazones_cuatro",
+      "numero": 4,
+      "palo": "Corazones",
+      "nombre": "Cuatro de Corazones",
+      "significado_base": "Estabilidad doméstica, la cama nupcial, la tranquilidad del hogar consolidado.",
+      "funcion": "Sustantivo. Describe el espacio íntimo, la estructura rígida de las emociones.",
+      "polaridad": "Positiva/Estática. Es una carta de inmovilidad confortable.",
+      "lectura_simbolica": "Las cuatro paredes de la casa. El lecho, la rutina pacífica y la comodidad afectiva.",
+      "contexto_de_uso": "Seguridad matrimonial, asentamiento físico, necesidad de descansar en el entorno conocido.",
+      "amor": "Un matrimonio establecido y rutinario, sin grandes pasiones pero profundamente seguro y leal.",
+      "trabajo": "Un puesto de trabajo inamovible pero estancado. La zona de confort.",
+      "salud": "Necesidad de guardar reposo en cama por agotamiento leve. Convalecencia en el hogar.",
+      "combinaciones_frecuentes": [
+        "+ 6 de Picas: Abandono ineludible del nido o la zona de confort",
+        "+ 10 de Corazones: El epítome de la familia tradicional unida"
+      ],
+      "ejemplos": "¿Cómo es mi matrimonio? Rutinario, seguro, sin sorpresas, profundamente cimentado (4 de Corazones).",
+      "errores_comunes": "Interpretar su quietud como aburrimiento mortal, ignorando su profunda protección y paz."
+    },
+    {
+      "id": "card_corazones_cinco",
+      "numero": 5,
+      "palo": "Corazones",
+      "nombre": "Cinco de Corazones",
+      "significado_base": "Fluctuación emocional, una transición afectiva, nostalgia pasajera o cambio en la dinámica familiar.",
+      "funcion": "Modificador de transición. Introduce movimiento en las aguas calmas del afecto.",
+      "polaridad": "Neutra/Inestable. Depende del entorno cromático.",
+      "lectura_simbolica": "El agua agitada. El pie que se mueve fuera del hogar, la necesidad de nuevos estímulos emocionales.",
+      "contexto_de_uso": "Cambios en la relación, pequeñas crisis de crecimiento, luto transitorio o distanciamiento leve.",
+      "amor": "Dudas sobre el compromiso, nostalgia del pasado, el 'síndrome del nido vacío'.",
+      "trabajo": "Mudanza temporal de oficina, inestabilidad laboral leve que causa incomodidad afectiva.",
+      "salud": "Alteraciones del sistema nervioso por ansiedad afectiva leve o insomnio.",
+      "combinaciones_frecuentes": [
+        "+ 8 de Diamantes: Mudanza física de residencia corporativa",
+        "+ 2 de Picas: Desconexión emocional temporal severa"
+      ],
+      "ejemplos": "Consultante siente que su relación se enfría; el 5 de Corazones valida la transición sin dictar ruptura final.",
+      "errores_comunes": "Confundir su inestabilidad natural con el dolor destructivo del 5 de Picas."
+    },
+    {
+      "id": "card_corazones_seis",
+      "numero": 6,
+      "palo": "Corazones",
+      "nombre": "Seis de Corazones",
+      "significado_base": "El karma afectivo, la protección del destino, el amor antiguo que retorna, la devoción filial.",
+      "funcion": "Modificador protector. Suaviza tensiones y aporta inercia del pasado.",
+      "polaridad": "Positiva. Flujo continuo y kármico de afecto.",
+      "lectura_simbolica": "El fluir del río. El lazo inquebrantable del tiempo, las memorias de la infancia, la madre cósmica.",
+      "contexto_de_uso": "Reencuentros, perdón genuino, lealtad a largo plazo, deudas kármicas saldadas con amor.",
+      "amor": "Retorno de un amor del pasado (sano), perdón tras un conflicto, protección profunda de la pareja.",
+      "trabajo": "Apoyo incondicional de un mentor del pasado. Recompensas kármicas por favores previos.",
+      "salud": "Sanación paulatina. Tratamientos tradicionales o cuidado amoroso sostenido.",
+      "combinaciones_frecuentes": [
+        "+ 9 de Picas: Dolor mental curado por una figura femenina o por el perdón",
+        "+ Rey de Corazones: Una relación kármica protegida por la divinidad"
+      ],
+      "ejemplos": "¿Debo perdonar la infidelidad? El 6 de Corazones sugiere que la misericordia sanará el karma de la relación.",
+      "errores_comunes": "Olvidar que se trata fundamentalmente de amor 'del pasado' o de energía compasiva, no pasión erótica nueva."
+    },
+    {
+      "id": "card_corazones_siete",
+      "numero": 7,
+      "palo": "Corazones",
+      "nombre": "Siete de Corazones",
+      "significado_base": "Emociones desbordadas, promesas ilusorias, sueños lúcidos y enamoramiento ciego.",
+      "funcion": "Modificador engañoso/iluminador. Exalta la emoción al punto de la irracionalidad.",
+      "polaridad": "Volátil. Muy positiva en romance ingenuo, peligrosa en contratos.",
+      "lectura_simbolica": "La luna sobre el agua. El espejismo, la exaltación romántica, el amor no materializado.",
+      "contexto_de_uso": "Citas a ciegas, fantasías amorosas intensas, celos pasionales sin fundamento, promesas excesivas.",
+      "amor": "Amor platónico cegador, infatuación máxima. Puede indicar promesas románticas poco realistas.",
+      "trabajo": "Castillos en el aire corporativos. Proyectos que suenan increíbles pero carecen de cimientos lógicos.",
+      "salud": "Hipocondría emocional, somatización, agotamiento por montañas rusas afectivas.",
+      "combinaciones_frecuentes": [
+        "+ As de Diamantes: Promesa romántica que sí se materializa en propuesta oficial",
+        "+ 7 de Picas: Engaño romántico malicioso, manipulación emocional severa"
+      ],
+      "ejemplos": "Consultante enamorado de alguien que conoció en internet; el 7 de Corazones advierte de idealización absoluta.",
+      "errores_comunes": "Tomarlo como un éxito matrimonial sólido (que es el 10) en lugar de un enamoramiento etéreo."
+    },
+    {
+      "id": "card_corazones_ocho",
+      "numero": 8,
+      "palo": "Corazones",
+      "nombre": "Ocho de Corazones",
+      "significado_base": "Reuniones sociales, interacciones en red, el entorno íntimo compartido, festejos afectivos.",
+      "funcion": "Sustantivo plural. Representa el círculo social cálido y la interconectividad.",
+      "polaridad": "Positiva. Aumenta la interacción afectiva y el diálogo.",
+      "lectura_simbolica": "La telaraña afectiva. El festival, la copa compartida, la sociabilidad genuina.",
+      "contexto_de_uso": "Eventos grupales íntimos, compañerismo profundo, nostalgia compartida, invitaciones cálidas.",
+      "amor": "Interés romántico que se desarrolla en círculos de amigos. Nostalgia afectiva profunda.",
+      "trabajo": "Eventos corporativos exitosos, cenas de negocios fructíferas, excelente relación pública.",
+      "salud": "Salud fortalecida por la interacción social. Terapia de grupo exitosa.",
+      "combinaciones_frecuentes": [
+        "+ Nueve de Picas: Sentirse miserable y solo a pesar de estar rodeado de amigos",
+        "+ As de Diamantes: Invitación formal escrita a una boda o festejo"
+      ],
+      "ejemplos": "¿Irá a la fiesta? Sí, el 8 de Corazones asegura una celebración amena y emocionalmente nutritiva.",
+      "errores_comunes": "Pensar que el número 8 en corazones indica estancamiento, cuando en realidad es expansión social."
+    },
+    {
+      "id": "card_corazones_nueve",
+      "numero": 9,
+      "palo": "Corazones",
+      "nombre": "Nueve de Corazones",
+      "significado_base": "La 'Carta de los Deseos'. La victoria emocional absoluta, el cumplimiento de los anhelos más profundos.",
+      "funcion": "Operador/Modificador de clímax. Garantiza la materialización de la felicidad buscada.",
+      "polaridad": "Extremadamente Positiva. Es el pico de la vibración roja.",
+      "lectura_simbolica": "El Grial. El éxtasis, la gratificación del alma, la bendición cósmica que disuelve el dolor.",
+      "contexto_de_uso": "Preguntas de 'Sí o No' (responde un SÍ rotundo), consecución de sueños íntimos, felicidad total.",
+      "amor": "Matrimonio soñado, amor correspondido incondicionalmente, superación de toda crisis amorosa.",
+      "trabajo": "Lograr el puesto soñado. Reconocimiento absoluto que llena el ego y el corazón.",
+      "salud": "Remisión de enfermedades, recuperación milagrosa o absoluta tranquilidad mental.",
+      "combinaciones_frecuentes": [
+        "+ 5 de Picas: Crisis transitoria que termina en victoria absoluta y reconciliación",
+        "+ As de Picas: El único operador capaz de aniquilar el deseo (Corte irrevocable)"
+      ],
+      "ejemplos": "El 9 de Corazones franqueado por cartas negras indica que a pesar del caos circundante, el consultante obtendrá su deseo final.",
+      "errores_comunes": "Minimizar su poder y tratarla como una carta de emoción regular; es la carta más auspiciosa del mazo."
+    },
+    {
+      "id": "card_corazones_diez",
+      "numero": 10,
+      "palo": "Corazones",
+      "nombre": "Diez de Corazones",
+      "significado_base": "El triunfo social de la familia, el epítome del matrimonio tradicional consolidado, la boda.",
+      "funcion": "Sustantivo mayor. Indica la estructura afectiva máxima y socialmente reconocida.",
+      "polaridad": "Muy Positiva. Asegura lealtad dinástica.",
+      "lectura_simbolica": "La fortaleza construida. El árbol genealógico, el contrato social del amor, la luna de miel.",
+      "contexto_de_uso": "Casamientos, herencias emocionales, celebraciones de aniversario, estabilidad inquebrantable a largo plazo.",
+      "amor": "Amor consolidado, bodas inminentes, formación de una familia oficial e indestructible.",
+      "trabajo": "Fidelidad absoluta a la empresa. Jubilación pacífica, ambiente laboral que es como una familia unida.",
+      "salud": "Salud robusta, longevidad, genética fuerte familiar.",
+      "combinaciones_frecuentes": [
+        "+ Rey de Tréboles: Un matrimonio cimentado en lealtad férrea y trabajo",
+        "+ 2 de Picas: Ruptura dolorosísima de un largo matrimonio familiar"
+      ],
+      "ejemplos": "¿Nos casaremos? El 10 de Corazones afirma el establecimiento de una familia legal y socialmente reconocida.",
+      "errores_comunes": "Leer el 10 de Corazones en lecturas financieras como dinero (Diamantes), cuando es un contrato afectivo."
+    },
+    {
+      "id": "card_corazones_jota",
+      "numero": 11,
+      "palo": "Corazones",
+      "nombre": "Jota de Corazones",
+      "significado_base": "El portador del amor. Un joven enamorado, un emisario de noticias afectivas cálidas, propuestas íntimas.",
+      "funcion": "Personaje / Sustantivo. Un hombre joven de mente y corazón, romántico, a veces ingenuo.",
+      "polaridad": "Positiva. Inyecta vitalidad romántica y sinceridad.",
+      "lectura_simbolica": "El heraldo del corazón. Cupido, el coqueteo inocente, la vulnerabilidad entregada, el amante idealista.",
+      "contexto_de_uso": "Proposiciones sinceras, reconciliaciones promovidas por una de las partes, mensajes que curan el alma.",
+      "amor": "El coqueteo sincero. Alguien que entrega su corazón o pide disculpas vulnerables. Sentimientos genuinos.",
+      "trabajo": "Un pasante o empleado inmensamente leal, afectuoso, pero que carece del rigor de los Diamantes.",
+      "salud": "Recuperación vital de la juventud. Buenas noticias de exámenes médicos (el emisario).",
+      "combinaciones_frecuentes": [
+        "+ As de Diamantes: Propuesta formal de compromiso y entrega por parte del joven",
+        "+ Reina de Picas: El joven enamorado es aniquilado por la frialdad de la Reina"
+      ],
+      "ejemplos": "La Jota de Corazones opera como el emisario que alivia la angustia trayendo un mensaje pasional esperado.",
+      "errores_comunes": "Confundirlo con la malicia inmadura (Jota de Picas) o la codicia material (Jota de Diamantes)."
+    },
+    {
+      "id": "card_corazones_reina",
+      "numero": 12,
+      "palo": "Corazones",
+      "nombre": "Reina de Corazones",
+      "significado_base": "La matriz protectora. La madre, la esposa fiel, una mujer profundamente empática y compasiva.",
+      "funcion": "Personaje principal. Actúa como el núcleo emocional nutritivo de la lectura.",
+      "polaridad": "Positiva. Irradia calidez y consuelo.",
+      "lectura_simbolica": "El refugio maternal. La devoción incondicional, el calor del hogar encarnado, la psique receptiva profunda.",
+      "contexto_de_uso": "Identifica a la consultante (si es mujer) en asuntos amorosos, o a la figura materna. Apoyo emocional incondicional.",
+      "amor": "Una mujer que nutre la relación. Devoción absoluta y lealtad. La esposa amada.",
+      "trabajo": "Jefa empática, recursos humanos amables, resolución de conflictos laborales a través de la inteligencia emocional.",
+      "salud": "Las funciones biológicas femeninas, fertilidad, sanación maternal. Cuidadoras.",
+      "combinaciones_frecuentes": [
+        "+ 7 de Tréboles: Una mujer buena que sufre desgaste mental y dudas insidiosas",
+        "+ Rey de Corazones: La pareja patriarcal/matriarcal perfecta, la familia nuclear fuerte"
+      ],
+      "ejemplos": "Si aparece como obstáculo, representa a una madre sobreprotectora (suegra) ahogando a la pareja con amor asfixiante.",
+      "errores_comunes": "Obviar su rol nutritivo. La Reina de Corazones sana lo que toca con compasión, nunca castiga."
+    },
+    {
+      "id": "card_corazones_rey",
+      "numero": 13,
+      "palo": "Corazones",
+      "nombre": "Rey de Corazones",
+      "significado_base": "El patriarca compasivo. Un hombre maduro, generoso, amoroso, capaz de proteger a su familia y entorno.",
+      "funcion": "Personaje principal. El gobernante de las emociones que lidera con sabiduría y empatía.",
+      "polaridad": "Positiva. Brinda seguridad patriarcal bondadosa.",
+      "lectura_simbolica": "El monarca benévolo. El padre de familia leal, la autoridad templada por el amor, el sanador.",
+      "contexto_de_uso": "Representa al padre, un juez bondadoso, un marido fiel, o al doctor en temas de salud.",
+      "amor": "Un esposo incondicional. Hombre de profundo corazón que ofrece protección y lealtad inquebrantable.",
+      "trabajo": "Un benefactor, un inversor ángel motivado por ideales humanos. Un jefe profundamente querido por su equipo.",
+      "salud": "Representa literalmente al médico que cura con dedicación. Sanación asegurada.",
+      "combinaciones_frecuentes": [
+        "+ Jota de Picas: La autoridad compasiva que derrota la maldad del joven intrigante",
+        "+ 4 de Picas: El médico (Rey) atendiendo a la enfermedad paralizante de la cama (4)"
+      ],
+      "ejemplos": "En una lectura legal, el Rey de Corazones dictamina que el juez emitirá un veredicto piadoso y favorable a la familia.",
+      "errores_comunes": "Confundir su autoridad compasiva con la frialdad implacable y destructiva del Rey de Picas."
+    },
+    {
+      "id": "card_diamantes_as",
+      "numero": 1,
+      "palo": "Diamantes",
+      "nombre": "As de Diamantes",
+      "significado_base": "El documento oficial, el contrato, el anillo de compromiso formal, o el gran nuevo inicio financiero.",
+      "funcion": "Operador Condicionante. Oficializa, sella por escrito o legaliza la carta anterior.",
+      "polaridad": "Positiva/Legal. Confiere peso de ley en la materia.",
+      "lectura_simbolica": "El sello de cera. El lingote inmaculado, la noticia escrita valiosa, la formalidad ineludible.",
+      "contexto_de_uso": "Firmas de contratos, compra-venta documentada, comunicaciones escritas críticas, herencias, propuestas formales.",
+      "amor": "Pasar de un amor pasional a una propuesta de matrimonio oficial con anillo. Documentos de divorcio (si hay picas).",
+      "trabajo": "Firma del contrato de tu vida. Creación de una corporación. Documentación legal comercial perfecta.",
+      "salud": "Resultados de laboratorio clínicos formales y escritos. El papel que certifica el diagnóstico.",
+      "combinaciones_frecuentes": [
+        "+ Jota de Corazones: La intención del enamorado se vuelve una propuesta escrita y seria.",
+        "+ 10 de Picas: El documento que sella la ruina total oficial o quiebra formal."
+      ],
+      "ejemplos": "Interpretar 'Amor + Diamantes' como que el amor se vende, cuando el As de Diamantes indica formalidad o matrimonio civil.",
+      "errores_comunes": "Leerlo sólo como 'mucho dinero', olvidando su cualidad burocrática y de 'mensaje formal escrito'."
+    },
+    {
+      "id": "card_diamantes_dos",
+      "numero": 2,
+      "palo": "Diamantes",
+      "nombre": "Dos de Diamantes",
+      "significado_base": "La asociación mercantil, el flujo recíproco de recursos, pequeñas transacciones y malabarismos financieros.",
+      "funcion": "Adjetivo/Sustantivo. Flujo de doble vía material.",
+      "polaridad": "Neutra. Depende de la honestidad de la otra carta.",
+      "lectura_simbolica": "La balanza contable. El intercambio comercial básico, el tira y afloja material, la compensación.",
+      "contexto_de_uso": "Sueldos y pagos menores, transacciones comerciales de mostrador, negociaciones pragmáticas iniciales.",
+      "amor": "Un amor transaccional, acuerdos pre-nupciales discutidos fríamente. Calcular lo que el otro aporta.",
+      "trabajo": "Intercambios laborales diarios. Manejo de caja, pagar cuentas pendientes. Balancear el presupuesto con destreza.",
+      "salud": "Fluctuaciones biológicas en los riñones o equilibrio físico. Necesidad de equilibrar la dieta material.",
+      "combinaciones_frecuentes": [
+        "+ 7 de Picas: Fraude en transacciones comerciales, pagos que rebotan.",
+        "+ Rey de Diamantes: Contratos menores avalados por un gigante bancario."
+      ],
+      "ejemplos": "Negociación de sueldo: El 2 de Diamantes muestra un tira y afloja que eventualmente se balancea.",
+      "errores_comunes": "No notar la sutil naturaleza ambivalente y transaccional que puede volver gélida una relación afectiva."
+    },
+    {
+      "id": "card_diamantes_tres",
+      "numero": 3,
+      "palo": "Diamantes",
+      "nombre": "Tres de Diamantes",
+      "significado_base": "Trabajo de baja intensidad pero disperso. Redes de esfuerzo fragmentado, pequeñas inversiones o estudios técnicos.",
+      "funcion": "Adjetivo de laboriosidad. Muestra aplicación práctica dispersa.",
+      "polaridad": "Neutra/Positiva débil. Constancia sin gran acumulación aún.",
+      "lectura_simbolica": "El tejido de hilos de cobre. Las tareas mundanas, la constancia de hormiga, la microgestión.",
+      "contexto_de_uso": "Estudios, perfeccionamiento de habilidades, trabajos de tiempo parcial (part-time), diligencias comerciales.",
+      "amor": "Esfuerzo por construir una vida en común paso a paso. Preocuparse por la economía diaria compartida.",
+      "trabajo": "Acumulación gradual. Micro-tareas que cansan pero construiscono cimientos reales.",
+      "salud": "Preocupación por detalles médicos pequeños. Exámenes rutinarios.",
+      "combinaciones_frecuentes": [
+        "+ 7 de Picas: Un estancamiento frustrante en componentes pequeños (circuitos mecánicos o engaños de centavos).",
+        "+ As de Diamantes: El pequeño trabajo se corona con una certificación escrita formal."
+      ],
+      "ejemplos": "El 3 de Diamantes indica la necesidad de aprender oficios y gestionar habilidades con las manos para salir adelante.",
+      "errores_comunes": "Menospreciar la carta por no traer fortunas; es la carta del esfuerzo técnico."
+    },
+    {
+      "id": "card_diamantes_cuatro",
+      "numero": 4,
+      "palo": "Diamantes",
+      "nombre": "Cuatro de Diamantes",
+      "significado_base": "La estructura física y financiera sólida. La oficina, el banco, la propiedad comercial o la cuenta intocable.",
+      "funcion": "Sustantivo inmovilizador. Congela el capital para protegerlo.",
+      "polaridad": "Positiva/Estática. Consolida pero detiene el flujo expansivo.",
+      "lectura_simbolica": "La caja fuerte. La muralla de oro, el activo inmovilizado, la fortaleza financiera terrenal.",
+      "contexto_de_uso": "Protección de patrimonio, estancamiento de efectivo seguro, la resistencia a invertir por conservadurismo.",
+      "amor": "Un matrimonio por conveniencia o tan sólidamente establecido materialmente que es imposible de disolver.",
+      "trabajo": "La sede corporativa. Capital resguardado de riesgos. Trabajo estable y asegurado como una roca.",
+      "salud": "Cuerpo robusto como un toro, o calcificación y rigidez (artritis) por exceso de Tierra.",
+      "combinaciones_frecuentes": [
+        "+ 5 de Picas: La caja fuerte asediada, intento de ruptura de una estructura sólida.",
+        "+ 2 de Tréboles: El edificio en construcción o negociando estructuras."
+      ],
+      "ejemplos": "Inversión en bienes raíces segura pero de lento retorno; asegura una casa construida firmemente.",
+      "errores_comunes": "Ignorar que el exceso del 4♦ puede indicar avaricia, tacañería o estancamiento del flujo comercial."
+    },
+    {
+      "id": "card_diamantes_cinco",
+      "numero": 5,
+      "palo": "Diamantes",
+      "nombre": "Cinco de Diamantes",
+      "significado_base": "Fluctuación financiera, crisis de liquidez, la pobreza tocando la puerta, reubicación urbana.",
+      "funcion": "Modificador destructivo. Quiebra la inmovilidad de la materia.",
+      "polaridad": "Negativa/Transicional. Pérdida de control económico.",
+      "lectura_simbolica": "El cofre perforado. La ciudad inmensa y caótica que drena los bolsillos, la fuga del dinero, el desarraigo.",
+      "contexto_de_uso": "Gastos súbitos, viajes costosos a la ciudad urbana, pérdidas materiales, inestabilidad financiera abrupta.",
+      "amor": "Dificultades económicas en el matrimonio que generan grietas. Mudanzas dolorosas que afectan la relación.",
+      "trabajo": "Falta de liquidez inminente. Fluctuación severa en las ventas, urgencia por encontrar nuevos ingresos.",
+      "salud": "Degradación física debido a carencias materiales, desnutrición, o estrés de la vida en la urbe.",
+      "combinaciones_frecuentes": [
+        "+ 7 de Picas y 10 de Picas: Fugas estructurales por robo interno asediando el dinero endeble.",
+        "+ 10 de Corazones: Cambios bruscos de ciudad urbana enfrentados por la familia (que sobrevivirá)."
+      ],
+      "ejemplos": "Consultante pregunta por el negocio; el 5 de Diamantes exhibe carencia de liquidez y descapitalización.",
+      "errores_comunes": "Asumir que es pobreza permanente. El 5 transita; la ruina permanente sería el 10 de Picas."
+    },
+    {
+      "id": "card_diamantes_seis",
+      "numero": 6,
+      "palo": "Diamantes",
+      "nombre": "Seis de Diamantes",
+      "significado_base": "Deudas, el peso de la responsabilidad material, pago de la hipoteca, también segundos matrimonios maduros.",
+      "funcion": "Modificador/Sustantivo. El karma aplicado a las finanzas.",
+      "polaridad": "Neutra. Impone obligación moral y material equitativa.",
+      "lectura_simbolica": "La balanza de la justicia kármica material. El saldo de la deuda, el sudor del deber cumplido.",
+      "contexto_de_uso": "Hacerse cargo de deudas pasadas, pago equitativo, responsabilidades legales financieras o segundos intentos maduros.",
+      "amor": "Desigualdad amorosa que requiere pago kármico. O el asentamiento pacífico en un segundo matrimonio por madurez.",
+      "trabajo": "Asumir responsabilidades ejecutivas que no te corresponden pero debes saldar. Liquidación de préstamos.",
+      "salud": "Las consecuencias físicas a largo plazo de hábitos del pasado. Chequeos médicos pendientes.",
+      "combinaciones_frecuentes": [
+        "+ 8 de Corazones: Pago social o reunión relacionada con deudas cívicas (impuestos).",
+        "+ 9 de Tréboles: Culminar el pago de la deuda pesada con un éxito rotundo."
+      ],
+      "ejemplos": "El consultante no se deshará de la carga hasta pagar hasta el último centavo (6♦).",
+      "errores_comunes": "Olvidar su vertiente astrológica de los 'segundos matrimonios pragmáticos' sin pasiones irracionales."
+    },
+    {
+      "id": "card_diamantes_siete",
+      "numero": 7,
+      "palo": "Diamantes",
+      "nombre": "Siete de Diamantes",
+      "significado_base": "Engaño contable, mentiras institucionales, doloroso robo o negociación extremadamente árida.",
+      "funcion": "Modificador/Operador. El veneno aplicado al capital.",
+      "polaridad": "Extremadamente Negativa. Corrompe los Diamantes puros.",
+      "lectura_simbolica": "El contrato con letra chica venenosa. La víbora entre el oro, el mercado hostil y estafador.",
+      "contexto_de_uso": "Auditorías maliciosas, extorsiones financieras, trampas en transacciones, malversación de fondos empresariales.",
+      "amor": "Traición calculada. Acuerdos de divorcio donde el cónyuge oculta dinero deliberadamente para dejarte en ruinas.",
+      "trabajo": "Espionaje industrial. Competencia desleal, mentiras institucionales para arruinar tu capital.",
+      "salud": "Problemas de sangre o hígado. Envenenamiento sistémico.",
+      "combinaciones_frecuentes": [
+        "+ Jota de Diamantes: Robo de empleado inmaduro drenando el capital del negocio.",
+        "+ Rey de Corazones: El patriarca benevolente interviene para frenar la estafa y negociar justamente."
+      ],
+      "ejemplos": "Una herencia (Diamantes) bloqueada maliciosamente por un abogado corrupto o hermano avaro (7♦).",
+      "errores_comunes": "Leer el 7 como carta mágica de éxito solo porque es Diamantes. Es un veneno corrosivo material."
+    },
+    {
+      "id": "card_diamantes_ocho",
+      "numero": 8,
+      "palo": "Diamantes",
+      "nombre": "Ocho de Diamantes",
+      "significado_base": "Logística brillante corporativa, planificación abstracta de negocios, la mente superior proyectando el éxito.",
+      "funcion": "Adjetivo/Sustantivo de mente maestra. La planificación fría.",
+      "polaridad": "Positiva/Abstracta. Expansión lógica y estratégica.",
+      "lectura_simbolica": "El tablero de ajedrez dorado. El arquitecto financiero, la mente proyectando la expansión corporativa fría.",
+      "contexto_de_uso": "Estrategia empresarial, logística de grandes reubicaciones, proyecciones financieras precisas.",
+      "amor": "Una relación puramente mental y pragmática. Entrelazar los destinos financieros, logística pre-nupcial.",
+      "trabajo": "Un masterplan que funcionará por su pura brillantez lógica. Reuniones corporativas del alto mando.",
+      "salud": "Salud mental afilada como un diamante. A veces hiper-racionalismo y frialdad psicológica.",
+      "combinaciones_frecuentes": [
+        "+ 4 de Picas: La mente procesando la logística (8♦) pero paralizada por el miedo inmovil (4♠).",
+        "+ Rey de Diamantes: La mente maestra operando bajo el auspicio del magnate corporativo absoluto."
+      ],
+      "ejemplos": "Reubicar la empresa a otra ciudad (8♦) indica que logísticamente está todo fríamente calculado y será expansivo.",
+      "errores_comunes": "Creer que trae dinero en efectivo instantáneo; trae la mente y planificación brillante para conseguirlo."
+    },
+    {
+      "id": "card_diamantes_nueve",
+      "numero": 9,
+      "palo": "Diamantes",
+      "nombre": "Nueve de Diamantes",
+      "significado_base": "Gran ganancia comercial a gran escala, expansión mercantil y materialización de la ambición empresarial.",
+      "funcion": "Modificador de Alta Magnitud. Amplifica inmensamente el capital.",
+      "polaridad": "Extremadamente Positiva. Fortuna material inminente.",
+      "lectura_simbolica": "El barco mercante cargado de tesoros. La victoria financiera expansiva, el talento monetizado con brutal eficacia.",
+      "contexto_de_uso": "Ganancias bursátiles, grandes dividendos de proyectos, expansión internacional de la franquicia comercial.",
+      "amor": "Inversión de gran capital en bienes gananciales. Una unión expansiva que trae riqueza colosal a ambas partes.",
+      "trabajo": "Éxito mercantil enorme, contratos multinacionales que multiplican exponencialmente la empresa y su alcance.",
+      "salud": "Sanación apoyada por el acceso al mejor sistema médico que el dinero puede comprar.",
+      "combinaciones_frecuentes": [
+        "+ As de Picas: Documentos legales que detienen súbitamente la ganancia (guillotina financiera).",
+        "+ Rey de Corazones: Fila del presente que indica victoria económica guiada por empatía."
+      ],
+      "ejemplos": "Una idea o talento personal es recompensado con un aluvión de riquezas. Un pago monumental y retrasado que llega.",
+      "errores_comunes": "Olvidar que a veces indica viajes de negocios expansivos (el barco mercante) en la práctica anglosajona."
+    },
+    {
+      "id": "card_diamantes_diez",
+      "numero": 10,
+      "palo": "Diamantes",
+      "nombre": "Diez de Diamantes",
+      "significado_base": "La máxima prosperidad material. Abundancia extrema, el gran capital consolidado, enriquecimiento patrimonial masivo.",
+      "funcion": "Sustantivo/Operador Final. Transmuta cualquier esfuerzo en oro.",
+      "polaridad": "Extremadamente Positiva. Culminación material áurea.",
+      "lectura_simbolica": "El sol de oro macizo. La bóveda llena, la aristocracia del dinero, la libertad económica absoluta.",
+      "contexto_de_uso": "Final de lecturas de negocios indicando rotundo triunfo financiero. Consolidación de imperios comerciales. Jubilación dorada.",
+      "amor": "Unión matrimonial donde el dinero es ilimitado. Sentimientos respaldados por una seguridad material aplastante y cómoda.",
+      "trabajo": "La culminación del modelo de negocio, un éxito tan lucrativo y estable que transforma la vida del consultante para siempre.",
+      "salud": "Salud pletórica, inmunidad, vigor físico inagotable basado en excelente nutrición y entorno elitista.",
+      "combinaciones_frecuentes": [
+        "+ 7 de Tréboles: El negocio lucrativo que presenta fatigas iniciales que se superan hacia el oro macizo.",
+        "+ 4 de Picas: Un gran negocio corporativo que inesperadamente entra en letargo y paralización total."
+      ],
+      "ejemplos": "Si la lectura comienza con Tréboles oscuros y culmina en 10♦, la transmutación del dolor en riqueza absoluta está asegurada.",
+      "errores_comunes": "En una tirada de la Cruz, ignorar que el 10♦ a la derecha es el Destino ineludible del éxito rotundo, obligando al desbloqueo."
+    },
+    {
+      "id": "card_diamantes_jota",
+      "numero": 11,
+      "palo": "Diamantes",
+      "nombre": "Jota de Diamantes",
+      "significado_base": "El joven mensajero mercantil. Un arribista inmaduro, empleado bancario astuto, avaricia joven o pequeñas finanzas.",
+      "funcion": "Personaje / Sustantivo. Inteligencia aguda, interés mercantil, lealtad dudosa.",
+      "polaridad": "Ambivalente/Negativa. Su avaricia lo vuelve engañoso o inestable.",
+      "lectura_simbolica": "El zorro aprendiz. El corredor de bolsa ansioso, el oro prematuro que carece de la rectitud ética del Rey.",
+      "contexto_de_uso": "Robos de empleados subalternos, noticias relacionadas con presupuestos menores, jóvenes calculadores y fríos.",
+      "amor": "Un pretendiente frívolo, interesado exclusivamente en la cartera o estatus del otro. Falso enamorado oportunista.",
+      "trabajo": "Un subordinado o mensajero que drena recursos metódicamente a espaldas tuyas o gestiona la contabilidad de forma oscura.",
+      "salud": "Estrés mental por especulación temprana. Hipocondría asociada a los costos médicos.",
+      "combinaciones_frecuentes": [
+        "+ 7 de Diamantes: Empleado bancario inmaduro orquestando robos de inventario constantes.",
+        "+ As de Diamantes: Propuesta formal (As) gestionada por este joven ávido."
+      ],
+      "ejemplos": "Fuga de capitales de la empresa causadas directamente por este perfil juvenil calculador y poco fiable (J♦).",
+      "errores_comunes": "Creer que trae buenas noticias solo por ser de palo rojo, ignorando su inherente naturaleza engañosa y codiciosa."
+    },
+    {
+      "id": "card_diamantes_reina",
+      "numero": 12,
+      "palo": "Diamantes",
+      "nombre": "Reina de Diamantes",
+      "significado_base": "La gran estratega materialista. Ecosistema social de altísima influencia financiera, viuda o separada inmensamente rica, mente astuta.",
+      "funcion": "Personaje Principal / Sustantivo. Controladora abstracta del lujo y la influencia corporativa.",
+      "polaridad": "Neutra/Positiva Abstracta. Depende de su dignidad, puede ser fría o mecenas.",
+      "lectura_simbolica": "La duquesa de hielo. La diplomacia letal, el lujo afilado, la mente de negocios disfrazada de fragilidad femenina.",
+      "contexto_de_uso": "Mujer de negocios impecable, rival sagaz, estatus social superior, poder aristocrático ejercido tras bambalinas.",
+      "amor": "Esposa trofeo muy inteligente, o mujer que calcula fríamente cada ventaja económica en un divorcio.",
+      "trabajo": "Ejecutiva de cuentas brillante. Mentora que no da amor, sino dinero y redes de contactos poderosos invaluables.",
+      "salud": "Frigidez física, o una fortaleza biológica adquirida a través de la cosmética y medicina de altísimo nivel.",
+      "combinaciones_frecuentes": [
+        "+ 7 de Picas: Estafa y traición profunda a manos de esta aristócrata manipuladora letal.",
+        "+ Rey de Diamantes: La sociedad corporativa invencible, el dúo de magnates que dominan su esfera."
+      ],
+      "ejemplos": "Una consultante pregunta por su jefa (Q♦): es una mente calculadora, materialista y afilada; hay que presentarle balances y no lágrimas.",
+      "errores_comunes": "Asumir que es tierna y comprensiva. Es una figura de élite implacable enfocada solo en el estatus."
+    },
+    {
+      "id": "card_diamantes_rey",
+      "numero": 13,
+      "palo": "Diamantes",
+      "nombre": "Rey de Diamantes",
+      "significado_base": "Jefatura imperturbable financiera bancaria internacional. Un patriarca inmensamente poderoso, calculador y exitoso magnate.",
+      "funcion": "Personaje Principal / Sustantivo. El maestro inquebrantable de la gran moneda, el emperador mercantil.",
+      "polaridad": "Positiva/Inquebrantable. Autoridad material máxima.",
+      "lectura_simbolica": "El monarca de la industria. El gigante inexpugnable, la cordillera de oro, la fría y vasta astucia corporativa.",
+      "contexto_de_uso": "Dueño absoluto de un negocio, inversionista multimillonario extranjero, un juez mercantil poderoso. El banco mismo.",
+      "amor": "Pareja de un inmenso poder material y frialdad psicológica. Provee el imperio a cambio de sometimiento a sus reglas.",
+      "trabajo": "El CEO implacable que salvará tu negocio con inyecciones de capital si la matemática lo avala, carente de cualquier sentimentalismo.",
+      "salud": "Salud asegurada mediante intervención de especialistas médicos aristocráticos de élite carísimos.",
+      "combinaciones_frecuentes": [
+        "+ As de Picas: A pesar de su inmenso poder, la guadaña puede cortar incluso al magnate supremo.",
+        "+ 2 de Diamantes: Acuerdos corporativos menores firmados y avalados por su autoridad implacable."
+      ],
+      "ejemplos": "En un bloqueo existencial psicológico, el Rey de Diamantes indica someterse espartanamente y transmutar el talento en oro industrial.",
+      "errores_comunes": "Olvidar que no tiene empatía alguna; juzga y recompensa únicamente en base al talento lucrativo frío."
+    },
+    {
+      "id": "card_tréboles_as",
+      "numero": 1,
+      "palo": "Tréboles",
+      "nombre": "As de Tréboles",
+      "significado_base": "El intelecto, el comienzo de un nuevo proyecto sólido y ambicioso comercialmente, el documento vital. La semilla de fuego.",
+      "funcion": "Operador/Sustantivo de Inicio. Detona la energía vital y creativa.",
+      "polaridad": "Muy Positiva. Asegura el arranque con inercia arrolladora.",
+      "lectura_simbolica": "La chispa primordial de voluntad. El contrato dinámico, el fuego de la idea purísima, la vitalidad ilimitada.",
+      "contexto_de_uso": "Nuevos emprendimientos profesionales, inicio de empresas, documentos vitales médicos (el alta firmada) o firmas clave.",
+      "amor": "Un nuevo comienzo erótico o impulsado por la pura atracción intelectual y la voluntad de conquista enérgica.",
+      "trabajo": "Un proyecto inmaculado con una vitalidad inmensa que generará riqueza si se ejecuta con persistencia.",
+      "salud": "Documento de alta médica oficial firmado. Renovación milagrosa de la vitalidad y fuerza del organismo.",
+      "combinaciones_frecuentes": [
+        "+ 7 de Tréboles: Inicio poderoso que choca de inmediato con burocracia paralizante (árbol caído).",
+        "+ 10 de Diamantes: La idea pura y creativa culmina en la formación de un inmenso imperio dinástico de oro."
+      ],
+      "ejemplos": "Un emprendimiento recién lanzado (As de Tréboles) posee la vitalidad y la potencia para transformar al consultante.",
+      "errores_comunes": "Desconocer su acepción como documento o 'alta médica formal' en contextos de salud."
+    },
+    {
+      "id": "card_tréboles_dos",
+      "numero": 2,
+      "palo": "Tréboles",
+      "nombre": "Dos de Tréboles",
+      "significado_base": "Entorno laboral diario, comunicación profesional constante. Desafíos operativos menores o cooperación práctica.",
+      "funcion": "Adjetivo/Sustantivo. Tránsito comunicativo de fuego.",
+      "polaridad": "Neutra. Depende enteramente de con quién se interactúa.",
+      "lectura_simbolica": "El cruce de correos. El chisme corporativo de pasillo, la colaboración diaria, el intercambio técnico de opiniones.",
+      "contexto_de_uso": "Negociaciones arduas de rutina, asociaciones necesarias para equilibrar proyectos, comunicaciones intensas en la oficina.",
+      "amor": "Charlas extensas, a veces discusiones por fricciones comunicativas diarias o de convivencia. Amigos con derechos.",
+      "trabajo": "Cooperación y delegación operativa. Hay roces pequeños por el estrés del esfuerzo diario continuo.",
+      "salud": "Salud regular que requiere atención a la fatiga vocal o estrés mental de oficina continuo.",
+      "combinaciones_frecuentes": [
+        "+ 5 de Picas: Discusiones agresivas en el entorno laboral o papeleo malicioso.",
+        "+ 4 de Diamantes: La negociación ardua equilibra el riesgo para forjar una estructura física inamovible."
+      ],
+      "ejemplos": "Frente al Cinco de Picas (estafa inicial en bienes raíces), el 2 de Tréboles media como la ardua asociación negociada para salvarla.",
+      "errores_comunes": "Interpretarla como amor romántico en vez de cooperación técnica, ignorando que es una carta de puro trabajo."
+    },
+    {
+      "id": "card_tréboles_tres",
+      "numero": 3,
+      "palo": "Tréboles",
+      "nombre": "Tres de Tréboles",
+      "significado_base": "Alianzas estratégicas corporativas y creativas, crecimiento orgánico innegable, cristalización de matrimonios prácticos.",
+      "funcion": "Modificador expansivo. Aporta fertilidad y progresión al trabajo.",
+      "polaridad": "Muy Positiva. Crece con constancia imparable.",
+      "lectura_simbolica": "El árbol joven y vigoroso. La expansión del talento, la asociación mercantil afortunada, la consolidación creativa férrea.",
+      "contexto_de_uso": "Sociedades extremadamente fructíferas, matrimonios por conveniencia exitosos, expansión gradual sin grandes obstáculos.",
+      "amor": "Unión formal donde la practicidad, el respeto profesional y el estatus laboral mutuo son más fuertes que la pasión irracional.",
+      "trabajo": "El tridente invencible. Proyecto, socio y ejecución logrando un poder orgánico de mercado insuperable.",
+      "salud": "Recuperación constante, fuerza celular en expansión y gran vigor.",
+      "combinaciones_frecuentes": [
+        "+ Rey de Tréboles: Crecimiento y mentoría perfecta guiada por el titán de la integridad corporativa.",
+        "+ 4 de Corazones: El matrimonio apoyado en un fundamento material estricto, pacífico y de hogar indestructible."
+      ],
+      "ejemplos": "Es una de las cartas más afortunadas para el desarrollo: promete a la larga uniones adineradas que facilitan la expansión profesional.",
+      "errores_comunes": "Suponer que carece de emoción, ignorando que la 'lealtad laboral' mutua es una forma purísima de amor para los Tréboles."
+    },
+    {
+      "id": "card_tréboles_cuatro",
+      "numero": 4,
+      "palo": "Tréboles",
+      "nombre": "Cuatro de Tréboles",
+      "significado_base": "La rigidez mental, la burocracia laboral, las políticas de oficina pesadas. A veces engaños de amigos o estancamiento de fuego.",
+      "funcion": "Modificador/Sustantivo. Contiene el intelecto y el trabajo hasta asfixiarlo.",
+      "polaridad": "Neutra/Negativa. Fricción por demasiada estructura restrictiva.",
+      "lectura_simbolica": "La jaula mental. El laberinto burocrático, la mesa de la junta directiva atrapada, la disciplina espartana.",
+      "contexto_de_uso": "Entornos laborales de alta política interna, lealtades divididas, disciplina ruda y estancamiento intelectual temporal.",
+      "amor": "Una relación sofocada por rutinas inamovibles. El fuego creativo de ambos está enjaulado en los hábitos.",
+      "trabajo": "Atrapado en un sistema corporativo pesado y traicionero. Agotamiento crónico de la mente por luchar contra estructuras.",
+      "salud": "Cansancio general, pesadez en el cuerpo debido al estrés psicológico sostenido y al sobre-esfuerzo burocrático.",
+      "combinaciones_frecuentes": [
+        "+ As de Picas: El auto-sabotaje inclemente, hipercrítica intelectual verduga de la mente.",
+        "+ Rey de Diamantes: La disciplina espartana sometida al mercado te transformará y generará oro al final."
+      ],
+      "ejemplos": "Representa la dura disciplina rudimentaria resistiendo a la crítica, la 'madera' del oficio forjada bajo gran presión (4♣).",
+      "errores_comunes": "Creer que el 4 siempre es estabilidad positiva; aquí en el fuego (Tréboles) sofoca la creatividad y genera desgaste crónico."
+    },
+    {
+      "id": "card_tréboles_cinco",
+      "numero": 5,
+      "palo": "Tréboles",
+      "nombre": "Cinco de Tréboles",
+      "significado_base": "Las redes de contacto activas (networking). Expansión dinámica social, aprendizaje frenético, alianzas valiosas con grupos.",
+      "funcion": "Modificador/Sustantivo. Introduce la energía de las masas aliadas y la multiplicidad técnica.",
+      "polaridad": "Positiva. Dinamiza y resuelve gracias a la interacción social.",
+      "lectura_simbolica": "El mercado de ideas. El enjambre colmena trabajando, la exposición comunitaria vital, el conocimiento externo como salvación.",
+      "contexto_de_uso": "Integración a nuevos equipos, éxito a través del apoyo externo, socialización masiva corporativa, amigos de clubes o deporte.",
+      "amor": "Buscar pareja fuera del entorno tradicional, conocer prospectos mediante clubes, hobbies activos o círculos profesionales intensos.",
+      "trabajo": "Apoyo invaluable de una red de mentores. Encontrar el empleo ideal gracias al 'boca a boca' socialmente expansivo.",
+      "salud": "Fortaleza física a través de la actividad aeróbica deportiva comunitaria o gimnasios (fuego en movimiento).",
+      "combinaciones_frecuentes": [
+        "+ Reina de Corazones: Integración perfecta en un equipo de trabajo matriarcal empático y compasivo.",
+        "+ 7 de Picas: Un amigo del nuevo círculo social oculta espionaje, chismes maliciosos o toxicidad."
+      ],
+      "ejemplos": "No busques éxito aislado; el 5 de Tréboles exige salir de la cueva e integrarte en redes de networking para desbloquear la situación.",
+      "errores_comunes": "Confundir su dinamismo con el 5 de Diamantes (que es fuga de dinero) o el de Picas (conflicto doloroso)."
+    },
+    {
+      "id": "card_tréboles_seis",
+      "numero": 6,
+      "palo": "Tréboles",
+      "nombre": "Seis de Tréboles",
+      "significado_base": "El karma recompensado en el trabajo. Crecimiento profesional constante gracias al esfuerzo pretérito incesante. El gran mérito logrado.",
+      "funcion": "Sustantivo causal. El cimiento del éxito basado en el sudor disciplinado histórico.",
+      "polaridad": "Positiva. Otorga victorias imparables fundamentadas en méritos sólidos.",
+      "lectura_simbolica": "La cosecha del esfuerzo titánico pasado. El motor imparable, la inercia victoriosa blindada por años de disciplina silenciosa.",
+      "contexto_de_uso": "Recompensas por largo servicio, ascensos inevitables por talento puro, inercia de trabajo afortunado hacia el éxito material.",
+      "amor": "Una relación amorosa cimentada lentamente en años de compañerismo, ayuda mutua y batallas superadas codo a codo.",
+      "trabajo": "Un éxito corporativo absoluto. La mente y el esfuerzo de un pasado inmenso ahora fructifican sin fricción.",
+      "salud": "Salud envidiable producto de un largo régimen de constancia en dietas o entrenamientos vitales crónicos (positivos).",
+      "combinaciones_frecuentes": [
+        "+ As de Diamantes: El esfuerzo disciplinado e imparable del pasado premia ahora con un comienzo absoluto lucrativo.",
+        "+ 4 de Picas: El esfuerzo titánico de repente sufre un bloqueo neurológico o parálisis temporal paralizante."
+      ],
+      "ejemplos": "En la Tirada de la Cruz, ubicado a la Izquierda (Pasado), dicta que todo el presente crítico deviene del enorme sacrificio del 6♣.",
+      "errores_comunes": "Verlo como 'otra carta del trabajo' y obviar su factor 'Kármico': lo que trae el 6 de Tréboles te lo has ganado a pulso absoluto."
+    },
+    {
+      "id": "card_tréboles_siete",
+      "numero": 7,
+      "palo": "Tréboles",
+      "nombre": "Siete de Tréboles",
+      "significado_base": "La carta de las preocupaciones, fricciones, burocracia paralizante. El 'árbol caído' en el sendero, dudas insidiosas.",
+      "funcion": "Operador/Modificador de retraso severo. Envenena y desgasta mentalmente a las cartas que lo rodean.",
+      "polaridad": "Altamente Negativa. Agota el intelecto y enturbia el juicio.",
+      "lectura_simbolica": "El muro de espinas mentales. El atrapamiento ciego, el pesimismo que pudre la voluntad, la neblina negra corporativa.",
+      "contexto_de_uso": "Bloqueos administrativos insalvables temporalmente, tensión aguda entre carrera y hogar, celos, desilusiones y pensamientos oscuros agudos.",
+      "amor": "Aparición de celos sin base física. Pensamientos oscuros que carcomen la mente de una relación sana. Desgaste mental agobiante.",
+      "trabajo": "Fricción administrativa, burocracia de mercado, pruebas espirituales y obstáculos de letargo. Pero desemboca en oro si no te rindes.",
+      "salud": "Agotamiento crónico, estrés mental profundo, migrañas inducidas por la presión incesante corporativa.",
+      "combinaciones_frecuentes": [
+        "+ Reina de Corazones: La mujer bondadosa está siendo devorada por el estrés y la duda paralizante.",
+        "+ 10 de Diamantes: Prueba el alma; el desgaste se supera y la fricción resulta en el más inmenso éxito financiero imaginable."
+      ],
+      "ejemplos": "El consultante entra en pánico asumiendo que el negocio falló, sin ver que el 7♣ es solo un escollo administrativo temporal en el camino hacia la recompensa.",
+      "errores_comunes": "Olvidar que el 7 de Tréboles es un retraso temporal, a diferencia del As de Picas (que es final definitivo)."
+    },
+    {
+      "id": "card_tréboles_ocho",
+      "numero": 8,
+      "palo": "Tréboles",
+      "nombre": "Ocho de Tréboles",
+      "significado_base": "La carta de los negocios, la rutina y la burocracia administrativa diaria. Desplazamientos y viajes cortos constantes.",
+      "funcion": "Adjetivo/Sustantivo. El movimiento de ruedas corporativo y rutinario.",
+      "polaridad": "Neutra. Implica un movimiento laborioso incesante y mundano.",
+      "lectura_simbolica": "El engranaje del reloj. La cinta de la fábrica, el viajante incesante de comercio, la oficina gris convertida en hábitat.",
+      "contexto_de_uso": "Viajes y traslados cortos inevitables, rutinas laborales asfixiantes o de administración, exceso de protocolos y papelería diaria.",
+      "amor": "Si aparece en el corazón de un matrimonio, indica la colonización y muerte transaccional. La pareja actúa como colegas de la rutina doméstica.",
+      "trabajo": "El ajetreo corporativo perfecto. Desplazamiento interurbano constante, negociaciones menores repetitivas. Vida consumida en trámites.",
+      "salud": "Falta de energía por rutinas deshumanizantes. Cansancio asociado a los constantes viajes cortos y traslados monótonos.",
+      "combinaciones_frecuentes": [
+        "+ As de Diamantes: Una propuesta formal proveniente de un viaje corto.",
+        "+ 10 de Corazones: Un matrimonio fuerte, pero dominado burocráticamente por el 8 de Tréboles."
+      ],
+      "ejemplos": "Un oráculo augura que en un desplazamiento rutinario (8♣) el consultante topará súbitamente con un amor pasional y antiguo reactivado.",
+      "errores_comunes": "Ignorar que cuando rige una pregunta romántica, expone crudamente un matrimonio que se ha vuelto una 'sociedad mercantil aburrida'."
+    },
+    {
+      "id": "card_tréboles_nueve",
+      "numero": 9,
+      "palo": "Tréboles",
+      "nombre": "Nueve de Tréboles",
+      "significado_base": "Culminación de una gran labor a base de pura persistencia y terquedad. Cambio de táctica y régimen espartano de disciplina.",
+      "funcion": "Sustantivo/Adjetivo culminante. La fuerza ígnea desatada al final.",
+      "polaridad": "Positiva, pero dura. Recompensa al esfuerzo espartano implacable.",
+      "lectura_simbolica": "El martillo del herrero golpeando la espada. La obstinación victoriosa, la disciplina ruda que quiebra el caos. También un viaje interurbano.",
+      "contexto_de_uso": "Régimen espartano para sobrevivir el caos, terquedad asombrosa, éxito logrado tras no rendirse jamás frente a la adversidad.",
+      "amor": "Un admirador tenaz e inamovible que persevera durante años hasta conseguir el amor de la consultante, o envidia ajena.",
+      "trabajo": "La adopción de una táctica y un régimen inquebrantables y rígidos que salva el ecosistema laboral asediado por fugas o toxicidades.",
+      "salud": "Disciplina corporal estricta requerida. Sanación que depende totalmente del cumplimiento riguroso y espartano del régimen médico.",
+      "combinaciones_frecuentes": [
+        "+ Rey de Tréboles: El Rey impone la disciplina férrea, logrando un cambio profundo y salvador (9♣).",
+        "+ 10 de Picas: El modelo de fracaso histórico es desmantelado gracias al duro cambio táctico del 9♣."
+      ],
+      "ejemplos": "El consultante debe apartarse de la microgestión y aplicar un régimen espartano (9♣) para purgar la toxicidad del negocio y salvarse.",
+      "errores_comunes": "Confundir su energía con la del 9 de Corazones; el de Tréboles no es un deseo celestial concedido fácilmente, se gana por puro sudor."
+    },
+    {
+      "id": "card_tréboles_diez",
+      "numero": 10,
+      "palo": "Tréboles",
+      "nombre": "Diez de Tréboles",
+      "significado_base": "Sobrecarga aplastante de responsabilidades, agotamiento crónico (burnout). Viaje muy largo al extranjero, finalización de ciclo corporativo.",
+      "funcion": "Sustantivo/Modificador pesado. El colapso por acumulación masiva.",
+      "polaridad": "Neutra/Negativa. Advierte colapso por excesivo éxito o carga brutal.",
+      "lectura_simbolica": "El Atlas que sostiene el mundo. La columna vertebral astillada, la mudanza de país definitivo, la acumulación final antes del derrumbe.",
+      "contexto_de_uso": "Responsabilidades desbordantes en negocios, viajes transoceánicos o exilio. Esfuerzo máximo inminente antes del gran cierre y recompensa material.",
+      "amor": "El deber aplasta a la pasión. Relaciones que terminan asfixiadas porque uno de los dos asume todas las responsabilidades emocionales y materiales conjuntas.",
+      "trabajo": "Llevar sobre los hombros el peso entero de una empresa colosal sin ayuda delegada. Dinero inesperado que llega por cruzar el umbral del sacrificio humano máximo.",
+      "salud": "El burnout psiquiátrico total y el desgaste severo del sistema inmunológico por agotamiento nervioso absoluto continuo.",
+      "combinaciones_frecuentes": [
+        "+ 4 de Picas: El peso del exceso de trabajo finalmente colapsa en la cama de la enfermedad física obligatoria.",
+        "+ 9 de Diamantes: La carga pesada e inmensa desemboca en una recompensa transatlántica colosal."
+      ],
+      "ejemplos": "Una gran empresa o responsabilidad ejecutiva ha sobrecargado física y mentalmente al consultante (10♣); debe delegar.",
+      "errores_comunes": "Atribuirle un valor puramente positivo o mágico, ignorando la advertencia física real de la inmensa sobrecarga (burnout) del número 10."
+    },
+    {
+      "id": "card_tréboles_jota",
+      "numero": 11,
+      "palo": "Tréboles",
+      "nombre": "Jota de Tréboles",
+      "significado_base": "El aprendiz incansable, el apoyo subalterno incondicional, un amigo moreno y enérgico de lealtad profunda o un atleta ávido.",
+      "funcion": "Personaje / Sustantivo. Inteligencia aplicada en formación inagotable y fiel.",
+      "polaridad": "Muy Positiva. Lealtad inquebrantable e iniciativa pura juvenil.",
+      "lectura_simbolica": "El paladín del rey joven. La llama vigorosa ascendente, el entusiasmo invencible, el aliado que no pregunta sino que acciona con coraje.",
+      "contexto_de_uso": "Apoyo solidísimo de amigos verdaderos, esfuerzo laboral en progreso con inmensa proactividad, mensajeros entusiastas en negocios.",
+      "amor": "El compañero de trabajo o el amigo que silenciosamente demuestra con lealtad que puede ser la pareja perfecta; amor desde la camaradería férrea.",
+      "trabajo": "El pasante o subordinado ideal y leal que impulsará el proyecto. Un colaborador inquebrantable de energía imparable sin intenciones ocultas o malignas.",
+      "salud": "Vitalidad espléndida, sanación acelerada y energía atlética asombrosamente recuperada.",
+      "combinaciones_frecuentes": [
+        "+ 8 de Tréboles: El mensajero trae novedades corporativas incesantes o un viaje ágil inminente.",
+        "+ Reina de Diamantes: El esfuerzo puro de la Jota es capitalizado inteligentemente por la Duquesa para gran lucro."
+      ],
+      "ejemplos": "Identifica al amigo fiel en medio de una traición laboral, o el propio ímpetu arrollador e inagotable del consultante estudiando un oficio técnico.",
+      "errores_comunes": "Pensar que es inmaduro como la Jota de Diamantes o malévolo como la de Picas. La Jota de Tréboles es pura fuerza de voluntad constructiva."
+    },
+    {
+      "id": "card_tréboles_reina",
+      "numero": 12,
+      "palo": "Tréboles",
+      "nombre": "Reina de Tréboles",
+      "significado_base": "Compañera de trabajo morena y de altísima actividad, una mujer de tremenda intelectualidad y poder, que en algunas tradiciones alberga intenciones perjudiciales oscuras.",
+      "funcion": "Personaje Principal. La voluntad femenina independiente forjada en el fuego laboral corporativo o la rival asombrosa.",
+      "polaridad": "Ambivalente/Peligrosa. Requiere enorme cautela. A menudo celosa del estatus ajeno.",
+      "lectura_simbolica": "La llama de doble filo. La mentora independiente, o la rival silenciosa que incuba la destrucción corporativa letal desde su gran destreza y capacidad.",
+      "contexto_de_uso": "El consultante debe vigilar meticulosamente su flanco en la oficina. Rivalidad por un puesto, jefa estricta que exige fuego incesante, o colega secreta malintencionada.",
+      "amor": "En amor, la rival despiadada disfrazada de compañera que compite intelectualmente o sabotea con información laboral. Separarse tácticamente.",
+      "trabajo": "Una colega morena de altísimo nivel intelectual advierte de una secreta conspiración profesional. Alberga intenciones letales u oscuros celos; se requiere alejamiento sutil y táctico.",
+      "salud": "Agitación psíquica profunda derivada de ambientes tóxicos o paranoias que pueden estar totalmente justificadas en la realidad objetiva corporativa.",
+      "combinaciones_frecuentes": [
+        "+ 7 de Picas: Confirma que la colega ejecutará espionaje, robo de datos o traición devastadora irreversible.",
+        "+ Rey de Tréboles: La Reina encuentra su maestro y es mitigada o canalizada hacia un imperio positivo conjunto."
+      ],
+      "ejemplos": "La lectura muestra que la jefa estricta guarda un secreto destructivo, exigiendo alejarse paulatinamente y con sumo tacto para evitar una catástrofe laboral total.",
+      "errores_comunes": "Suponer que, al ser mujer, asume un rol amoroso y pasivo (Reina de Corazones). La Reina de Tréboles compite con fuerza arrolladora masculina corporativa."
+    },
+    {
+      "id": "card_tréboles_rey",
+      "numero": 13,
+      "palo": "Tréboles",
+      "nombre": "Rey de Tréboles",
+      "significado_base": "El pilar laboral absoluto, integridad y rectitud empresarial inquebrantable, gerente feroz, patriarca del gran equipo corporativo.",
+      "funcion": "Personaje Principal / Sustantivo. El monarca de la ética mercantil férrea, inspirador infatigable colosal.",
+      "polaridad": "Muy Positiva. Asegura el respaldo moral inquebrantable y el éxito garantizado.",
+      "lectura_simbolica": "El roble inamovible. El titán de la fuerza moral corporativa, el escudo inagotable de lealtad, la autoridad purificadora justa.",
+      "contexto_de_uso": "Un socio externo implacable para salvar una empresa, mentor incorruptible, figura paterna laboral, jefe estricto profundamente ético y respetable.",
+      "amor": "Compañero sentimental protector a niveles inmensurables, el bastión y pilar del equipo con lealtad total. Su amor es trabajo constante en favor del hogar.",
+      "trabajo": "El gerente espartano. Un auditor o figura disciplinaria eterna incorruptible que purgará la toxicidad y establecerá orden incesante logrando el éxito definitivo.",
+      "salud": "Resistencia sobrehumana física, constitución inquebrantable bajo una presión que aplastaría a un hombre normal. Inmunidad natural profunda.",
+      "combinaciones_frecuentes": [
+        "+ 10 de Picas: El Rey espartano desmantela la asfixia del fracaso purificando de inmediato el ecosistema laboral.",
+        "+ As de Diamantes: Firma avalada con la palabra inamovible de honor por este titán corporativo."
+      ],
+      "ejemplos": "Se requiere un gerente feroz y externo (Rey de Tréboles) que discipline el caos, llevando un severo cambio táctico para evadir la ruina empresarial predicha.",
+      "errores_comunes": "Creer que la severidad y rigidez de este Rey es por malicia (como Picas). Su rigor espartano nace del deber sagrado y el honor puro incorruptible."
+    },
+    {
+      "id": "card_picas_as",
+      "numero": 1,
+      "palo": "Picas",
+      "nombre": "As de Picas",
+      "significado_base": "La guadaña, el corte, la muerte de la situación, el documento legal del fin, la sentencia de aniquilación y amputación súbita irrevocable.",
+      "funcion": "Operador Absoluto y Letal. Detiene, corta y cancela cualquier significado de la carta anterior u objeto circundante.",
+      "polaridad": "Extremadamente Negativa. Destruye estructuralmente a las cartas rojas vecinas.",
+      "lectura_simbolica": "El filo implacable negro del hacha cósmica. La noche absoluta, el fallo definitivo de castigo cósmico de la justicia kármica final.",
+      "contexto_de_uso": "Despido inmediato fulminante, quiebre matrimonial, sentencia fatal de divorcio, el cierre tajante de todo ciclo con dolor sordo, estafa institucional inminente.",
+      "amor": "La sentencia de muerte emocional a cualquier mínima esperanza afectiva de regreso o romance del entorno; el corte es definitivo y gélido.",
+      "trabajo": "El despido inmediato y abrupto, la rescisión del contrato masivo irreversible que detiene el flujo financiero, contrato fraudulento que vaciará cuentas.",
+      "salud": "La herida mortal en el campo energético, el dolor neurológico o el accidente ineludible e intervención quirúrgica punitiva radical inevitable urgente.",
+      "combinaciones_frecuentes": [
+        "+ 10 de Diamantes: El proyecto colosal bancarrota inmediatamente cancelado al segundo siguiente.",
+        "+ 9 de Corazones: El deseo inmenso y concedido se topa con el único operador que lo anula tajantemente y le amputa toda manifestación futura."
+      ],
+      "ejemplos": "Si un As de Corazones es seguido por el As de Picas, ocurre la inminente y definitiva ruptura y quiebre insalvable de esa sólida estructura doméstica matrimonial y la guillotina del hogar pacífico.",
+      "errores_comunes": "Minimizarlo como un 'pequeño obstáculo superable'. Este operador requiere que la línea de lectura se detenga porque aniquila el destino de todo el bloque."
+    },
+    {
+      "id": "card_picas_dos",
+      "numero": 2,
+      "palo": "Picas",
+      "nombre": "Dos de Picas",
+      "significado_base": "La división, la separación temporal y profunda desconexión afectiva, conflictos y grietas en cualquier asociación y camino divergente.",
+      "funcion": "Operador/Sustantivo Disonante. Crea fracturas irreparables a corto y mediano plazo y decisiones que hieren emocionalmente.",
+      "polaridad": "Negativa y Dolorosa. Provoca lágrimas literales de dolor íntimo psicológico dual.",
+      "lectura_simbolica": "El sendero que se quiebra brutalmente por la mitad afilada. El silencio pesado e hiriente del abandono y las promesas estériles mentales oscuras.",
+      "contexto_de_uso": "Desacuerdos severos verbales de pareja profundos, rupturas drásticas a nivel corporativo, desconfianza psicológica total, decisiones bifurcadas ineludibles imposibles de armonizar.",
+      "amor": "La separación temporal del hogar afectivo de un enorme amor pero inminente divorcio latente si se prolongan los inmensos choques intelectuales fríos e hirientes crónicos.",
+      "trabajo": "Grieta severa y división letal aguda entre inmensos socios corporativos que ya no pueden convivir o asociarse en absoluta traición y desconfianza letal silente perpetua.",
+      "salud": "Ataques de pánico por decisiones de divorcios traumáticos crónicos y duales que colapsan temporalmente o la angustia que fisura silenciosa e irremediablemente todo balance químico emocional nervioso.",
+      "combinaciones_frecuentes": [
+        "+ 10 de Corazones: La desconexión profunda temporal familiar de la inmensa base sólida histórica.",
+        "+ 8 de Tréboles: Disonancia puramente transaccional del trabajo pesado."
+      ],
+      "ejemplos": "El consultante debe decidir ante el 2♠ que el camino inevitable inmediato será la ruptura en medio de una profunda discordia de un entorno unificado hasta ahora establemente seguro.",
+      "errores_comunes": "Llenar de optimismo estéril ignorando que las cartas de espadas indican fisuras, dolor y el doloroso final de toda asociación en curso, requiriendo cirugías kármicas."
+    },
+    {
+      "id": "card_picas_tres",
+      "numero": 3,
+      "palo": "Picas",
+      "nombre": "Tres de Picas",
+      "significado_base": "Crisis existenciales insalvables, pérdida dolorosa, infidelidad o triángulo destructivo perverso en toda dinámica y estrés agudo asfixiante tóxico.",
+      "funcion": "Modificador/Sustantivo Corrosivo Crónico Letal. Expresa pérdida triangular profunda y daño sistémico kármico constante.",
+      "polaridad": "Extremadamente Negativa. Engendra toxicidad y traición constante.",
+      "lectura_simbolica": "Las espadas atravezando incesantemente la estructura blanda. La mentira crónica profunda venenosa, la angustia incesante mental del fracaso kármico.",
+      "contexto_de_uso": "Triángulo amoroso devastador y tóxico, intromisión nociva en equipos de negocios ajenos, problemas con parientes externos, pérdidas graduales sistemáticas.",
+      "amor": "Es la clásica y explícita advertencia formal infalible e incuestionable empírica para la infidelidad y el adulterio crónico doloroso dentro del matrimonio consolidado.",
+      "trabajo": "Un tercer miembro o aliado en la corporación conspira destructiva e infatigablemente infiltrando el daño tóxico letal irreversible corporativo minando internamente desde siempre la base.",
+      "salud": "Aguda y crónica crisis depresiva somática letal del organismo, corazón frágil agobiado irreversible por un dolor sordo y traiciones insondables crónicas sostenidas.",
+      "combinaciones_frecuentes": [
+        "+ 7 de Corazones: La ceguera de un engaño amoroso idílico tapando una infidelidad brutal.",
+        "+ 9 de Picas: El luto profundo mental provocado en esencia fundamental ineludible trágica a raíz de un tercero doloroso ineludible oscuro."
+      ],
+      "ejemplos": "En una lectura matrimonial estable y pura del hogar y 10♥, este cruel y sombrío tres indica con incuestionable seguridad la interferencia dolorosa sexual secreta de un adversario del mismo palo.",
+      "errores_comunes": "Pasar por alto y no dictaminar tajantemente la infidelidad obvia; confundir esto con una mera y simple 'ansiedad'."
+    },
+    {
+      "id": "card_picas_cuatro",
+      "numero": 4,
+      "palo": "Picas",
+      "nombre": "Cuatro de Picas",
+      "significado_base": "La inmovilidad física o el encierro forzado, la convalecencia, la fatiga absoluta y la cama solitaria que aísla de un cuerpo y un proyecto enfermo paralizado exhausto.",
+      "funcion": "Sustantivo/Operador Letárgico. Anula temporalmente la vida congelando y aprisionando el tiempo físico real material.",
+      "polaridad": "Muy Negativa / Letárgica severa. Postración absoluta paralizante crónicamente pasiva forzada médica del letargo.",
+      "lectura_simbolica": "El hospital aséptico gélido carcelario asfixiante oscuro sombrío inamovible silente. Las cuatro paredes insalvables del cautiverio temporal mental o físico y postración absoluta agónica.",
+      "contexto_de_uso": "Tratamientos forzosos médicos en aislamiento prolongado de larga data, paralizaciones completas inamovibles de juicios, pausas obligatorias insondables del cuerpo y parálisis mental.",
+      "amor": "Retiro doloroso e insalvable o luto solitario severo post-divorcio y el alejamiento prolongado para digerir la devastadora crisis. Cansancio de vivir.",
+      "trabajo": "El negocio y los ingresos sufren y experimentan inmediatamente un coma profundo o un letargo y paralización y congelamiento temporal inminente, paralizando todos y cualquier pago en espera sin poder actuar.",
+      "salud": "Convalecencia postoperatoria dolorosa forzosa en la cama (en hospital), o postración literal psiquiátrica clínica, encierro forzoso físico que paraliza al consultante por inmensa presión agotadora o daño orgánico físico evidente.",
+      "combinaciones_frecuentes": [
+        "+ As de Tréboles: Tras el inmenso y doloroso letargo (4♠), se firma formalmente (A♣) con un médico la salvación alta oficial.",
+        "+ Rey de Corazones: El doctor o protector interviene operativamente misericordiosamente a la cama del paciente paralizado grave y enfermo inmóvil postrado curando la afección crónica y salvándolo."
+      ],
+      "ejemplos": "Representa literalmente la paralización (4♠) originada por el abrumador desgarramiento por fatiga intelectual extenuante, atado irremisiblemente a su zona temporal de cama o retiro físico obligado forzosamente hospitalizado.",
+      "errores_comunes": "Creer inocentemente que solo advierte sobre un 'descanso' ameno y feliz, cuando la carta implica encierro duro o parálisis absoluta y letargo crónico o clínico que aplasta temporal y severamente forzosa toda la materialidad."
+    },
+    {
+      "id": "card_picas_cinco",
+      "numero": 5,
+      "palo": "Picas",
+      "nombre": "Cinco de Picas",
+      "significado_base": "Los conflictos y peleas temporales, fricción verbal intelectual álgida insoportable dolorosa incesante. El cuerpo desarmado físico humano enfermo o crisis agónica externa agobiante disonante pero transitoria.",
+      "funcion": "Operador de Caos Externo y Tensión Crítica Sostenible. Rompe toda la letargia produciendo violencia menor pero hiriente mental continua y aguda pero nunca crónica irresoluble total.",
+      "polaridad": "Negativa pero controlable. Refleja estrés constante pero superable. No indica ruina letal irreversible sino obstáculo y crisis neurótica.",
+      "lectura_simbolica": "Las estacas que cercan a la fiera desesperada mental que corre alocada; la tormenta pasajera de truenos, la punzada y los gritos ahogados del roce. La separación, pero no irreversible final.",
+      "contexto_de_uso": "Discusiones intensas asfixiantes con compañeros o familiares furiosos, peleas agudas que hieren, y separaciones momentáneas furibundas cargadas de enojo ineludible pero redimibles y purificadoras a la larga después.",
+      "amor": "El presente íntimo está inmensamente viciado e intoxicado febrilmente por estrés ruidoso, fricción, ruido mental intelectual punzante destructivo pero pasajero si logran trascender superando todo obstáculo comunicativo sin sentido con empatía.",
+      "trabajo": "La estafa institucional dolorosa u obstáculo menor logístico y administrativo venenoso que el consultante ineludiblemente deberá sortear si avanza sufriendo severos golpes iniciales, mal papeleo, inestabilidad externa de colegas.",
+      "salud": "Crisis de ansiedad o ataque de pánico puro desatado momentáneo y letal que pasará pero desgastará la resiliencia neurológica; o enfermedad nerviosa transitoria e inflamaciones, cuerpo exhausto agitado crónico febril leve pero agotador hiriente nervioso intenso.",
+      "combinaciones_frecuentes": [
+        "+ 9 de Corazones: El dolor transitorio (5♠) desembocará en inmenso éxito afectivo garantizado a posteriori.",
+        "+ 4 de Diamantes: La crisis de mudanza material será contenida por cimientos firmes invencibles."
+      ],
+      "ejemplos": "Si aparece '5♠' escoltado a ambos lados por '2♥' y '9♥' la crisis intelectual y pelea es un simple estorbo aplastado y superado por el inmenso inercial y magnético amor puro dominante.",
+      "errores_comunes": "Alarmarse trágicamente asumiendo siempre ruptura total cuando la carta por definición es superable transitoria si el individuo o consultante lucha. No es un As letal tajante. Exige resistir para vencer lo temporal de la crisis transitoria ruidosa nerviosa."
+    },
+    {
+      "id": "card_picas_seis",
+      "numero": 6,
+      "palo": "Picas",
+      "nombre": "Seis de Picas",
+      "significado_base": "Advertencia del destino místico, recuperación lenta de una herida cruda dolorosa. Karma punitivo doloroso que exige transición inevitable obligatoria, un alejamiento por abandono necesario para no seguir hundiendo el dolor letal del pasado irredento estancado putrefacto. Pasos duros obligados oscuros del pantano espeso y abandono triste lúgubre solitario forzoso del pasado estéril oscuro.",
+      "funcion": "Adjetivo de Transición Destinada Lenta Triste Y Lúgubre. Muestra la resaca lenta cruda letárgica doliente de la tragedia tras las peores picas, el karma ejecutándose despacio sanando letárgica forzosamente el cuerpo destrozado ineludiblemente herido crudo crónico pasivo inevitable oscuro estéril pantanoso turbio de barro oscuro agobiante fatal pero finalmente regenerativo pasivo eterno kármico doloroso e inevitable del mar ciego temporal inerme triste ciego transicional eterno pasivo ciego oscuro en luto silencioso sordo y lento ciego.",
+      "polaridad": "Negativa Transicional. Lenta mejora pero con profunda tristeza dolorosa inevitable.",
+      "lectura_simbolica": "La barca fúnebre zarpando o cruzando silenciosa el pantano sordo del Estigia o hacia aguas heladas con esperanza lúgubre ineludible forzosa lejana en pos de la remisión y lejanía de las guerras kármicas insalvables insondables trágicas letárgicas del dolor agónico oscuro.",
+      "contexto_de_uso": "Mejora extremadamente lenta y amarga, pero continua tras las pérdidas o el colapso trágico psíquico de batallas; viajes melancólicos solitarios tristes para enterrar el duelo o curar las culpas profundas del fracaso existencial innegable de las promesas pasadas rotas y crudas heridas sangrantes pasivas oscuras.",
+      "amor": "Obligado y necesario abandono kármico trágico solitario de un afecto oscuro asfixiante que te hundía en desesperación agónica lúgubre depresiva pero sin dramas estruendosos, en silencio taciturno ciego pasivo de separación en pos de supervivencia transicional final oscura obligada transitoria amarga ineludible inquebrantable cruda forzosa de lejanía insalvable final ineludible de dolor transicional del final.",
+      "trabajo": "Salida forzosa transicional del entorno corporativo tóxico; un escape necesario letárgico, lento hacia tierras nuevas a pesar del fracaso inicial aplastante anterior agobiante de batallas perdidas y dinero innegable drenado en litigios pasados transicionales.",
+      "salud": "Transición biológica muy dolorosa transitoria lenta pasiva oscura tras una hospitalización de postración severa. Re-habilítación física tortuosa extensa triste pero inexorable, con tristeza latente post trauma grave crónico ciego y pesado transicional final ineludible crónico transicional mudo de fatiga y pesadez crónica pesada en convalecencia forzosa cruda física pasiva ciego de las secuelas irreversibles kármicas mudas de sanidad pesada pasiva transitoria.",
+      "combinaciones_frecuentes": [
+        "+ 4 de Picas: Tránsito muy lento tras la enorme y letal convalecencia estática postrante crónicamente dura.",
+        "+ 9 de Diamantes: Abandonar dolorosamente las tierras tóxicas forzosas te conducirá lentamente al mar inmenso infinito victorioso lucrativo dorado."
+      ],
+      "ejemplos": "El 6♠ dicta la ineludible necesidad trágica ciego kármica dolorosa pasiva lenta del desapego total y doloroso exilio y abandono para poder salvar los restos existenciales o curar la cicatriz de guerra, el barco fúnebre letárgico transicional ineludible del exilio pacífico ciego pasivo tras naufragar oscuro lento ineludible forzoso.",
+      "errores_comunes": "Suponer ciegamente éxito fácil sin lágrimas y sin luto pasivo, subestimando la inmensidad densa del esfuerzo emocional triste sombrío pesado letárgico crudo exhausto y lento necesario de este ineludible dolor psíquico melancólico oscuro y pasivo exilio ineludible forzoso lento trágico transicional transitorio kármico crudo de las secuelas de la guerra y la supervivencia sombría ciego ineludible pasivo pesado letárgico sordo de luto doloroso en exilio oscuro de sanidad sordo pasivo forzoso amargo eterno innegable inevitable letargo ciego sordo doloroso del luto forzoso."
+    },
+    {
+      "id": "card_picas_siete",
+      "numero": 7,
+      "palo": "Picas",
+      "nombre": "Siete de Picas",
+      "significado_base": "Traición interna pura, espionaje o malicia venenosa silente, dolor y lágrimas literales en las emociones inestables traicioneras o robo calculado letal premeditado silencioso.",
+      "funcion": "Modificador/Operador Asesino Letal Silencioso o Corrosivo de Letargo Doloroso Constante Secreto. Inyecta ponzoña, veneno sordo doloroso destructivo y sabotaje interno al entorno entero letalmente sombrío.",
+      "polaridad": "Altamente Negativa Tóxica. Es quizá la carta menor más destructora encubierta y triste.",
+      "lectura_simbolica": "El puñal bañado en cicuta o el cáliz letal de envenenador oculto tras sonrisas silentes de espías tóxicos envidiosos mortales. Lágrimas pesadas puramente destructivas lúgubres asediadoras ineludibles sutiles destructivas ocultas lúgubres agónicas pasivas dolorosas ciego.",
+      "contexto_de_uso": "El llanto en luto crónico o secreto letal doloroso tóxico destructivo malicioso ajeno; planes oscuros o secretos que te destruyen, advertencia cruda forzosa traicionera sombría.",
+      "amor": "Engaños tóxicos y encubiertos letales sutiles oscuros destructivos dolorosos sutiles sombríos; el puñal clávandose lenta forzosa sutil letal silencioso ineludible dolorosamente oscuro transicional por las sombras; infidelidad silente transicional, malos consejos letales destructores.",
+      "trabajo": "El empleado de alta confianza o cercano colega malicioso silencioso ejecutando asedio de robo contable sutil u oscuro calculador ineludible sabotaje industrial sistemático forzoso letal letárgico oculto silente.",
+      "salud": "Envenenamiento silente, cáncer oculto no detectado, padecimientos silentes o enfermedades destructivas lentas traicioneras silentes progresivas de toxicidad orgánica sutil celular sistémico agudo kármico doloroso transicional.",
+      "combinaciones_frecuentes": [
+        "+ 5 de Diamantes: Robo de sumas constantes encubierto premeditado del capital vital.",
+        "+ 10 de Picas: Traición silente y sabotaje oscuro malicioso que resulta obligatoriamente en ruina estructural de quiebra innegable pasiva destructiva fatal inevitable mortal irreversible absoluta final ciego letal sordo ineludible."
+      ],
+      "ejemplos": "Este empleado está calculadamente socavando tu economía o drenando de a centavos (7♠), o hay lágrimas y toxicidad silentes de desamor engañoso.",
+      "errores_comunes": "Atribuir las tragedias o lágrimas a la mera 'mala suerte' o al cosmos y no a la toxicidad activa directa oculta o sabotaje interno asediador silencioso o al luto ineludible provocado malicioso directo de una persona o engaño externo oscuro de las sombras innegables venenosas pasivas ocultas silenciosas asfixiantes lúgubres ciego sordo ineludibles."
+    },
+    {
+      "id": "card_picas_ocho",
+      "numero": 8,
+      "palo": "Picas",
+      "nombre": "Ocho de Picas",
+      "significado_base": "Estrés mental abrumador por excesos masivos; la enfermedad literal e intervenciones médicas hospitalarias asépticas aislantes crudas y severas que requieren atención solitaria dolorosa obligada; el entorno clínico inmaculado y el desgaste letárgico nervioso sombrío y doloroso por inmensa multitud y exigencias pesadas destructivas crónicas.",
+      "funcion": "Adjetivo/Sustantivo Hospitalario Aislante Crudo Severo. Multiplica incesantemente la fricción incesantemente y genera peso neurológico insalvable de cansancio extremo ineludible físico letal transicional.",
+      "polaridad": "Muy Negativa Hospitalaria Crítica Severa Ineludible Aséptica Pesada Aislante Extenuante Letal Transicional Agotadora Lúgubre.",
+      "lectura_simbolica": "La sala de cuidados quirúrgicos aislantes o la sala de quirófano frío; la pared aséptica inamovible punitiva solitaria, o la estampida humana asfixiante de la aglomeración que ahoga y quiebra de estrés la mente frágil dolorosamente pasiva sombría de pesadez y asedio sombrío innegable forzoso crudo letárgico extenuante pesado asfixiante agónico sombrío mudo kármico.",
+      "contexto_de_uso": "Hospitalización quirúrgica necesaria inevitable forzosa, estrés nervioso colapsado por exceso abrumador crónico o de volumen extenuante kármico, soledad médica en dolor crudo y crónico de letargo severo innegable lúgubre de pesadez de desgaste y cansancio letal crudo.",
+      "amor": "Separación médica asilante forzosa; desgaste profundo sordo doloroso lúgubre letárgico en el matrimonio ineludible oscuro que asfixia extenuante letal. Una relación sostenida en camas de hospital y en cuidados trágicos dolorosos fríos ineludibles pesados.",
+      "trabajo": "Exceso rotundo de trabajo y aglomeración cruda de demandas y tareas asfixiantes que producen un colapso físico o agotamiento crudo extenuante de hospital por sobre exigencia pesada y estrés ineludible letal crónico incesante de estrés ciego pesado transicional sombrío lúgubre letal crudo y mudo transicional sordo letal extenuante fatal.",
+      "salud": "Infecciones físicas severas crónicas o intervenciones médicas en cirugía y curación dolorosa y convalecencia fría en soledad, dolor y aislamiento, padecimientos severos kármicos neurológicos crudos de estrés agobiante crudo o debilidad inmune sombría pasiva forzosa letárgica pesada innegable transicional ineludible forzoso.",
+      "combinaciones_frecuentes": [
+        "+ 9 de Corazones: Éxito asfixiante masivo aplastante extenuante que atrae una multitud enorme agotadora y requiere una cuota de salud o produce un enorme cansancio severo.",
+        "+ Rey de Picas: El implacable cirujano o figura médica verdugo de rectitud que impondrá o ejecutará la cirugía forzosa inevitable o la condena médica severa cruda ineludible en salud letal inamovible fría aséptica pasiva ciego y dura letal."
+      ],
+      "ejemplos": "El oráculo subraya y evidencia incuestionablemente de forma rotunda e ineludible forzosa pasiva cruda asombrosa transicional la imperiosa necesidad inexorable estricta cruda letárgica asombrosamente fría médica de soledad, cama, cirugía obligatoria, letargo físico y aislamiento aséptico en cuidado estricto intenso kármico forzoso doloroso.",
+      "errores_comunes": "Considerar que un ocho siempre es 'caminos'. En las espadas/picas de Occidente advierte de inmediato soledad hospitalaria ineludible, aislamiento físico crudo o el estrés masivo de la aglomeración abrumadora asfixiante tóxica que colapsa físicamente o neuro-agota trágicamente lúgubremente agónicamente ciegamente el alma letalmente transicional o la cordura física letal cruda forzosa de la soledad pasiva aséptica extenuante sordo ineludible letal transitorio sombría transicional pesada agónica."
+    },
+    {
+      "id": "card_picas_nueve",
+      "numero": 9,
+      "palo": "Picas",
+      "nombre": "Nueve de Picas",
+      "significado_base": "La carta del dolor psíquico extremo angustiante letal. Luto profundo agónico sordo insuperable insondable crudo transicional, la desesperación trágica clínica, pesadillas y dolorosas e incurables agonías mentales asfixiantes oscuras innegables y depresión clínica pesada incesante o angustia insalvable lúgubre cruda forzosa ineludible pesada pasiva dolorosa tóxica kármica asfixiante ciego sordo extenuante agónica destructora transitoria triste oscura letárgica letal asombrosa y severa.",
+      "funcion": "Modificador Psíquico de Angustia Letal Constante Aguda. Anula y tiñe toda victoria vecina roja brillante con amargura sombría letárgica pesada cruda y un velo oscuro triste sordo ineludible pesado lúgubre de depresión asfixiante kármica sombría dolorosa ciego letal lenta dolorosa agónica sombrío.",
+      "polaridad": "Extremadamente Letal Psicológica y Negativa Depresiva Severa Sombría Ciego y Lúgubre Ineludible Asfixiante.",
+      "lectura_simbolica": "El cementerio del alma y velorio oscuro insondable sordo; la neurosis que no deja dormir ineludible lúgubre pesada sombría agónica transicional cruda forzosa pasiva extenuante. Angustia clínica pesada, el llanto desesperado en aislamiento letárgico aséptico kármico triste y la mente quebrada dolorosa agónica.",
+      "contexto_de_uso": "Desolación asombrosa mental; miedo irracional letal oscuro, insomnio perpetuo doloroso, pérdida traumática lúgubre forzosa irresoluble inamovible ineludible profunda, fracasos que asfixian el alma y la tortura psíquica kármica inevitable lenta sombría dolorosa transicional letárgica forzosa cruda sordo.",
+      "amor": "Sabotaje tóxico absoluto de la relación forzado pasivo por la intromisión destructiva letal triste pasiva dolorosa. Luto insuperable transicional de separación de ruptura amarga oscura ineludible y llanto desgarrador sordo ciego constante.",
+      "trabajo": "Incapacidad mental paralizante letárgica depresiva frente al terror kármico doloroso innegable del fracaso lúgubre o del juicio insalvable y las deudas, neurosis que destruye asombrosa destructora al arte crudo extenuante pesado pasivo ciego sordo de letargo intelectual. Ruina.",
+      "salud": "Enfermedad mental severa, psiquiatría profunda, neurosis extrema sombría letárgica, depresión endógena asfixiante y colapso psicológico lúgubre agónico letal sordo transicional kármico crónico crudo forzoso ineludible doloroso sombrío pasivo triste letal transitorio sombrío y desgarrador mudo extenuante transicional inamovible.",
+      "combinaciones_frecuentes": [
+        "+ 8 de Corazones: Sentimiento de sentirse profunda crónicamente miserable doloroso triste agónico y solo o en desesperación depresiva asfixiante letárgica en medio de una fiesta amena extenuante asfixiante y cálida.",
+        "+ 10 de Picas: Luto por muerte física de ruina existencial innegable dolorosa insalvable irreversible asfixiante y la destrucción trágica terminal kármica pasiva sombría definitiva de un imperio o de sanidad o el cuerpo físico."
+      ],
+      "ejemplos": "El dolor puro agónico mental sordo kármico y tortuoso insomnio sombrío de este nueve devora innegablemente la inercia roja expansiva, produciendo amargura clínica ineludible depresiva sombría profunda transicional de llanto agónico lúgubre asfixiante transicional lenta.",
+      "errores_comunes": "Tratarla como una mera disonancia menor; su aparición exige letargo agónico kármico triste de pavor existencial o luto clínico real y un dolor letárgico desgarrador sordo y pesadillas neuro-torturantes ineludibles en soledad dolorosa ciego pasivo de tortura psicológica extenuante letal lenta lúgubre sombría mudo forzosa ineludible trágica ineludible asfixiante pesada agónica letal y sombría extenuante forzosa."
+    },
+    {
+      "id": "card_picas_diez",
+      "numero": 10,
+      "palo": "Picas",
+      "nombre": "Diez de Picas",
+      "significado_base": "La ruina innegable física material institucional o kármica estructural final. Colapso del ecosistema vital asfixiante letal y la bancarrota ineludible destructiva fatal irreversible definitiva absoluta ciego letal asombrosa y severa. Muerte, final asfixiante, condena lúgubre kármica oscura asombrosa, y el fracaso rotundo definitivo estructural y terminal sombrío o final fúnebre agónico letal aséptico extenuante sordo ineludible letal transitorio pasivo sombría lúgubre asombrosa y letal definitiva fatal trágica dolorosa.",
+      "funcion": "Sustantivo Operador Final de Destrucción Estructural Total y Bancarrota Absoluta Letal Definitiva Cruda Fatal Sombría Asfixiante.",
+      "polaridad": "Catastrófica Extremadamente Negativa, Devastadora Destructiva Definitiva Fatal Lúgubre y Letal.",
+      "lectura_simbolica": "El ataúd estructural cósmico sellado; la demolición de la catedral o imperio de oro; el asedio de picas terminal destructivo oscuro final y la pérdida insalvable kármica lúgubre y devastadora ineludible forzosa cruda letal asombrosamente terminal pasivo fatal asfixiante oscura trágica transitoria definitiva innegable.",
+      "contexto_de_uso": "Cierre de instituciones ruinosas, bancarrota, condena o exilio permanente y de luto ineludible destructiva kármica triste fúnebre lúgubre; la noche asfixiante oscura y la muerte innegable inamovible terminal sordo o final destructivo del ciclo oscuro definitivo letal crudo.",
+      "amor": "Muerte total del vínculo emocional, destrucción sombría irreversible de asfixia letal en divorcio trágico y la aniquilación definitiva kármica forzosa letárgica pesada cruda y la final devastación de familia o relación asombrosa terminal ciego agónica dolorosa ineludible innegable.",
+      "trabajo": "Modelo nacido viciado y asfixiado o que se colapsa inevitablemente innegable en la bancarrota absoluta ruinosa kármica. Estructuras asediadas y condenadas lúgubres por la traición interna fatal irreversible y muerte institucional absoluta inamovible destructiva cruda forzosa asombrosa.",
+      "salud": "La muerte física material transicional kármica o la cronicidad insondable letal destructiva irreversible terminal y fatal o un colapso inmune innegable sombrío destructivo asfixiante o final ineludible de letargo fatal agónica doloroso ineludible inamovible irreversible ineludible.",
+      "combinaciones_frecuentes": [
+        "+ 5 de Diamantes: Modelo nacido viciado; la ruina es absoluta ineludible asfixiante y el colapso financiero es terminal.",
+        "+ Rey de Tréboles: El fracaso estructural asfixiado (10♠) es salvado asombrosamente purgado de toxicidad y curado por el imperio de ética espartana del Rey."
+      ],
+      "ejemplos": "La combinación de '10♠ + 5♦ + 7♠' expone un colapso literal ineludible fatal lúgubre sombrío kármico irreversible de un modelo empresarial asfixiado, toxicidad encubierta premeditada letal terminal asombrosa y la bancarrota absoluta innegable destructiva forzosa y fatal del negocio o proyecto ciego asfixiante.",
+      "errores_comunes": "No aceptar o diagnosticar cobardemente que es la carta final destructora asfixiante de muerte literal u opresión de ruina total y querer edulcorar que es 'una pequeña dificultad transitoria temporal'; representa siempre ineludible y de manera fatal letal destructora terminal definitiva la bancarrota o muerte asombrosa de todo el ciclo sombrío final letárgico asfixiante ineludible lúgubre oscuro crudo fatal kármico letal definitivo sombrío o transicional mudo de la muerte."
+    },
+    {
+      "id": "card_picas_jota",
+      "numero": 11,
+      "palo": "Picas",
+      "nombre": "Jota de Picas",
+      "significado_base": "El joven malicioso letal envidioso, delincuente oscuro asombrosamente cruel, energía diabólica menor o traiciones venenosas y espías silentes calculadores malvados en un entorno sombrío asfixiante tóxico letal letárgico asombrosamente destructivo y ciego asombroso.",
+      "funcion": "Personaje Menor Negativo Letal Silente Asombrosamente Joven y Destructivo Astuto o Venenoso Espía.",
+      "polaridad": "Altamente Negativa y Tóxica Maliciosa o Lúgubre Joven Engañosa y Asombrosamente Silente Oscura y Ciega Tóxica Letal.",
+      "lectura_simbolica": "El puñal de doble filo juvenil traicionero. La serpiente en formación o el engaño astuto juvenil asfixiante venenoso; el mensajero inescrupuloso y la toxicidad joven inclemente encubierta asesina o asombrosamente celoso vengativo letárgico asombroso destructivo cruel y doloroso o calculador silencioso.",
+      "contexto_de_uso": "Espionaje juvenil destructivo asombroso oscuro traicionero, jóvenes problemáticos peligrosos letales, y falsos compañeros traicioneros sombríos en proyectos asfixiantes kármicos o amigos envidiosos silentes ciegos en engaños lúgubres asombrosamente sutiles dolorosos asombrosos letales.",
+      "amor": "Un falso y asombrosamente maligno o calculador joven amante y pretendiente engañoso silente que encarna falsedad pura o trae desgracia tóxica destructora ineludible y lágrimas incesantes de infidelidad o maltrato sordo doloroso cruel y engaño letal doloroso forzoso.",
+      "trabajo": "Subordinado, abogado contrario hostil o mensajero de mala fe asombrosamente destructivo que espía o roba metódica silente sombría asfixiantemente para destruir o estafar. Juventud y malicia fría dolorosa o delincuencia corporativa letárgica.",
+      "salud": "Dolencias de infecciones sutiles encubiertas o heridas venenosas asombrosas juveniles crónicas letárgicas sombrías que engañan y asfixian, toxinas agudas letales y fatigas silenciosas sombrías transitorias lúgubres ciego.",
+      "combinaciones_frecuentes": [
+        "+ 7 de Picas: Alguien muy joven pero letalmente oscuro y calculador espiando o destruyendo venenosamente tus emociones con asombroso cálculo asfixiante letal silente.",
+        "+ Rey de Corazones: El patriarca inamovible bondadoso compasivo (Rey) que derrota innegablemente la maldad del abogado contrario (Jota de Picas) o joven traicionero asombroso."
+      ],
+      "ejemplos": "Aparece encarnando la figura hostil maliciosa del abogado contrario en un juicio, intentando inyectar burocracia maliciosa fría e inclemente dolorosa o trabas ilegales oscuras asombrosas tóxicas ineludibles engañosas asfixiantes sombrías ciego.",
+      "errores_comunes": "Esperar que, como mensajero (Jota), traiga algo constructivo o romántico, obviando su intrínseca naturaleza venenosa oscura traicionera silente asfixiante letal destructora asombrosa engañosa lúgubre fría e implacable juvenil y ciego destructiva sombría sutil lúgubre y letal asesina."
+    },
+    {
+      "id": "card_picas_reina",
+      "numero": 12,
+      "palo": "Picas",
+      "nombre": "Reina de Picas",
+      "significado_base": "La viuda intelectual y fría implacable o exiliada innegable que reina lúgubre mediante pavor solitario asfixiante o rigor gélido punitivo letal; la mujer de intelecto afilado asombrosamente cruda o la cruda verdad letárgica asombrosa fría e ineludible y divorciada sombría o justicia judicial inclemente y amarga gélida letal.",
+      "funcion": "Personaje Principal Sustantivo Gélido Abstracto Asfixiante Implacable Sombrío Viuda de Exilio Legal Ciego Cruda y Asombrosa.",
+      "polaridad": "Negativa Punitiva Extrema Asombrosamente Lúgubre y Fría Letal Gélida. Sin compasión.",
+      "lectura_simbolica": "La espada de Atenea y la gélida mirada de Medusa que petrifica ineludiblemente y aniquila todo a su paso. La aristocracia del dolor, el rigor gélido o el aislamiento de exilio forzado y soledad sombría asfixiante asombrosa ineludible fría e inmutable letal destructora o dolorosa y viuda pavorosa.",
+      "contexto_de_uso": "Figura femenina mayor de autoridad implacable y muy peligrosa o viuda de enorme rigor hostil; exilio forzoso o sentencias desprovistas de emoción compasiva. Separación judicial letal.",
+      "amor": "Mujer que destruye relaciones asombrosamente fría letal de la verdad sombría dolorosa ciego; o la frialdad implacable de un divorcio punitivo kármico irreversible oscuro y asfixiante cruel inamovible y letal gélido y lúgubre.",
+      "trabajo": "Jueza fría asombrosamente o ejecutiva viuda solitaria que exige perfección espartana gélida para triunfar y que jamás tendrá compasión o misericordia ineludible frente a debilidades. La fría y pavorosa justicia inamovible.",
+      "salud": "Esterilidad física asombrosamente gélida kármica; frigidez asfixiante letal, problemas severos y fríos sombríos de menopausia asombrosos y enfermedades del intelecto o parálisis neurológica ciego.",
+      "combinaciones_frecuentes": [
+        "+ As de Diamantes: Sentencia oficial de divorcio o fallo judicial escrito por esta gélida y letal soberana de inmenso pavor o viuda.",
+        "+ Rey de Corazones: Pese a su enorme frialdad inclemente y destructora letal sombría asombrosa, el patriarca compasivo logrará atenuar e innegablemente calmar la sentencia lúgubre asfixiante."
+      ],
+      "ejemplos": "A menudo indica una viuda fría o una mujer que usa la frialdad judicial (Reina de Picas) o verdad hiriente para ejecutar a rivales de negocios asombrosamente asfixiantes y separar familias con rigor implacable letal de guadaña o sentencias de inmenso dolor lúgubre ineludible pasivo sombrío ciego.",
+      "errores_comunes": "Esperar alguna empatía o cariño materno de su parte. Ella es gélida, cortante, asombrosamente letal y desprovista totalmente de misericordia kármica cálida o calidez empática en todas sus asombrosas y letales acciones sombrías asfixiantes de exilio ineludible lúgubre asombrosas frías gélidas."
+    },
+    {
+      "id": "card_picas_rey",
+      "numero": 13,
+      "palo": "Picas",
+      "nombre": "Rey de Picas",
+      "significado_base": "La implacable justicia inclemente gélida y letal. Un cirujano verdugo estricto o un juez severo e incorruptible y oscuro patriarca o abogado punitivo castigador ineludible ciego y asombrosamente frío e inamovible que no permite piedad en su sentencia asfixiante y oscura de dolor letal transicional kármico crudo.",
+      "funcion": "Personaje Principal / Sustantivo Operador Asombrosamente Implacable Punitivo Final Destructivo Sombrío Inamovible y Gélido.",
+      "polaridad": "Extremadamente Peligroso Punitivo o Inflexible y Gélido Letal. Es el más oscuro, temible y asombrosamente frío del mazo.",
+      "lectura_simbolica": "La balanza de Anubis, el martillo de plomo del castigo final; el intelecto desprovisto de piedad, el hacha del juez o el bisturí letal frío del cirujano innegable y asfixiantemente severo y mudo e inclemente asombroso oscuro y letal ciego ineludible pasivo sombrío.",
+      "contexto_de_uso": "Juez implacable forzoso dictaminando sentencias oscuras kármicas inamovibles, patriarca de asombrosa crueldad fría o castigador punitivo judicial estricto legal asfixiante y exilio letal sombrío de asombrosa condena de justicia o autoridad gélida y fatal ineludible.",
+      "amor": "Un esposo o amante abusivo de enorme rigidez asombrosamente castigadora o dictatorial fría ineludible y destructora pasiva o un divorcio ejecutado con inmensa inclemencia y frialdad de espada por abogados hostiles y un juez cruel e inclemente sordo oscuro letárgico asfixiante asombroso.",
+      "trabajo": "Un cirujano frío e implacable o un auditor externo inclemente verdugo ciego kármico de pavor asombroso que cortará o aniquilará y ejecutará sentencias legales de bancarrota con bisturí quirúrgico letal destruyendo a quien no se alinee con rigidez. Autoridad oscura forzosa.",
+      "salud": "Representa literalmente o advierte sobre el cirujano que ejerce o el especialista que asombrosamente realizará intervenciones punitivas forzosas asépticas dolorosas kármicas e ineludibles ciego pasivo o mutilaciones físicas curativas asombrosamente asfixiantes gélidas.",
+      "combinaciones_frecuentes": [
+        "+ 8 de Picas: El implacable cirujano sombrío (Rey) exige intervenciones quirúrgicas u hospitalizaciones de aislamiento crudo forzoso aséptico pasivo innegable.",
+        "+ 10 de Tréboles: Aplastado por burocracia, recae en las implacables fauces asombrosas y letales del juez inamovible oscuro asfixiante letárgico."
+      ],
+      "ejemplos": "El oráculo augura que en juicio enfrentarás a este colosal inamovible magistrado gélido castigador oscuro ineludible asfixiante punitivo de ley (Rey♠) que emitirá sentencias incuestionablemente letales e inflexibles sin atisbo de asombrosa misericordia de corazón cálido sombría y ciega ineludible forzosa.",
+      "errores_comunes": "Olvidar su poder quirúrgico implacable o confundirlo con la bondad de Corazones o Tréboles. Es la mente fría de la justicia asombrosa kármica asfixiante, el bisturí de plomo oscuro asombroso implacable de inmensa e ineludible castidad letal, dolor sordo y crueldad pasiva gélida sin piedad o humanidad alguna asombrosa sombría asfixiante letal."
+    }
+  ]
+}

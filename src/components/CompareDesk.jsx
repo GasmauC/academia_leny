@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { cardsDictionary } from '../data/db/lenormand_cards';
+import { cardsDictionary as lenormandCardsDictionary } from '../data/db/lenormand_cards';
+import { pokerCardsDictionary } from '../data/db/poker_cards';
 import { comparisonCategories } from '../data/db/advanced_comparisons';
 import { 
   SplitSquareVertical, 
@@ -30,15 +31,22 @@ const iconMap = {
   users: Users
 };
 
-const CompareDesk = ({ onClose }) => {
-  const [activeTab, setActiveTab] = useState('teorico'); // 'teorico' | 'manual'
+const CompareDesk = ({ onClose, activeModule = 'lenormand' }) => {
+  const isPoker = activeModule === 'poker';
+  const currentDict = isPoker ? pokerCardsDictionary : lenormandCardsDictionary;
+  const accentText = isPoker ? 'text-red-500' : 'text-leny-accent';
+  const accentBorder = isPoker ? 'border-red-500' : 'border-leny-accent';
+  const accentBg = isPoker ? 'bg-red-500' : 'bg-leny-accent';
+  const accentShadow = isPoker ? 'shadow-[0_0_15px_rgba(239,68,68,0.3)]' : 'shadow-[0_0_15px_rgba(205,174,104,0.3)]';
+
+  const [activeTab, setActiveTab] = useState(isPoker ? 'manual' : 'teorico'); // 'teorico' | 'manual'
   
   // Estado para el Modo Teórico
   const [activeCategory, setActiveCategory] = useState(comparisonCategories[0].id);
   const [activeComparisonData, setActiveComparisonData] = useState(comparisonCategories[0].comparisons[0]);
 
   // Estado para el Modo Manual
-  const [manualCards, setManualCards] = useState([1, 3]);
+  const [manualCards, setManualCards] = useState(isPoker ? [1, 2] : [1, 3]);
   const [isOpenMenu, setIsOpenMenu] = useState({ 0: false, 1: false });
 
   // HANDLERS MODO TEORICO
@@ -51,8 +59,8 @@ const CompareDesk = ({ onClose }) => {
   const currentCatData = comparisonCategories.find(c => c.id === activeCategory);
 
   // HANDLERS MODO MANUAL
-  const manualCard1 = cardsDictionary.find(c => c.id === manualCards[0]);
-  const manualCard2 = cardsDictionary.find(c => c.id === manualCards[1]);
+  const manualCard1 = currentDict.find(c => c.id === manualCards[0]);
+  const manualCard2 = currentDict.find(c => c.id === manualCards[1]);
 
   const handleManualSelect = (index, cardId) => {
     const newSelection = [...manualCards];
@@ -76,16 +84,16 @@ const CompareDesk = ({ onClose }) => {
 
       {isOpenMenu[index] && (
         <div className="absolute top-16 left-0 right-0 bg-leny-darker border border-white/10 rounded-lg shadow-2xl overflow-hidden max-h-80 overflow-y-auto z-50">
-          {cardsDictionary.map(c => (
+          {currentDict.map(c => (
             <button
               key={c.id}
               disabled={manualCards.includes(c.id) && manualCards.indexOf(c.id) !== index}
               onClick={() => handleManualSelect(index, c.id)}
               className={`w-full text-left px-4 py-3 flex items-center gap-3 hover:bg-white/5 transition-colors ${
                 manualCards.includes(c.id) && manualCards.indexOf(c.id) !== index ? 'opacity-30 cursor-not-allowed' : ''
-              } ${currentCard.id === c.id ? 'bg-leny-accent/10 border-l-2 border-leny-accent' : ''}`}
+              } ${currentCard.id === c.id ? `${accentBg}/10 border-l-2 ${accentBorder}` : ''}`}
             >
-              <span className="text-xl">{c.emoji}</span>
+              <span className={`text-xl ${isPoker && c.color === 'rojo' ? 'text-red-500' : isPoker ? 'text-gray-300' : ''}`}>{c.emoji}</span>
               <span className="text-white">{c.name}</span>
             </button>
           ))}
@@ -99,7 +107,7 @@ const CompareDesk = ({ onClose }) => {
       {/* HEADER PRINCIPAL */}
       <div className="p-6 border-b border-white/5 bg-leny-darker/50 shrink-0 flex flex-col md:flex-row gap-6 md:items-center justify-between relative z-30">
         <div className="flex items-center gap-3">
-          <SplitSquareVertical className="w-7 h-7 text-leny-accent" />
+          <SplitSquareVertical className={`w-7 h-7 ${accentText}`} />
           <div>
             <h2 className="text-2xl font-serif text-white uppercase tracking-wider">Laboratorio Comparativo</h2>
             <p className="text-xs text-leny-dim">Desmitificando confusiones semánticas</p>
@@ -107,15 +115,17 @@ const CompareDesk = ({ onClose }) => {
         </div>
 
         <div className="flex items-center gap-2 bg-black/40 p-1 rounded-full border border-white/5">
-          <button 
-            onClick={() => setActiveTab('teorico')}
-            className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all ${activeTab === 'teorico' ? 'bg-leny-accent text-leny-dark shadow-[0_0_15px_rgba(205,174,104,0.3)]' : 'text-white/50 hover:text-white'}`}
-          >
-            <BookOpen className="w-4 h-4" /> Pares Frecuentes
-          </button>
+          {!isPoker && (
+            <button 
+              onClick={() => setActiveTab('teorico')}
+              className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all ${activeTab === 'teorico' ? `${accentBg} text-black ${accentShadow}` : 'text-white/50 hover:text-white'}`}
+            >
+              <BookOpen className="w-4 h-4" /> Pares Frecuentes
+            </button>
+          )}
           <button 
             onClick={() => setActiveTab('manual')}
-            className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all ${activeTab === 'manual' ? 'bg-leny-accent text-leny-dark shadow-[0_0_15px_rgba(205,174,104,0.3)]' : 'text-white/50 hover:text-white'}`}
+            className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all ${activeTab === 'manual' ? `${accentBg} text-black ${accentShadow}` : 'text-white/50 hover:text-white'}`}
           >
             <ArrowLeftRight className="w-4 h-4" /> Sandbox Libre
           </button>
@@ -165,8 +175,8 @@ const CompareDesk = ({ onClose }) => {
                 <div className="flex flex-wrap gap-3">
                   {currentCatData?.comparisons.map(comp => {
                     const isActive = activeComparisonData.id === comp.id;
-                    const c1 = cardsDictionary.find(c => c.id === comp.cards[0]);
-                    const c2 = cardsDictionary.find(c => c.id === comp.cards[1]);
+                    const c1 = currentDict.find(c => c.id === comp.cards[0]);
+                    const c2 = currentDict.find(c => c.id === comp.cards[1]);
                     return (
                       <button
                         key={comp.id}
@@ -184,8 +194,8 @@ const CompareDesk = ({ onClose }) => {
 
               {/* Arena de Batalla */}
               {activeComparisonData && (() => {
-                const c1 = cardsDictionary.find(c => c.id === activeComparisonData.cards[0]);
-                const c2 = cardsDictionary.find(c => c.id === activeComparisonData.cards[1]);
+                const c1 = currentDict.find(c => c.id === activeComparisonData.cards[0]);
+                const c2 = currentDict.find(c => c.id === activeComparisonData.cards[1]);
 
                 return (
                   <div className="max-w-4xl max-w-5xl mx-auto space-y-8 animate-fade-in fade-in">
@@ -287,7 +297,7 @@ const CompareDesk = ({ onClose }) => {
               <div className="flex flex-col md:flex-row gap-6 relative">
                 {/* Divisor VS Central */}
                 <div className="hidden md:flex absolute inset-y-0 left-1/2 -translate-x-1/2 items-center justify-center z-10">
-                  <div className="w-12 h-12 bg-leny-darker border border-leny-accent/30 rounded-full flex items-center justify-center shadow-lg text-leny-accent font-bold font-serif shadow-[0_0_15px_rgba(201,162,39,0.2)]">
+                  <div className={`w-12 h-12 bg-leny-darker border ${accentBorder}/30 rounded-full flex items-center justify-center shadow-lg ${accentText} font-bold font-serif ${accentShadow}`}>
                     VS
                   </div>
                 </div>
@@ -322,7 +332,7 @@ const CompareDesk = ({ onClose }) => {
 
                 {/* Divisor Móvil */}
                 <div className="flex md:hidden items-center justify-center my-4">
-                  <div className="w-10 h-10 bg-leny-darker border border-leny-accent/30 rounded-full flex items-center justify-center text-leny-accent font-bold font-serif">
+                  <div className={`w-10 h-10 bg-leny-darker border ${accentBorder}/30 rounded-full flex items-center justify-center ${accentText} font-bold font-serif`}>
                     VS
                   </div>
                 </div>
@@ -357,13 +367,13 @@ const CompareDesk = ({ onClose }) => {
               </div>
 
               {/* Botones de Verbo de Acción */}
-              <div className="bg-leny-accent/5 border border-leny-accent/30 rounded-xl p-8 mt-8 text-center max-w-4xl mx-auto shadow-[0_0_30px_rgba(201,162,39,0.05)]">
-                <CheckCircle2 className="w-8 h-8 text-leny-accent mx-auto mb-4" />
-                <h3 className="text-lg font-bold text-leny-accent uppercase tracking-widest mb-4">Destilación de Verbos de Acción</h3>
+              <div className={`${accentBg}/5 border ${accentBorder}/30 rounded-xl p-8 mt-8 text-center max-w-4xl mx-auto shadow-[0_0_30px_rgba(201,162,39,0.05)]`}>
+                <CheckCircle2 className={`w-8 h-8 ${accentText} mx-auto mb-4`} />
+                <h3 className={`text-lg font-bold ${accentText} uppercase tracking-widest mb-4`}>Destilación de Verbos de Acción</h3>
                 <p className="text-white text-lg leading-relaxed">
-                  <span className="opacity-75">La esencia activa de</span> <strong className="text-leny-accent">{manualCard1.name}</strong> <span className="opacity-75">se resume en</span> <em className="italic bg-black/40 px-2 py-1 rounded">"{manualCard1.actionVerb}"</em>.
+                  <span className="opacity-75">La esencia activa de</span> <strong className={accentText}>{manualCard1?.name}</strong> <span className="opacity-75">se resume en</span> <em className="italic bg-black/40 px-2 py-1 rounded">"{manualCard1?.actionVerb}"</em>.
                   <br className="my-2"/>
-                  <span className="opacity-75">La esencia activa de</span> <strong className="text-leny-accent"> {manualCard2.name}</strong> <span className="opacity-75">se dirige hacia</span> <em className="italic bg-black/40 px-2 py-1 rounded">"{manualCard2.actionVerb}"</em>.
+                  <span className="opacity-75">La esencia activa de</span> <strong className={accentText}> {manualCard2?.name}</strong> <span className="opacity-75">se dirige hacia</span> <em className="italic bg-black/40 px-2 py-1 rounded">"{manualCard2?.actionVerb}"</em>.
                 </p>
               </div>
 

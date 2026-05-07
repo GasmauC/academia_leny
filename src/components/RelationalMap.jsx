@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import ForceGraph2D from 'react-force-graph-2d';
-import { cardsDictionary } from '../data/db/lenormand_cards';
+import { cardsDictionary as lenormandCardsDictionary } from '../data/db/lenormand_cards';
+import { pokerCardsDictionary } from '../data/db/poker_cards';
 import { comparisonCategories } from '../data/db/advanced_comparisons';
 import { semanticDictionary } from '../data/db/semantic_dictionary';
 import { LenormandAPI } from '../data/api';
@@ -20,7 +21,18 @@ const spreadsData = [
   { id: 'dailyCard', label: 'Carta Diaria', cards: [2] }
 ];
 
-function generateGraphForPath(path) {
+// === POKER SUITS MAP ===
+const pokerSuitsData = [
+  { id: 'Corazones', name: 'Corazones', emoji: '♥', color: '#ef4444', desc: 'Emociones y Relaciones' },
+  { id: 'Tréboles', name: 'Tréboles', emoji: '♣', color: '#d1d5db', desc: 'Trabajo y Esfuerzo' },
+  { id: 'Diamantes', name: 'Diamantes', emoji: '♦', color: '#ef4444', desc: 'Material y Finanzas' },
+  { id: 'Picas', name: 'Picas', emoji: '♠', color: '#d1d5db', desc: 'Desafíos y Obstáculos' }
+];
+
+function generateGraphForPath(path, activeModule = 'lenormand') {
+  const isPoker = activeModule === 'poker';
+  const cardsDictionary = isPoker ? pokerCardsDictionary : lenormandCardsDictionary;
+  
   const nodes = [];
   const links = [];
 
@@ -48,15 +60,33 @@ function generateGraphForPath(path) {
 
   // NIVEL 1: MACRO UNIVERSO
   if (currentLevel.type === 'universe') {
-      semanticDictionary.forEach(sem => {
-          addNode(`concept-${sem.concept}`, sem.concept.toUpperCase(), 'concept', 40, '☀️', sem, 'rgba(205,174,104,0.9)');
-      });
-      // Nodo especial extra para "Módulos de Práctica" si queremos, pero lo mantendremos limpio a Solo Conceptos
+      if (isPoker) {
+          pokerSuitsData.forEach(suit => {
+              addNode(`concept-${suit.id}`, suit.name.toUpperCase(), 'concept', 45, suit.emoji, { concept: suit.id, context: suit.desc }, suit.color);
+          });
+      } else {
+          semanticDictionary.forEach(sem => {
+              addNode(`concept-${sem.concept}`, sem.concept.toUpperCase(), 'concept', 40, '☀️', sem, 'rgba(205,174,104,0.9)');
+          });
+      }
       return { nodes, links };
   }
 
-  // NIVEL 2: EXPANSIÓN DE CONCEPTO
+  // NIVEL 2: EXPANSIÓN DE CONCEPTO / PALO
   if (currentLevel.type === 'concept') {
+      if (isPoker) {
+          const suitId = currentLevel.id.split('-')[1];
+          const suit = pokerSuitsData.find(s => s.id === suitId);
+          addNode(`concept-${suit.id}`, suit.name.toUpperCase(), 'concept', 55, suit.emoji, { concept: suit.id, context: suit.desc }, suit.color);
+          
+          cardsDictionary.filter(c => c.suit === suitId).forEach(cCard => {
+              let cColor = cCard.color === 'rojo' ? '#ef4444' : '#d1d5db';
+              addNode(`card-${cCard.id}`, `${cCard.number}. ${cCard.name}`, 'card', 25, cCard.emoji, cCard, cColor);
+              addLink(`concept-${suit.id}`, `card-${cCard.id}`, 'medium', 'Pertenece al Palo');
+          });
+          return { nodes, links };
+      }
+
       const sem = currentLevel.data;
       addNode(`concept-${sem.concept}`, sem.concept.toUpperCase(), 'concept', 50, '☀️', sem, 'rgba(205,174,104,0.9)');
       
@@ -82,19 +112,30 @@ function generateGraphForPath(path) {
   // NIVEL 3/4: EXPANSIÓN DE CARTA
   if (currentLevel.type === 'card') {
       const card = currentLevel.data;
-      let cColor = card.polarity.includes('+') ? '#34d399' : card.polarity.includes('-') ? '#f87171' : '#a1a1aa';
+      let cColor = isPoker 
+        ? (card.color === 'rojo' ? '#ef4444' : '#d1d5db') 
+        : (card.polarity.includes('+') ? '#34d399' : card.polarity.includes('-') ? '#f87171' : '#a1a1aa');
       addNode(`card-${card.id}`, `${card.number}. ${card.name}`, 'card', 50, card.emoji, card, cColor);
 
       // 1. Conceptos a los que pertenece (Orígenes)
-      semanticDictionary.forEach(sem => {
-          if (sem.primaryCardId === card.id || sem.relatedCardIds.includes(card.id)) {
-              addNode(`concept-${sem.concept}`, sem.concept.toUpperCase(), 'concept', 25, '☀️', sem, 'rgba(205,174,104,0.6)');
-              addLink(`card-${card.id}`, `concept-${sem.concept}`, sem.primaryCardId === card.id ? 'strong' : 'medium', 'Pertenece a la esfera de');
+      if (isPoker) {
+          const suit = pokerSuitsData.find(s => s.id === card.suit);
+          if (suit) {
+              addNode(`concept-${suit.id}`, suit.name.toUpperCase(), 'concept', 35, suit.emoji, { concept: suit.id, context: suit.desc }, suit.color);
+              addLink(`card-${card.id}`, `concept-${suit.id}`, 'strong', 'Gobierna el ámbito de');
           }
-      });
+      } else {
+          semanticDictionary.forEach(sem => {
+              if (sem.primaryCardId === card.id || sem.relatedCardIds.includes(card.id)) {
+                  addNode(`concept-${sem.concept}`, sem.concept.toUpperCase(), 'concept', 25, '☀️', sem, 'rgba(205,174,104,0.6)');
+                  addLink(`card-${card.id}`, `concept-${sem.concept}`, sem.primaryCardId === card.id ? 'strong' : 'medium', 'Pertenece a la esfera de');
+              }
+          });
+      }
 
-      // 2. Batallas Semánticas (Roces)
-      comparisonCategories.forEach(cat => {
+      // 2. Batallas Semánticas (Roces) - Solo Lenormand por ahora
+      if (!isPoker) {
+          comparisonCategories.forEach(cat => {
           cat.comparisons.forEach(comp => {
               if (comp.cards.includes(card.id)) {
                   addNode(`comp-${comp.id}`, comp.title, 'comparison', 25, '⚔️', { catId: cat.id, comp }, '#a78bfa');
@@ -108,7 +149,8 @@ function generateGraphForPath(path) {
                   }
               }
           });
-      });
+          });
+      }
 
       // 3. Tiradas donde brilla (Práctica)
       spreadsData.forEach(sp => {
@@ -154,7 +196,7 @@ function generateGraphForPath(path) {
 }
 
 
-const RelationalMap = ({ onClose, onNavigate }) => {
+const RelationalMap = ({ onClose, onNavigate, activeModule = 'lenormand' }) => {
   const fgRef = useRef();
   const [windowDimensions, setWindowDimensions] = useState({ width: window.innerWidth, height: window.innerHeight });
   
@@ -168,7 +210,7 @@ const RelationalMap = ({ onClose, onNavigate }) => {
   const [hoverNode, setHoverNode] = useState(null);
 
   // GRAFÍA ACTUAL
-  const graphData = useMemo(() => generateGraphForPath(history), [history]);
+  const graphData = useMemo(() => generateGraphForPath(history, activeModule), [history, activeModule]);
 
   useEffect(() => {
     const handleResize = () => setWindowDimensions({ width: window.innerWidth, height: window.innerHeight });
@@ -311,8 +353,8 @@ const RelationalMap = ({ onClose, onNavigate }) => {
             {/* Header del Panel */}
             <div className={`p-6 border-b border-white/10 ${node.id === currentLevel.id ? 'bg-leny-accent/5' : 'bg-white/5'} shrink-0`}>
                 <div className="flex justify-between items-start mb-2">
-                    <span className="text-[10px] text-leny-accent font-bold uppercase tracking-widest px-2 py-1 bg-white/10 inline-block rounded">
-                        Info: {node.nodeType === 'spread' ? 'Módulo de Tirada' : node.nodeType === 'concept' ? 'Familia Conceptual' : node.nodeType === 'comparison' ? 'Batalla Semántica' : 'Carta'}
+                    <span className={`text-[10px] ${activeModule==='poker' ? 'text-red-400' : 'text-leny-accent'} font-bold uppercase tracking-widest px-2 py-1 bg-white/10 inline-block rounded`}>
+                        Info: {node.nodeType === 'spread' ? 'Módulo de Tirada' : node.nodeType === 'concept' ? (activeModule==='poker' ? 'Palo Principal' : 'Familia Conceptual') : node.nodeType === 'comparison' ? 'Batalla Semántica' : 'Carta'}
                     </span>
                     {selectedNode && (
                        <button onClick={() => setSelectedNode(null)} className="text-white/40 hover:text-white p-1 hover:bg-white/10 rounded transition-colors" title="Cerrar Foco"><X size={16}/></button>
