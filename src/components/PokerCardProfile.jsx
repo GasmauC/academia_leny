@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BookOpen, AlertTriangle, Sparkles, Layers, History, Hash, Network, ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react';
+import { BookOpen, AlertTriangle, Sparkles, Layers, History, Hash, Network, ChevronLeft, ChevronRight, CheckCircle2, Target } from 'lucide-react';
 import EditorialText from './EditorialText';
 import pokerCardsTheory from '../data/db/poker_cards_theory.json';
 import { pokerExercisesBank } from '../data/poker_exercises_bank';
