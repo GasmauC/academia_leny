@@ -51,7 +51,8 @@ export default function PokerExamplesBank() {
       return {
         value: valueStr,
         suit: data.emoji,
-        meaning: data.meaning
+        meaning: data.meaning,
+        name: data.name
       };
     });
   };

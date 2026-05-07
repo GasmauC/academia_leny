@@ -8,6 +8,7 @@ export default function PokerCard({
   value, 
   suit, 
   meaning,
+  nameFallback,
   size = "md", // sm, md, lg, fluid
   className = "" 
 }) {
@@ -16,8 +17,14 @@ export default function PokerCard({
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
   const cardRef = useRef(null);
 
-  // Detectar si el palo corresponde a un color rojo
-  const isRed = suit === '♥' || suit === '♦' || suit === '♥️' || suit === '♦️';
+  // Detectar si el palo corresponde a un color rojo (usando suit o nameFallback)
+  const isRedSuit = (s) => s === '♥' || s === '♦' || s === '♥️' || s === '♦️';
+  const isRedName = (n) => {
+    if (!n) return false;
+    const l = n.toLowerCase();
+    return l.includes('♥') || l.includes('♦') || l.includes('corazon') || l.includes('corazones') || l.includes('diamante') || l.includes('diamantes');
+  };
+  const isRed = isRedSuit(suit) || isRedName(nameFallback) || isRedName(meaning);
   
   // Asignación de colores basada en el palo
   const textColor = isRed ? 'text-red-500' : 'text-gray-100';
@@ -91,18 +98,18 @@ export default function PokerCard({
       {/* Esquina superior izquierda */}
       <div className={`absolute top-2 left-2 flex flex-col items-center leading-none ${textColor} ${currentText.padding}`}>
         <span className={`font-bold tracking-tighter ${currentText.cornerValue}`}>{value}</span>
-        <PokerSuitIcon suit={suit} className={currentText.cornerSuit} />
+        <PokerSuitIcon suit={suit} nameFallback={nameFallback || meaning} className={currentText.cornerSuit} />
       </div>
 
       {/* Símbolo central */}
       <div className={`${textColor} drop-shadow-md opacity-90 transition-all duration-500 flex items-center justify-center`}>
-        <PokerSuitIcon suit={suit} className={currentText.center} />
+        <PokerSuitIcon suit={suit} nameFallback={nameFallback || meaning} className={currentText.center} />
       </div>
 
       {/* Esquina inferior derecha (invertida) */}
       <div className={`absolute bottom-2 right-2 flex flex-col items-center leading-none ${textColor} ${currentText.padding} rotate-180`}>
         <span className={`font-bold tracking-tighter ${currentText.cornerValue}`}>{value}</span>
-        <PokerSuitIcon suit={suit} className={currentText.cornerSuit} />
+        <PokerSuitIcon suit={suit} nameFallback={nameFallback || meaning} className={currentText.cornerSuit} />
       </div>
 
       {/* Panel semántico (Significado opcional - Controlado por Toggle) */}
@@ -123,7 +130,7 @@ export default function PokerCard({
       >
         <div className="bg-[#111115]/95 backdrop-blur-xl border border-red-500/20 p-4 rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.8)] w-64">
           <div className="flex items-center gap-2 mb-2 border-b border-white/10 pb-2">
-            <PokerSuitIcon suit={suit} className={`w-5 h-5 ${textColor}`} />
+            <PokerSuitIcon suit={suit} nameFallback={nameFallback || meaning} className={`w-5 h-5 ${textColor}`} />
             <span className="font-serif font-bold text-white tracking-wide">{theoryData.nombre}</span>
           </div>
           <div className="space-y-2">

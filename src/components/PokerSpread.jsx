@@ -35,6 +35,7 @@ export default function PokerSpread({ layout = 'lineal3', cards = [], showOrderB
             value={cardData.value} 
             suit={cardData.suit} 
             meaning={cardData.meaning} 
+            nameFallback={cardData.name}
           />
         </div>
       </div>

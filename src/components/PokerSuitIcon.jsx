@@ -1,18 +1,21 @@
 import React from 'react';
 
-export default function PokerSuitIcon({ suit, className = "" }) {
+export default function PokerSuitIcon({ suit, nameFallback = "", className = "" }) {
   // Función para determinar cuál es el palo basado en el string que llega
-  const getSuitType = (s) => {
-    if (!s) return null;
-    const str = s.toLowerCase();
-    if (str.includes('♥') || str.includes('corazon') || str.includes('corazones')) return 'heart';
-    if (str.includes('♦') || str.includes('diamante') || str.includes('diamantes')) return 'diamond';
-    if (str.includes('♣') || str.includes('trebol') || str.includes('trébol') || str.includes('tréboles')) return 'club';
-    if (str.includes('♠') || str.includes('pica') || str.includes('picas')) return 'spade';
-    return null;
+  const getSuitType = (s1, s2) => {
+    const checkStr = (str) => {
+      if (!str) return null;
+      str = str.toLowerCase();
+      if (str.includes('♥') || str.includes('corazon') || str.includes('corazones') || str.includes('heart')) return 'heart';
+      if (str.includes('♦') || str.includes('diamante') || str.includes('diamantes') || str.includes('diamond')) return 'diamond';
+      if (str.includes('♣') || str.includes('trebol') || str.includes('trébol') || str.includes('tréboles') || str.includes('club')) return 'club';
+      if (str.includes('♠') || str.includes('pica') || str.includes('picas') || str.includes('spade')) return 'spade';
+      return null;
+    };
+    return checkStr(s1) || checkStr(s2);
   };
 
-  const suitType = getSuitType(suit);
+  const suitType = getSuitType(suit, nameFallback);
 
   if (!suitType) return null;
 

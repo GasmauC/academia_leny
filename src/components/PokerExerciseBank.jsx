@@ -91,7 +91,8 @@ export default function PokerExerciseBank({ onNavigate }) {
       return {
         value: valueStr,
         suit: data.emoji,
-        meaning: '' // Exercises don't have explicit meanings in the array yet
+        meaning: '', // Exercises don't have explicit meanings in the array yet
+        name: data.name
       };
     });
   };

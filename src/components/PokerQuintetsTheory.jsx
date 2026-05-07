@@ -38,7 +38,8 @@ export default function PokerQuintetsTheory() {
       return {
         value: valueStr,
         suit: cardData.emoji,
-        meaning: '' 
+        meaning: '',
+        name: cardData.name
       };
     });
   };
